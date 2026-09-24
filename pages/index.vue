@@ -3,7 +3,7 @@ const moods = [
   { emoji:'🤩', name:'Heureux', tone:'gold' },
   { emoji:'😌', name:'Bien', tone:'sage' },
   { emoji:'😐', name:'Moyen', tone:'sand' },
-  { emoji:'😢', name:'Pas top', tone:'peach' },
+  { emoji:'😴', name:'Fatigué', tone:'peach' },
   { emoji:'😡', name:'Nul', tone:'cocoa' }
 ]
 </script>
