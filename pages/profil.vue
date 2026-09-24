@@ -24,7 +24,10 @@ async function deleteAccount() {
         <h1>Mon profil,<br><i>à ma façon.</i></h1>
         <p>Ton espace personnel pour retrouver tes informations et tes humeurs.</p>
       </div>
-      <div class="profile-avatar">☺</div>
+      <div class="profile-head-actions">
+        <button class="profile-logout profile-head-logout" type="button" @click="logout">Se déconnecter <span>↗</span></button>
+        <div class="profile-avatar">☺</div>
+      </div>
     </div>
 
     <div class="profile-grid">
@@ -58,7 +61,5 @@ async function deleteAccount() {
         <button class="profile-delete" type="button" @click="deleteAccount">Supprimer mon profil</button>
       </article>
     </div>
-
-    <button class="profile-logout" type="button" @click="logout">Se déconnecter <span>↗</span></button>
   </section>
 </template>
