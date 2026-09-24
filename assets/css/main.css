@@ -500,3 +500,23 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 :root[data-theme="dark"] .mood-slide .selected-label{
   opacity:.9;
 }
+
+
+/* Contraste réel sur la carte dorée en mode sombre */
+:root[data-theme="dark"] .mood-slide.tone-gold{
+  background:#e7bd58 !important;
+  color:#392b24 !important;
+}
+:root[data-theme="dark"] .mood-slide.tone-gold .slide-title,
+:root[data-theme="dark"] .mood-slide.tone-gold .slide-title h2,
+:root[data-theme="dark"] .mood-slide.tone-gold .slide-copy blockquote,
+:root[data-theme="dark"] .mood-slide.tone-gold .slide-film,
+:root[data-theme="dark"] .mood-slide.tone-gold .choose-label,
+:root[data-theme="dark"] .mood-slide.tone-gold .selected-label{
+  color:#392b24 !important;
+  opacity:1 !important;
+}
+:root[data-theme="dark"] .mood-slide.tone-gold .slide-save{
+  background:#392b24 !important;
+  color:#fffaf2 !important;
+}
