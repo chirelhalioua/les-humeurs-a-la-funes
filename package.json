@@ -1,0 +1,7 @@
+{
+  "name":"les-humeurs-a-la-funes",
+  "private":true,
+  "type":"module",
+  "scripts":{"dev":"nuxt dev","build":"nuxt build","generate":"nuxt generate","preview":"nuxt preview"},
+  "dependencies":{"nuxt":"^3.17.7","vue":"^3.5.13","vue-router":"^4.5.0"}
+}
