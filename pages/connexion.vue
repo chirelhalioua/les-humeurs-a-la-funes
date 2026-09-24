@@ -75,6 +75,7 @@ function switchMode(next: 'login' | 'register') {
         </button>
       </form>
 
+      <NuxtLink v-if="mode === 'login'" to="/reinitialiser-mot-de-passe" class="auth-reset-link">Mot de passe oublié ?</NuxtLink>
       <p class="auth-foot">{{ mode === 'login' ? 'Pas encore de compte ?' : 'Déjà un compte ?' }}
         <button type="button" @click="switchMode(mode === 'login' ? 'register' : 'login')">
           {{ mode === 'login' ? 'Créer un compte' : 'Se connecter' }}
