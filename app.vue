@@ -39,6 +39,12 @@ watch(dark, value => {
 
     <main><NuxtPage /></main>
 
+    <footer class="site-footer">
+      <NuxtLink to="/contact" class="footer-contact">Contact</NuxtLink>
+      <span class="footer-separator">·</span>
+      <span>Développé avec <span class="footer-heart">♥</span> par <a href="https://chirelhalioua.fr/" target="_blank" rel="noopener noreferrer">Chire Dev</a></span>
+    </footer>
+
     <nav class="mobile-nav" aria-label="Navigation mobile">
       <NuxtLink to="/"><span>⌂</span>Accueil</NuxtLink>
       <NuxtLink to="/choisir-humeurs"><span>☻</span>Humeur</NuxtLink>
