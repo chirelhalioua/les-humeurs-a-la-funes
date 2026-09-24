@@ -103,3 +103,161 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .mood-tile:last-child{min-height:94px}
   .mood-tile:last-child .tile-image{height:70px}
 }
+
+/* Nouvelle présentation mobile : galerie + fiche sélectionnée */
+.mood-gallery{
+  margin-top:30px;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
+}
+.mood-choice{
+  border:1px solid transparent;
+  border-radius:24px;
+  min-height:128px;
+  padding:13px 8px 11px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  cursor:pointer;
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+}
+.mood-choice:hover{transform:translateY(-3px)}
+.mood-choice.selected{
+  border-color:var(--cocoa);
+  box-shadow:0 12px 28px rgba(57,43,36,.14);
+  transform:translateY(-3px);
+}
+.choice-photo{
+  width:62px;
+  height:62px;
+  border-radius:50%;
+  overflow:hidden;
+  flex:none;
+  background:var(--paper);
+  border:3px solid rgba(255,250,242,.72);
+  box-shadow:0 5px 14px rgba(57,43,36,.13);
+  display:grid;
+  place-items:center;
+}
+.choice-photo img{width:100%;height:100%;object-fit:cover}
+.choice-emoji{font-size:31px}
+.choice-name{
+  font-size:11px;
+  font-weight:800;
+  white-space:nowrap;
+}
+.choice-dot{
+  height:14px;
+  min-width:14px;
+  font-size:10px;
+  font-weight:900;
+}
+.mood-detail{
+  margin:16px auto 0;
+  min-height:125px;
+  border-radius:27px;
+  padding:14px 16px;
+  display:grid;
+  grid-template-columns:72px 1fr auto;
+  align-items:center;
+  gap:15px;
+  box-shadow:0 14px 34px rgba(57,43,36,.1);
+}
+.detail-photo{
+  width:72px;
+  height:96px;
+  border-radius:18px;
+  overflow:hidden;
+  background:var(--paper);
+}
+.detail-photo img{width:100%;height:100%;object-fit:cover}
+.detail-copy{min-width:0}
+.detail-title{display:flex;align-items:center;gap:7px}
+.detail-title span{font-size:23px}
+.detail-title strong{font-size:18px}
+.detail-copy blockquote{
+  margin:5px 0 5px;
+  font-size:22px;
+  line-height:1.02;
+}
+.detail-copy p{
+  margin:0;
+  font-size:10px;
+  font-weight:800;
+  opacity:.72;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.detail-save{
+  border:0;
+  border-radius:999px;
+  background:var(--cocoa);
+  color:var(--paper);
+  padding:11px 14px;
+  font-size:10px;
+  font-weight:800;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.detail-save span{margin-left:5px}
+.mood-hint{
+  margin:18px 0 0;
+  text-align:center;
+  color:var(--muted);
+  font-size:11px;
+}
+.mood-detail-enter-active,.mood-detail-leave-active{transition:opacity .2s,transform .2s}
+.mood-detail-enter-from,.mood-detail-leave-to{opacity:0;transform:translateY(8px)}
+
+@media(max-width:850px){
+  .mood-gallery{grid-template-columns:repeat(5,1fr);gap:7px;margin-top:26px}
+  .mood-choice{min-height:112px;border-radius:20px;padding:9px 4px}
+  .choice-photo{width:55px;height:55px}
+  .choice-name{font-size:10px}
+  .mood-detail{grid-template-columns:64px 1fr auto;min-height:112px;padding:12px;border-radius:23px;gap:11px}
+  .detail-photo{width:64px;height:84px;border-radius:15px}
+  .detail-title strong{font-size:16px}
+  .detail-copy blockquote{font-size:20px}
+  .detail-save{padding:10px 11px}
+}
+@media(max-width:560px){
+  .mood-page{padding:30px 16px 100px}
+  .page-heading h1{font-size:43px}
+  .mood-gallery{
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    margin-top:24px;
+  }
+  .mood-choice{
+    min-height:104px;
+    border-radius:20px;
+    padding:8px 3px;
+    gap:5px;
+  }
+  .mood-choice:nth-child(4){grid-column:1/2}
+  .mood-choice:nth-child(5){grid-column:2/3}
+  .choice-photo{width:53px;height:53px}
+  .choice-name{font-size:10px}
+  .mood-detail{
+    grid-template-columns:57px 1fr;
+    margin-top:12px;
+    min-height:112px;
+    padding:10px 11px;
+    gap:10px;
+  }
+  .detail-photo{width:57px;height:78px;border-radius:13px}
+  .detail-title span{font-size:19px}
+  .detail-title strong{font-size:15px}
+  .detail-copy blockquote{font-size:18px;line-height:1.02;margin:4px 0}
+  .detail-copy p{font-size:8px}
+  .detail-save{
+    grid-column:1/-1;
+    width:100%;
+    padding:9px 12px;
+  }
+  .mood-hint{font-size:10px;margin-top:13px}
+}
