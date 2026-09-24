@@ -32,6 +32,7 @@ export default defineEventHandler(async (event) => {
     await sendBrevoEmail({
       to: 'contact@chirelhalioua.fr',
       toName: 'Chirel Dev',
+      replyTo: email,
       subject: 'Nouveau message de contact — Les Humeurs à la Funes',
       htmlContent: `
         <div style="font-family:Arial,sans-serif;max-width:600px;margin:auto;color:#392b24">
