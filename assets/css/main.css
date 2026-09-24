@@ -987,3 +987,15 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .legal-page h1,.contact-page h1{font-size:43px}
   .legal-card,.contact-card{padding:20px;border-radius:22px}
 }
+
+
+.auth-reset-link{
+  display:block;
+  margin:2px 0 -4px;
+  text-align:right;
+  color:var(--muted);
+  font-size:9px;
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
