@@ -1137,3 +1137,42 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     margin-top:16px;
   }
 }
+
+/* Contact : garder seulement les 2 cartes principales, FAQ en section éditoriale */
+@media(min-width:1100px){
+  .contact-layout{
+    display:grid;
+    grid-template-columns:minmax(280px,.8fr) minmax(480px,1.25fr);
+    gap:18px 24px;
+    align-items:start;
+  }
+  .contact-layout>.contact-card:nth-child(1){grid-column:1;grid-row:1}
+  .contact-layout>.contact-card:nth-child(2){grid-column:2;grid-row:1}
+  .contact-layout>.faq-section{
+    grid-column:1/-1;
+    grid-row:2;
+    display:grid;
+    grid-template-columns:220px 1fr 1fr;
+    gap:0 28px;
+    align-items:start;
+    margin:10px 0 0;
+    padding:18px 0 0;
+    max-width:none;
+    background:transparent;
+    border:0;
+    border-top:1px solid var(--line);
+    border-radius:0;
+    box-shadow:none;
+  }
+  .faq-heading{grid-column:1;grid-row:1}
+  .faq-heading h2{font-size:25px;margin:8px 0 0}
+  .faq-section details{
+    padding:9px 0;
+    border-top:0;
+    border-bottom:1px solid var(--line);
+  }
+  .faq-section details:nth-of-type(2),
+  .faq-section details:nth-of-type(4){grid-column:2}
+  .faq-section details:nth-of-type(3),
+  .faq-section details:nth-of-type(5){grid-column:3}
+}
