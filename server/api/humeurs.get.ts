@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig(event)
 
   try {
-    const db = await getHumeursDb()
+    const db = await getHumeursDb(event)
     const documents = await db
       .collection(config.mongodbCollection)
       .find({ title: { $in: moodMap.map(mood => mood.source) } })
