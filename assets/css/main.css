@@ -319,3 +319,26 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   }
   .mood-hint{display:none}
 }
+
+
+/* Correction citations visibles + cadrage photo */
+.choice-info{min-width:0;display:grid;gap:3px}
+.choice-name{font-size:11px;font-weight:800;white-space:nowrap}
+.choice-quote{
+  font-family:Caveat,cursive;
+  font-size:15px;
+  line-height:1.05;
+  opacity:.9;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.choice-photo img{object-position:center center}
+.mood-choice:first-child .choice-photo img{object-position:50% 50%}
+@media(max-width:560px){
+  .choice-info{min-width:0;align-self:center}
+  .choice-name{font-size:12px;white-space:normal;line-height:1.1}
+  .choice-quote{font-size:14px;line-height:1.02}
+  .mood-choice:first-child .choice-photo img{object-position:center center}
+}
