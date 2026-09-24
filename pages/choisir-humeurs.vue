@@ -13,6 +13,13 @@ const { data, pending, error } = await useFetch<Mood[]>('/api/humeurs')
 const moods = computed(() => data.value || [])
 const currentIndex = ref(0)
 const selected = ref<Mood | null>(null)
+const moment = ref('matin')
+const exactTime = ref('08:00')
+const moments = [
+  { key: 'matin', label: 'Matin', hours: '06:00 – 11:59', emoji: '☀️' },
+  { key: 'apres-midi', label: 'Après-midi', hours: '12:00 – 17:59', emoji: '🌤️' },
+  { key: 'soir', label: 'Soir', hours: '18:00 – 23:59', emoji: '🌙' }
+]
 const currentMood = computed(() => moods.value[currentIndex.value] || null)
 
 const goTo = (index: number) => {
@@ -94,6 +101,31 @@ const selectCurrent = () => {
         ></button>
       </div>
       <div class="carousel-counter">{{ currentIndex + 1 }} / {{ moods.length }}</div>
+
+      <div class="mood-time">
+        <div class="mood-time-heading">
+          <span class="eyebrow"><span></span> à quel moment ?</span>
+          <p>Choisis le moment où tu ressens cette humeur.</p>
+        </div>
+        <div class="moment-options">
+          <button
+            v-for="item in moments"
+            :key="item.key"
+            type="button"
+            class="moment-option"
+            :class="{ active: moment === item.key }"
+            @click="moment = item.key"
+          >
+            <span class="moment-emoji">{{ item.emoji }}</span>
+            <strong>{{ item.label }}</strong>
+            <small>{{ item.hours }}</small>
+          </button>
+        </div>
+        <label class="exact-time">
+          Heure précise
+          <input v-model="exactTime" type="time">
+        </label>
+      </div>
     </template>
   </section>
 </template>
