@@ -951,3 +951,39 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     flex-wrap:wrap;
   }
 }
+
+
+/* Options du compte */
+.profile-actions{display:grid;gap:5px;margin-top:12px}
+.profile-actions .profile-link{margin-top:0}
+.profile-danger{border-color:rgba(139,71,51,.18)}
+.profile-delete{
+  margin-top:18px;border:0;border-radius:999px;padding:10px 13px;
+  background:rgba(231,165,142,.22);color:#8b4733;
+  font-size:10px;font-weight:800;cursor:pointer;
+}
+.profile-delete:hover{background:rgba(231,165,142,.35)}
+
+/* Pages légales et contact */
+.legal-page,.contact-page{max-width:850px;margin:auto;padding:55px 24px 110px}
+.legal-page h1,.contact-page h1{
+  font-family:Sora,var(--font);font-size:clamp(45px,6vw,70px);
+  line-height:.98;letter-spacing:-.065em;margin:18px 0 30px
+}
+.legal-page h1 i,.contact-page h1 i{font-family:Caveat,cursive;font-weight:500}
+.legal-card,.contact-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:28px;
+  padding:28px;box-shadow:0 12px 32px rgba(57,43,36,.07)
+}
+.legal-card h2{font-family:Sora,var(--font);font-size:16px;margin:22px 0 8px}
+.legal-card h2:first-child{margin-top:0}
+.legal-card p,.contact-card p{color:var(--muted);font-size:12px;line-height:1.7;margin:0}
+.contact-card a{
+  display:inline-flex;margin-top:22px;padding:12px 17px;border-radius:999px;
+  background:var(--cocoa);color:var(--paper);font-size:11px;font-weight:800
+}
+@media(max-width:560px){
+  .legal-page,.contact-page{padding:30px 16px 100px}
+  .legal-page h1,.contact-page h1{font-size:43px}
+  .legal-card,.contact-card{padding:20px;border-radius:22px}
+}
