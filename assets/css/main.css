@@ -752,7 +752,7 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 
 /* Navigation : connexion intégrée au menu */
 .desktop-nav{gap:22px}
-.desktop-nav .nav-auth-link{font-weight:800;color:var(--cocoa)}
+.desktop-nav .nav-auth-link{font-weight:400;color:var(--muted)}
 .desktop-nav .nav-auth-link:hover{color:var(--brown)}
 
 @media(max-width:560px){
@@ -1250,4 +1250,9 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);
     gap:56px;
   }
+}
+
+.desktop-nav a.router-link-exact-active{
+  font-weight:800 !important;
+  color:var(--cocoa) !important;
 }
