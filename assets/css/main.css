@@ -1542,3 +1542,11 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     font-size:11px;
   }
 }
+
+.mood-save-error{
+  margin:9px 0 0;
+  color:#b85d4f;
+  font-size:10px;
+  font-weight:700;
+  text-align:center;
+}
