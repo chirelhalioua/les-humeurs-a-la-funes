@@ -55,7 +55,10 @@ const selectMood = (mood: Mood) => {
             >
             <span v-else class="choice-emoji">{{ mood.emoji }}</span>
           </span>
-          <span class="choice-name">{{ mood.emoji }} {{ mood.name }}</span>
+          <span class="choice-info">
+            <strong class="choice-name">{{ mood.emoji }} {{ mood.name }}</strong>
+            <small class="choice-quote">« {{ mood.quote }} »</small>
+          </span>
           <span class="choice-dot">{{ selected?.key === mood.key ? '✓' : '' }}</span>
         </button>
       </div>
