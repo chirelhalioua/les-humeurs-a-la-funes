@@ -136,7 +136,7 @@ async function deleteAccount() {
         <button class="profile-avatar" type="button" :disabled="photoSaving" aria-label="Modifier la photo de profil" @click="showPhotoMenu = !showPhotoMenu">
           <img v-if="user?.photo" :src="user.photo" alt="Photo de profil">
           <span v-else>{{ (user?.name || 'M').charAt(0).toUpperCase() }}</span>
-          <span class="profile-avatar-camera">⌕</span>
+          <span class="profile-avatar-camera" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6.5 9.2 4.8h5.6L16 6.5h2.5A2.5 2.5 0 0 1 21 9v8a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17V9a2.5 2.5 0 0 1 2.5-2.5H8Zm4 10A4 4 0 1 0 12 8.5a4 4 0 0 0 0 8Zm0-1.7A2.3 2.3 0 1 1 12 10a2.3 2.3 0 0 1 0 4.6Z"/></svg></span>
         </button>
         <div v-if="showPhotoMenu" class="profile-photo-menu">
           <button type="button" @click="openPhotoPicker">Modifier la photo</button>
