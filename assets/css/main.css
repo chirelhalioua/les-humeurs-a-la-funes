@@ -1289,3 +1289,11 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   line-height:1.05;
   text-shadow:none;
 }
+
+/* Ajustement portrait Heureux sur mobile */
+@media(max-width:560px){
+  .mood-slide.tone-gold .slide-photo img{
+    object-position:50% 100% !important;
+    transform:scale(1.38) translateY(-12px) !important;
+  }
+}
