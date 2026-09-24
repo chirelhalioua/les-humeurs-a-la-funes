@@ -4,7 +4,7 @@ const moods = [
   { emoji:'😌', name:'Bien', tone:'sage' },
   { emoji:'😐', name:'Moyen', tone:'sand' },
   { emoji:'😴', name:'Fatigué', tone:'peach' },
-  { emoji:'😡', name:'Nul', tone:'cocoa' }
+  { emoji:'😡', name:'Énervé', tone:'cocoa' }
 ]
 </script>
 
