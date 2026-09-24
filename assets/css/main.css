@@ -450,3 +450,19 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     object-position:50% 76%;
   }
 }
+
+
+/* Réglage précis du portrait Heureux : visage nettement remonté */
+.mood-slide.tone-gold .slide-photo{
+  position:relative;
+}
+.mood-slide.tone-gold .slide-photo img{
+  object-position:50% 100%;
+  transform:scale(1.08);
+}
+@media(max-width:560px){
+  .mood-slide.tone-gold .slide-photo img{
+    object-position:50% 100%;
+    transform:scale(1.12);
+  }
+}
