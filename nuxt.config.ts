@@ -2,6 +2,11 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-01-15',
   devtools: { enabled: false },
   css: ['~/assets/css/main.css'],
+  runtimeConfig: {
+    mongodbUri: '',
+    mongodbDbName: 'humeurs_funes',
+    mongodbCollection: 'humeurs'
+  },
   app: {
     head: {
       title: 'Les Humeurs à la Funes',
