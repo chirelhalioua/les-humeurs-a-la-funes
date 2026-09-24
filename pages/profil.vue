@@ -7,6 +7,10 @@ const newName = ref('')
 const nameSaving = ref(false)
 const nameError = ref('')
 const nameSuccess = ref('')
+const photoInput = ref<HTMLInputElement | null>(null)
+const photoSaving = ref(false)
+const photoError = ref('')
+const showPhotoMenu = ref(false)
 
 function startNameEdit() {
   newName.value = user.value?.name || ''
@@ -41,6 +45,77 @@ async function saveName() {
   }
 }
 
+function openPhotoPicker() {
+  photoError.value = ''
+  photoInput.value?.click()
+}
+
+function compressPhoto(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = () => {
+      const image = new Image()
+      image.onload = () => {
+        const maxSize = 600
+        const scale = Math.min(1, maxSize / Math.max(image.width, image.height))
+        const canvas = document.createElement('canvas')
+        canvas.width = Math.round(image.width * scale)
+        canvas.height = Math.round(image.height * scale)
+        const context = canvas.getContext('2d')
+        if (!context) return reject(new Error('Canvas indisponible'))
+        context.drawImage(image, 0, 0, canvas.width, canvas.height)
+        resolve(canvas.toDataURL('image/jpeg', 0.82))
+      }
+      image.onerror = () => reject(new Error('Image invalide'))
+      image.src = String(reader.result)
+    }
+    reader.onerror = () => reject(new Error('Lecture impossible'))
+    reader.readAsDataURL(file)
+  })
+}
+
+async function handlePhotoChange(event: Event) {
+  const input = event.target as HTMLInputElement
+  const file = input.files?.[0]
+  input.value = ''
+  if (!file) return
+  if (!file.type.startsWith('image/')) {
+    photoError.value = 'Choisis une image.'
+    return
+  }
+  if (file.size > 5 * 1024 * 1024) {
+    photoError.value = 'La photo doit faire moins de 5 Mo.'
+    return
+  }
+
+  photoSaving.value = true
+  photoError.value = ''
+  try {
+    const photo = await compressPhoto(file)
+    await $fetch('/api/auth/update-photo', { method: 'PATCH', body: { photo } })
+    await refreshSession()
+    showPhotoMenu.value = false
+  } catch (error: any) {
+    photoError.value = error?.data?.statusMessage || 'Impossible de modifier la photo.'
+  } finally {
+    photoSaving.value = false
+  }
+}
+
+async function removePhoto() {
+  photoSaving.value = true
+  photoError.value = ''
+  try {
+    await $fetch('/api/auth/update-photo', { method: 'PATCH', body: { photo: null } })
+    await refreshSession()
+    showPhotoMenu.value = false
+  } catch (error: any) {
+    photoError.value = error?.data?.statusMessage || 'Impossible de supprimer la photo.'
+  } finally {
+    photoSaving.value = false
+  }
+}
+
 async function logout() {
   await clearSession()
   await navigateTo('/')
@@ -57,7 +132,19 @@ async function deleteAccount() {
 <template>
   <section class="profile-page">
     <div class="profile-head">
-      <div class="profile-avatar">{{ (user?.name || 'M').charAt(0).toUpperCase() }}</div>
+      <div class="profile-avatar-wrap">
+        <button class="profile-avatar" type="button" :disabled="photoSaving" aria-label="Modifier la photo de profil" @click="showPhotoMenu = !showPhotoMenu">
+          <img v-if="user?.photo" :src="user.photo" alt="Photo de profil">
+          <span v-else>{{ (user?.name || 'M').charAt(0).toUpperCase() }}</span>
+          <span class="profile-avatar-camera">⌕</span>
+        </button>
+        <div v-if="showPhotoMenu" class="profile-photo-menu">
+          <button type="button" @click="openPhotoPicker">Modifier la photo</button>
+          <button v-if="user?.photo" type="button" @click="removePhoto">Supprimer la photo</button>
+        </div>
+        <input ref="photoInput" class="profile-photo-input" type="file" accept="image/*" @change="handlePhotoChange">
+        <p v-if="photoError" class="profile-photo-error">{{ photoError }}</p>
+      </div>
       <div class="profile-head-copy">
         <span class="eyebrow"><span></span> mon espace</span>
         <h1>Mon profil,<br><i>à ma façon.</i></h1>
