@@ -738,3 +738,13 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .auth-switch{margin-bottom:20px}
   .auth-card input{padding:12px;font-size:12px}
 }
+
+
+.auth-top-link{
+  font-size:11px;
+  font-weight:800;
+  color:var(--brown);
+  padding:9px 4px;
+}
+.auth-top-link:hover{color:var(--cocoa)}
+@media(max-width:560px){.auth-top-link{display:none}}
