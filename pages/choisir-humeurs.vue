@@ -11,10 +11,19 @@ type Mood = {
 
 const { data, pending, error } = await useFetch<Mood[]>('/api/humeurs')
 const moods = computed(() => data.value || [])
+const currentIndex = ref(0)
 const selected = ref<Mood | null>(null)
+const currentMood = computed(() => moods.value[currentIndex.value] || null)
 
-const selectMood = (mood: Mood) => {
-  selected.value = mood
+const goTo = (index: number) => {
+  if (!moods.value.length) return
+  currentIndex.value = (index + moods.value.length) % moods.value.length
+  selected.value = null
+}
+const nextMood = () => goTo(currentIndex.value + 1)
+const previousMood = () => goTo(currentIndex.value - 1)
+const selectCurrent = () => {
+  if (currentMood.value) selected.value = currentMood.value
 }
 </script>
 
@@ -23,7 +32,7 @@ const selectMood = (mood: Mood) => {
     <div class="page-heading">
       <span class="eyebrow"><span></span> maintenant</span>
       <h1>Quelle tête fait<br><i>ta journée ?</i></h1>
-      <p>Choisis simplement celle qui te ressemble.</p>
+      <p>Fais défiler les humeurs et choisis celle qui te ressemble.</p>
     </div>
 
     <div v-if="pending" class="mood-loading">
@@ -35,42 +44,56 @@ const selectMood = (mood: Mood) => {
       Impossible de charger les humeurs pour le moment.
     </div>
 
-    <template v-else>
-      <div class="mood-gallery">
-        <button
-          v-for="mood in moods"
-          :key="mood.key"
-          class="mood-choice"
-          :class="['tone-' + mood.tone, { selected: selected?.key === mood.key }]"
-          :data-quote="mood.quote"
-          type="button"
-          @click="selectMood(mood)"
+    <template v-else-if="currentMood">
+      <div class="mood-carousel">
+        <button class="carousel-arrow carousel-prev" type="button" aria-label="Humeur précédente" @click="previousMood">‹</button>
+
+        <article
+          class="mood-slide"
+          :class="['tone-' + currentMood.tone, { selected: selected?.key === currentMood.key }]"
+          @click="selectCurrent"
         >
-          <span class="choice-photo">
+          <div class="slide-photo">
             <img
-              v-if="mood.image"
-              :src="mood.image"
-              :alt="'Louis de Funès — ' + mood.name"
-              loading="lazy"
+              v-if="currentMood.image"
+              :src="currentMood.image"
+              :alt="'Louis de Funès — ' + currentMood.name"
             >
-            <span v-else class="choice-emoji">{{ mood.emoji }}</span>
-          </span>
-          <span class="choice-info">
-            <strong class="choice-name">{{ mood.emoji }} {{ mood.name }}</strong>
-            <small class="choice-quote">« {{ mood.quote }} »</small>
-          </span>
-          <span class="choice-dot">{{ selected?.key === mood.key ? '✓' : '' }}</span>
-        </button>
+            <span v-else>{{ currentMood.emoji }}</span>
+          </div>
+
+          <div class="slide-copy">
+            <div class="slide-title">
+              <span>{{ currentMood.emoji }}</span>
+              <h2>{{ currentMood.name }}</h2>
+            </div>
+            <blockquote>« {{ currentMood.quote }} »</blockquote>
+            <p class="slide-film">🎬 {{ currentMood.film }}</p>
+
+            <div class="slide-action">
+              <span v-if="selected?.key === currentMood.key" class="selected-label">Humeur choisie ✓</span>
+              <span v-else class="choose-label">Toucher pour choisir</span>
+              <button v-if="selected?.key === currentMood.key" type="button" class="slide-save" @click.stop>
+                Enregistrer <span>→</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <button class="carousel-arrow carousel-next" type="button" aria-label="Humeur suivante" @click="nextMood">›</button>
       </div>
 
-      <Transition name="save-only">
-        <div v-if="selected" class="selection-bar mood-save-only">
-          <span>{{ selected.emoji }} <b>{{ selected.name }}</b></span>
-          <button type="button">Enregistrer <span>→</span></button>
-        </div>
-      </Transition>
-
-      <p v-if="!selected" class="mood-hint">Choisis ton humeur, puis enregistre-la.</p>
+      <div class="carousel-dots" aria-label="Choisir une humeur">
+        <button
+          v-for="(mood, index) in moods"
+          :key="mood.key"
+          type="button"
+          :class="{ active: index === currentIndex }"
+          :aria-label="'Afficher ' + mood.name"
+          @click="goTo(index)"
+        ></button>
+      </div>
+      <div class="carousel-counter">{{ currentIndex + 1 }} / {{ moods.length }}</div>
     </template>
   </section>
 </template>
