@@ -30,17 +30,6 @@ async function submit() {
     </div>
 
     <div class="contact-layout">
-      <div class="contact-card contact-info">
-        <span class="card-kicker">CONTACT</span>
-        <h2>Parlons-en.</h2>
-        <p>Remplis le formulaire et ton message sera transmis à l’équipe.</p>
-        <div class="contact-note">
-          <span>♥</span>
-          <div><strong>Les Humeurs à la Funes</strong><small>Un espace simple, humain et sans jugement.</small></div>
-        </div>
-        <a href="https://chirelhalioua.fr/" target="_blank" rel="noopener noreferrer" class="contact-dev">Chirel Dev <span>↗</span></a>
-      </div>
-
       <div class="contact-card">
         <form v-if="!sent" class="contact-form" @submit.prevent="submit">
           <label>Nom ou prénom
