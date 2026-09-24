@@ -29,6 +29,7 @@ watch(dark, value => {
       </nav>
 
       <div class="top-actions">
+        <NuxtLink to="/connexion" class="auth-top-link">Connexion</NuxtLink>
         <button class="theme-button" type="button" :aria-label="dark ? 'Passer en mode clair' : 'Passer en mode sombre'" @click="dark=!dark">
           {{ dark ? '☀' : '☾' }}
         </button>
