@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const dark = ref(false)
+const { loggedIn } = useUserSession()
 
 onMounted(() => {
   dark.value = localStorage.getItem('humeurs-theme') === 'dark'
@@ -25,8 +26,8 @@ watch(dark, value => {
       <nav class="desktop-nav" aria-label="Navigation principale">
         <NuxtLink to="/choisir-humeurs">Mon humeur</NuxtLink>
         <NuxtLink to="/suivi-humeurs">Mon suivi</NuxtLink>
-        <NuxtLink to="/profil">Profil</NuxtLink>
-        <NuxtLink to="/connexion" class="nav-auth-link">Connexion</NuxtLink>
+        <NuxtLink v-if="loggedIn" to="/profil">Profil</NuxtLink>
+        <NuxtLink v-else to="/connexion" class="nav-auth-link">Connexion</NuxtLink>
       </nav>
 
       <div class="top-actions">
@@ -49,7 +50,8 @@ watch(dark, value => {
       <NuxtLink to="/"><span>⌂</span>Accueil</NuxtLink>
       <NuxtLink to="/choisir-humeurs"><span>☻</span>Humeur</NuxtLink>
       <NuxtLink to="/suivi-humeurs"><span>◔</span>Suivi</NuxtLink>
-      <NuxtLink to="/profil"><span>○</span>Profil</NuxtLink>
+      <NuxtLink v-if="loggedIn" to="/profil"><span>○</span>Profil</NuxtLink>
+      <NuxtLink v-else to="/connexion"><span>↗</span>Connexion</NuxtLink>
     </nav>
   </div>
 </template>
