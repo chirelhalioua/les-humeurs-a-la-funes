@@ -1725,6 +1725,11 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 .profile-head-copy{
   min-width:0;
 }
+.profile-head-copy h1{
+  font-family:Sora,var(--font);
+  font-weight:800;
+  letter-spacing:-.035em;
+}
 .profile-avatar{
   width:110px;
   height:110px;
@@ -1874,65 +1879,15 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   height:100%;
 }
 .profile-avatar-camera{
-  position:absolute!important;
-  right:5px;
-  bottom:5px;
-  width:28px!important;
-  height:28px!important;
-  border-radius:50%;
-  display:grid!important;
-  place-items:center;
-  background:var(--paper);
-  color:var(--cocoa);
-  border:2px solid var(--gold);
-  font-size:16px;
-  line-height:1;
-  box-shadow:0 5px 12px rgba(57,43,36,.16);
-}
-.profile-photo-menu{
-  position:absolute;
-  top:calc(100% + 8px);
-  left:0;
-  z-index:8;
-  min-width:155px;
-  padding:6px;
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-radius:14px;
-  box-shadow:0 14px 30px rgba(57,43,36,.15);
-}
-.profile-photo-menu button{
-  display:block;
-  width:100%;
-  padding:9px 10px;
-  border:0;
-  background:transparent;
-  color:var(--cocoa);
-  text-align:left;
-  border-radius:9px;
-  font-size:9px;
-  font-weight:800;
-  cursor:pointer;
-}
-.profile-photo-menu button:hover{background:var(--cream)}
-.profile-photo-input{display:none}
-.profile-photo-error{
-  position:absolute;
-  top:calc(100% + 170px);
-  left:0;
-  width:180px;
-  margin:0!important;
-  color:#b85d4f!important;
-  font-size:8px!important;
-}
-@media(max-width:560px){
-  .profile-avatar-camera{
     right:2px;
     bottom:2px;
-    width:22px!important;
-    height:22px!important;
-    font-size:13px;
+    width:21px!important;
+    height:21px!important;
     border-width:1px;
+  }
+  .profile-avatar-camera svg{
+    width:10px;
+    height:10px;
   }
   .profile-photo-menu{
     left:0;
