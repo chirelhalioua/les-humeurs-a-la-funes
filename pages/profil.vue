@@ -7,6 +7,13 @@ async function logout() {
   await clearSession()
   await navigateTo('/')
 }
+
+async function deleteAccount() {
+  if (!window.confirm('Supprimer définitivement ton profil ?')) return
+  await $fetch('/api/auth/delete-account', { method: 'DELETE' })
+  await clearSession()
+  await navigateTo('/')
+}
 </script>
 
 <template>
@@ -39,6 +46,16 @@ async function logout() {
         <span class="card-kicker">MON ESPACE</span>
         <h3>Préférences</h3>
         <p>Le mode sombre est disponible depuis le bouton ☾ en haut de l’écran.</p>
+        <div class="profile-actions">
+          <NuxtLink to="/modifier-mot-de-passe" class="profile-link">Modifier mon mot de passe <span>→</span></NuxtLink>
+          <NuxtLink to="/conditions-generales" class="profile-link">Conditions générales <span>→</span></NuxtLink>
+        </div>
+      </article>
+      <article class="profile-card profile-danger">
+        <span class="card-kicker">ZONE COMPTE</span>
+        <h3>Supprimer mon profil</h3>
+        <p>Cette action supprime ton compte. Elle est définitive.</p>
+        <button class="profile-delete" type="button" @click="deleteAccount">Supprimer mon profil</button>
       </article>
     </div>
 
