@@ -19,7 +19,8 @@ export default defineEventHandler(async (event) => {
 
   const id = user._id.toString()
   const name = String(user.name || user.prenom || 'Membre')
-  await setUserSession(event, { user: { id, name, email } })
+  const photo = user.photo ? String(user.photo) : null
+  await setUserSession(event, { user: { id, name, email, photo } })
 
-  return { ok: true, user: { id, name, email } }
+  return { ok: true, user: { id, name, email, photo } }
 })
