@@ -43,7 +43,7 @@ watch(dark, value => {
     <footer class="site-footer">
       <NuxtLink to="/contact" class="footer-contact">Contact</NuxtLink>
       <span class="footer-separator">·</span>
-      <span>Développé avec <span class="footer-heart">♥</span> par <a href="https://chirelhalioua.fr/" target="_blank" rel="noopener noreferrer">Chire Dev</a></span>
+      <span>Développé avec <span class="footer-heart">♥</span> par <a href="https://chirelhalioua.fr/" target="_blank" rel="noopener noreferrer">Chirel Dev</a></span>
     </footer>
 
     <nav class="mobile-nav" aria-label="Navigation mobile">
