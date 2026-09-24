@@ -17,6 +17,9 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'Les Humeurs à la Funes',
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }
+      ],
       meta: [
         { name: 'description', content: 'Un petit espace pour prendre le temps de voir comment tu vas.' },
         { name: 'theme-color', content: '#f5efe5' }
