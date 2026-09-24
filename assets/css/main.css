@@ -1256,3 +1256,36 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   font-weight:800 !important;
   color:var(--cocoa) !important;
 }
+
+/* Finitions UI : alignements et footer */
+.app-shell{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+.app-shell>main{
+  flex:1 0 auto;
+}
+.site-footer{
+  margin-top:auto;
+}
+.brand-mark,
+.theme-button{
+  display:grid;
+  place-items:center;
+  line-height:1;
+  padding:0;
+}
+.brand-mark{
+  text-align:center;
+}
+.theme-button{
+  font-family:Arial,sans-serif;
+  line-height:1;
+}
+.film-stamp{
+  color:#392b24 !important;
+  opacity:1 !important;
+  line-height:1.05;
+  text-shadow:none;
+}
