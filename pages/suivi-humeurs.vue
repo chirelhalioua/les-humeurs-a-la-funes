@@ -1,0 +1,1 @@
+<template><section class="placeholder-page"><span class="eyebrow"><span></span> mon suivi</span><h1>Voir mon humeur<br><i>dans le temps.</i></h1><p>Ton historique, tes tendances et tes repères trouveront leur place ici.</p><div class="coming">Le suivi arrive avec la connexion au backend.</div></section></template>
