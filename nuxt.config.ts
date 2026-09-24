@@ -2,6 +2,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-01-15',
   devtools: { enabled: false },
   css: ['~/assets/css/main.css'],
+  modules: ['nuxt-auth-utils'],
   runtimeConfig: {
     mongodbUri: '',
     mongodbDbName: 'humeurs_funes',
