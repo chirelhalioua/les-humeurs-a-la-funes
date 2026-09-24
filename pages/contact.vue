@@ -1,10 +1,70 @@
+<script setup lang="ts">
+const form = reactive({ name: '', email: '', message: '' })
+const loading = ref(false)
+const sent = ref(false)
+const error = ref('')
+
+async function submit() {
+  loading.value = true
+  error.value = ''
+  try {
+    await $fetch('/api/contact', { method: 'POST', body: form })
+    sent.value = true
+    form.name = ''
+    form.email = ''
+    form.message = ''
+  } catch (e: any) {
+    error.value = e?.data?.statusMessage || 'Impossible d’envoyer ton message.'
+  } finally {
+    loading.value = false
+  }
+}
+</script>
+
 <template>
   <section class="contact-page">
-    <span class="eyebrow"><span></span> nous écrire</span>
-    <h1>Une question ?<br><i>On t’écoute.</i></h1>
-    <div class="contact-card">
-      <p>Pour toute question concernant Les Humeurs à la Funes, tu peux nous contacter.</p>
-      <a href="https://chirelhalioua.fr/" target="_blank" rel="noopener noreferrer">Contacter Chire Dev <span>↗</span></a>
+    <div class="contact-heading">
+      <span class="eyebrow"><span></span> nous écrire</span>
+      <h1>Une question ?<br><i>On t’écoute.</i></h1>
+      <p>Une remarque, une question ou simplement envie de nous écrire ? Laisse-nous un message.</p>
+    </div>
+
+    <div class="contact-layout">
+      <div class="contact-card contact-info">
+        <span class="card-kicker">CONTACT</span>
+        <h2>Parlons-en.</h2>
+        <p>Remplis le formulaire et ton message sera transmis à l’équipe.</p>
+        <div class="contact-note">
+          <span>♥</span>
+          <div><strong>Les Humeurs à la Funes</strong><small>Un espace simple, humain et sans jugement.</small></div>
+        </div>
+        <a href="https://chirelhalioua.fr/" target="_blank" rel="noopener noreferrer" class="contact-dev">Chirel Dev <span>↗</span></a>
+      </div>
+
+      <div class="contact-card">
+        <form v-if="!sent" class="contact-form" @submit.prevent="submit">
+          <label>Nom ou prénom
+            <input v-model="form.name" type="text" autocomplete="name" placeholder="Ton prénom" required>
+          </label>
+          <label>E-mail
+            <input v-model="form.email" type="email" autocomplete="email" placeholder="toi@exemple.fr" required>
+          </label>
+          <label>Message
+            <textarea v-model="form.message" rows="6" placeholder="Écris ton message ici…" minlength="5" required></textarea>
+          </label>
+          <p v-if="error" class="auth-message auth-error">{{ error }}</p>
+          <button class="auth-submit" type="submit" :disabled="loading">
+            {{ loading ? 'Envoi en cours…' : 'Envoyer mon message' }} <span>→</span>
+          </button>
+        </form>
+
+        <div v-else class="contact-success">
+          <span>✓</span>
+          <h2>Message envoyé !</h2>
+          <p>Merci pour ton message. Nous reviendrons vers toi dès que possible.</p>
+          <button type="button" @click="sent = false">Envoyer un autre message</button>
+        </div>
+      </div>
     </div>
   </section>
 </template>
