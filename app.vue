@@ -50,7 +50,7 @@ watch(dark, value => {
     <nav class="mobile-nav" aria-label="Navigation mobile">
       <NuxtLink to="/"><span>⌂</span>Accueil</NuxtLink>
       <NuxtLink to="/choisir-humeurs"><span>☻</span>Humeur</NuxtLink>
-      <NuxtLink to="/suivi-humeurs"><span>◔</span>Suivi</NuxtLink>
+      <NuxtLink to="/suivi-humeurs"><span class="nav-follow-icon">◔</span>Suivi</NuxtLink>
       <NuxtLink v-if="loggedIn" to="/profil"><span>○</span>Profil</NuxtLink>
       <NuxtLink v-else to="/connexion"><span>↗</span>Connexion</NuxtLink>
     </nav>
