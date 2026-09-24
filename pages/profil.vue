@@ -1,0 +1,1 @@
+<template><section class="placeholder-page"><span class="eyebrow"><span></span> mon espace</span><h1>Mon profil,<br><i>à ma façon.</i></h1><p>Compte, préférences et informations personnelles seront regroupés ici.</p><div class="coming">La partie compte sera reconnectée au backend existant.</div></section></template>
