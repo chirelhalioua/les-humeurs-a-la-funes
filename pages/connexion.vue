@@ -60,10 +60,26 @@ function switchMode(next: 'login' | 'register') {
           <input v-model="form.email" type="email" autocomplete="email" placeholder="toi@exemple.fr" required>
         </label>
         <label>Mot de passe
-          <input v-model="form.password" type="password" autocomplete="new-password" placeholder="8 caractères minimum" required>
+          <input
+            v-model="form.password"
+            id="register-password"
+            name="password"
+            type="password"
+            autocomplete="new-password"
+            placeholder="8 caractères minimum"
+            required
+          >
         </label>
         <label v-if="mode === 'register'">Confirmer le mot de passe
-          <input v-model="form.confirmPassword" type="password" autocomplete="new-password" placeholder="Retape ton mot de passe" required>
+          <input
+            v-model="form.confirmPassword"
+            id="register-password-confirm"
+            name="password_confirmation"
+            type="password"
+            autocomplete="new-password"
+            placeholder="Retape ton mot de passe"
+            required
+          >
         </label>
 
         <p v-if="errorMessage" class="auth-message auth-error">{{ errorMessage }}</p>
