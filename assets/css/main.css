@@ -1446,3 +1446,27 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     transform:scale(1.08);
   }
 }
+
+.legal-back{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-bottom:8px;
+  color:var(--muted);
+  font-size:10px;
+  font-weight:800;
+  text-decoration:none;
+}
+.legal-back:hover{color:var(--cocoa)}
+@media(max-width:560px){
+  .mobile-nav .nav-follow-icon{
+    display:grid!important;
+    place-items:center;
+    width:22px;
+    height:22px;
+    margin:0 auto;
+    font-size:24px!important;
+    line-height:22px!important;
+    transform:scale(1.12);
+  }
+}
