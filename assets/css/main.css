@@ -1176,3 +1176,36 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .faq-section details:nth-of-type(3),
   .faq-section details:nth-of-type(5){grid-column:3}
 }
+
+/* FAQ Contact : titre en tête, questions à la suite */
+@media(min-width:851px){
+  .contact-layout>.faq-section{
+    display:block;
+    width:100%;
+    max-width:900px;
+    margin:28px auto 0;
+    padding:22px 0 0;
+    background:transparent;
+    border:0;
+    border-top:1px solid var(--line);
+    border-radius:0;
+    box-shadow:none;
+  }
+  .faq-heading{margin-bottom:8px}
+  .faq-heading h2{font-size:28px;margin:8px 0 14px}
+  .faq-section details{
+    padding:13px 2px;
+    border-top:1px solid var(--line);
+    border-bottom:0;
+  }
+  .faq-section details:last-child{border-bottom:1px solid var(--line)}
+  .faq-section summary{font-size:11px}
+  .faq-section details p{font-size:10px;line-height:1.5}
+}
+@media(min-width:1100px){
+  .contact-layout>.faq-section{
+    grid-column:1/-1;
+    grid-row:2;
+  }
+  .faq-heading{display:block}
+}
