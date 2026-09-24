@@ -342,3 +342,22 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .choice-quote{font-size:14px;line-height:1.02}
   .mood-choice:first-child .choice-photo img{object-position:center center}
 }
+
+/* Sélection : uniquement le bouton Enregistrer */
+.mood-save-only{
+  margin-top:14px;
+}
+.save-only-enter-active,.save-only-leave-active{transition:opacity .18s,transform .18s}
+.save-only-enter-from,.save-only-leave-to{opacity:0;transform:translateY(6px)}
+@media(max-width:560px){
+  .mood-save-only{
+    position:sticky;
+    bottom:82px;
+    z-index:5;
+    margin:12px 0 0;
+  }
+  .mood-save-only button{
+    font-size:11px;
+    padding:10px 15px;
+  }
+}
