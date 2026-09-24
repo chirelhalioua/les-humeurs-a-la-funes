@@ -14,7 +14,7 @@ const moods = computed(() => data.value || [])
 const currentIndex = ref(0)
 const selected = ref<Mood | null>(null)
 const moment = ref('matin')
-const exactTime = ref('08:00')
+const exactTime = ref('')
 const moments = [
   { key: 'matin', label: 'Matin', hours: '06:00 – 11:59', emoji: '☀️' },
   { key: 'apres-midi', label: 'Après-midi', hours: '12:00 – 17:59', emoji: '🌤️' },
@@ -79,10 +79,8 @@ const selectCurrent = () => {
 
             <div class="slide-action">
               <span v-if="selected?.key === currentMood.key" class="selected-label">Humeur choisie ✓</span>
-              <span v-else class="choose-label">Toucher pour choisir</span>
-              <button v-if="selected?.key === currentMood.key" type="button" class="slide-save" @click.stop>
-                Enregistrer <span>→</span>
-              </button>
+              <span v-else class="choose-label">① Toucher pour choisir cette humeur</span>
+              <span v-if="selected?.key === currentMood.key" class="selected-label">Humeur choisie ✓</span>
             </div>
           </div>
         </article>
@@ -102,10 +100,11 @@ const selectCurrent = () => {
       </div>
       <div class="carousel-counter">{{ currentIndex + 1 }} / {{ moods.length }}</div>
 
-      <div class="mood-time">
+      <div class="mood-time" :class="{ disabled: !selected }">
         <div class="mood-time-heading">
-          <span class="eyebrow"><span></span> à quel moment ?</span>
-          <p>Choisis le moment où tu ressens cette humeur.</p>
+          <span class="eyebrow"><span></span> ② quand ?</span>
+          <p v-if="selected">Choisis le moment où tu ressens cette humeur.</p>
+          <p v-else>Choisis d’abord ton humeur ci-dessus.</p>
         </div>
         <div class="moment-options">
           <button
@@ -114,7 +113,7 @@ const selectCurrent = () => {
             type="button"
             class="moment-option"
             :class="{ active: moment === item.key }"
-            @click="moment = item.key"
+            @click="selected && (moment = item.key)"
           >
             <span class="moment-emoji">{{ item.emoji }}</span>
             <strong>{{ item.label }}</strong>
@@ -122,9 +121,12 @@ const selectCurrent = () => {
           </button>
         </div>
         <label class="exact-time">
-          Heure précise
-          <input v-model="exactTime" type="time">
+          Heure précise <span>(facultatif)</span>
+          <input v-model="exactTime" type="time" :disabled="!selected">
         </label>
+        <button type="button" class="mood-final-save" :disabled="!selected">
+          Enregistrer mon humeur <span>→</span>
+        </button>
       </div>
     </template>
   </section>
