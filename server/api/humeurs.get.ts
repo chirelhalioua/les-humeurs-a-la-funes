@@ -4,7 +4,7 @@ const moodMap = [
   { source: 'Heureux', key: 'heureux', name: 'Heureux', emoji: '🤩', tone: 'gold' },
   { source: 'Rieur', key: 'bien', name: 'Bien', emoji: '😌', tone: 'sage' },
   { source: 'Étonné', key: 'moyen', name: 'Moyen', emoji: '😐', tone: 'sand' },
-  { source: 'Fatigué', key: 'fatigue', name: 'Fatigué', emoji: '😢', tone: 'peach' },
+  { source: 'Fatigué', key: 'fatigue', name: 'Fatigué', emoji: '😴', tone: 'peach' },
   { source: 'Énervé', key: 'nul', name: 'Nul', emoji: '😡', tone: 'cocoa' }
 ]
 
