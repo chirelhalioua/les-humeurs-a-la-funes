@@ -80,7 +80,6 @@ const selectCurrent = () => {
             <div class="slide-action">
               <span v-if="selected?.key === currentMood.key" class="selected-label">Humeur choisie ✓</span>
               <span v-else class="choose-label">① Toucher pour choisir cette humeur</span>
-              <span v-if="selected?.key === currentMood.key" class="selected-label">Humeur choisie ✓</span>
             </div>
           </div>
         </article>
