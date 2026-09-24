@@ -1352,3 +1352,27 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 .site-footer{
   border-top:1px solid var(--line);
 }
+
+/* Icônes plus grandes sans agrandir leurs cercles */
+.brand-mark{
+  width:34px;
+  height:34px;
+  font-size:25px;
+}
+.theme-button{
+  width:38px;
+  height:38px;
+  font-size:24px;
+}
+@media(max-width:700px){
+  .brand-mark{
+    width:40px;
+    height:40px;
+    font-size:23px;
+  }
+  .theme-button{
+    width:42px;
+    height:42px;
+    font-size:22px;
+  }
+}
