@@ -13,6 +13,9 @@ const { data, pending, error } = await useFetch<Mood[]>('/api/humeurs')
 const moods = computed(() => data.value || [])
 const currentIndex = ref(0)
 const selected = ref<Mood | null>(null)
+const saving = ref(false)
+const saveError = ref('')
+const saved = ref(false)
 const moment = ref('matin')
 const exactTime = ref('')
 const moments = [
@@ -30,7 +33,43 @@ const goTo = (index: number) => {
 const nextMood = () => goTo(currentIndex.value + 1)
 const previousMood = () => goTo(currentIndex.value - 1)
 const selectCurrent = () => {
-  if (currentMood.value) selected.value = currentMood.value
+  if (currentMood.value) {
+    selected.value = currentMood.value
+    saveError.value = ''
+    saved.value = false
+  }
+}
+
+const saveMood = async () => {
+  if (!selected.value || saving.value) return
+  saving.value = true
+  saveError.value = ''
+  try {
+    await $fetch('/api/humeurs/save', {
+      method: 'POST',
+      body: {
+        moodKey: selected.value.key,
+        moodName: selected.value.name,
+        emoji: selected.value.emoji,
+        tone: selected.value.tone,
+        quote: selected.value.quote,
+        film: selected.value.film,
+        image: selected.value.image,
+        moment: moment.value,
+        exactTime: exactTime.value
+      }
+    })
+    saved.value = true
+    await navigateTo('/suivi-humeurs')
+  } catch (e: any) {
+    if (e?.statusCode === 401 || e?.data?.statusCode === 401) {
+      await navigateTo('/connexion?redirect=/choisir-humeurs')
+      return
+    }
+    saveError.value = e?.data?.statusMessage || 'Impossible d’enregistrer ton humeur.'
+  } finally {
+    saving.value = false
+  }
 }
 </script>
 
@@ -123,8 +162,9 @@ const selectCurrent = () => {
           Heure précise <span>(facultatif)</span>
           <input v-model="exactTime" type="time" :disabled="!selected">
         </label>
-        <button type="button" class="mood-final-save" :disabled="!selected">
-          Enregistrer mon humeur <span>→</span>
+        <p v-if="saveError" class="mood-save-error">{{ saveError }}</p>
+        <button type="button" class="mood-final-save" :disabled="!selected || saving" @click="saveMood">
+          {{ saving ? 'Enregistrement…' : 'Enregistrer mon humeur' }} <span>→</span>
         </button>
       </div>
     </template>
