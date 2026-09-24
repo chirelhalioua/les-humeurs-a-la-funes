@@ -1,6 +1,11 @@
 <script setup lang="ts">
 const dark = ref(false)
-const { loggedIn } = useUserSession()
+const { loggedIn, clear: clearSession } = useUserSession()
+
+async function logout() {
+  await clearSession()
+  await navigateTo('/')
+}
 
 onMounted(() => {
   dark.value = localStorage.getItem('humeurs-theme') === 'dark'
@@ -35,7 +40,10 @@ watch(dark, value => {
         <button class="theme-button" type="button" :aria-label="dark ? 'Passer en mode clair' : 'Passer en mode sombre'" @click="dark=!dark">
           {{ dark ? '☀' : '☾' }}
         </button>
-        <NuxtLink to="/choisir-humeurs" class="top-action">Ça va comment ? <span>→</span></NuxtLink>
+        <button v-if="loggedIn" class="top-action top-logout" type="button" @click="logout">
+          Se déconnecter <span>↗</span>
+        </button>
+        <NuxtLink v-else to="/choisir-humeurs" class="top-action">Ça va comment ? <span>→</span></NuxtLink>
       </div>
     </header>
 
