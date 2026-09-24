@@ -533,3 +533,16 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     transform:scale(1.18) translateY(-6px);
   }
 }
+
+
+/* Portrait Heureux — déplacement très marqué vers le haut */
+.mood-slide.tone-gold .slide-photo img{
+  object-position:50% 100% !important;
+  transform:scale(1.32) translateY(-18px) !important;
+}
+@media(max-width:560px){
+  .mood-slide.tone-gold .slide-photo img{
+    object-position:50% 100% !important;
+    transform:scale(1.38) translateY(-22px) !important;
+  }
+}
