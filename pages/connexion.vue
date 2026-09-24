@@ -25,7 +25,8 @@ async function submit() {
       await $fetch('/api/auth/register', { method: 'POST', body: form })
     }
     successMessage.value = mode.value === 'login' ? 'Connexion réussie. Bienvenue !' : 'Ton compte est créé. Bienvenue !'
-    await navigateTo('/profil')
+    // Recharge la page pour que la session fraîchement créée soit immédiatement reconnue par le middleware.
+    window.location.assign('/profil')
   } catch (error: any) {
     errorMessage.value = error?.data?.statusMessage || error?.data?.message || 'Une erreur est survenue.'
   } finally {
