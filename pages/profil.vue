@@ -1,7 +1,45 @@
 <script setup lang="ts">
 definePageMeta({ middleware: ['authenticated'] })
 
-const { user, clear: clearSession } = useUserSession()
+const { user, fetch: refreshSession, clear: clearSession } = useUserSession()
+const editingName = ref(false)
+const newName = ref('')
+const nameSaving = ref(false)
+const nameError = ref('')
+const nameSuccess = ref('')
+
+function startNameEdit() {
+  newName.value = user.value?.name || ''
+  nameError.value = ''
+  nameSuccess.value = ''
+  editingName.value = true
+}
+
+function cancelNameEdit() {
+  editingName.value = false
+  nameError.value = ''
+}
+
+async function saveName() {
+  nameError.value = ''
+  nameSuccess.value = ''
+  const name = newName.value.trim()
+  if (name.length < 2) {
+    nameError.value = 'Ton prénom ou nom doit contenir au moins 2 caractères.'
+    return
+  }
+  nameSaving.value = true
+  try {
+    await $fetch('/api/auth/update-name', { method: 'PATCH', body: { name } })
+    await refreshSession()
+    editingName.value = false
+    nameSuccess.value = 'Ton nom a bien été modifié.'
+  } catch (error: any) {
+    nameError.value = error?.data?.statusMessage || 'Impossible de modifier ton nom.'
+  } finally {
+    nameSaving.value = false
+  }
+}
 
 async function logout() {
   await clearSession()
@@ -30,8 +68,21 @@ async function deleteAccount() {
     <div class="profile-grid">
       <article class="profile-card profile-main-card">
         <span class="card-kicker">MON COMPTE</span>
-        <h2>{{ user?.name || 'Membre' }}</h2>
-        <p>{{ user?.email }}</p>
+        <template v-if="!editingName">
+          <h2>{{ user?.name || 'Membre' }}</h2>
+          <p>{{ user?.email }}</p>
+          <button class="profile-edit-name" type="button" @click="startNameEdit">Modifier mon nom <span>↗</span></button>
+        </template>
+        <form v-else class="profile-name-form" @submit.prevent="saveName">
+          <label for="profile-name">Prénom ou nom</label>
+          <div class="profile-name-row">
+            <input id="profile-name" v-model="newName" type="text" autocomplete="name" maxlength="80" required>
+            <button type="submit" :disabled="nameSaving">{{ nameSaving ? '…' : 'Enregistrer' }}</button>
+          </div>
+          <button class="profile-name-cancel" type="button" @click="cancelNameEdit">Annuler</button>
+        </form>
+        <p v-if="nameError" class="profile-name-message profile-name-error">{{ nameError }}</p>
+        <p v-if="nameSuccess" class="profile-name-message profile-name-success">{{ nameSuccess }}</p>
         <div class="profile-status-row">
           <div class="profile-status"><span></span> Compte connecté</div>
           <button class="profile-logout profile-card-logout" type="button" @click="logout">Se déconnecter <span>↗</span></button>
