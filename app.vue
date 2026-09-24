@@ -28,6 +28,7 @@ watch(dark, value => {
         <NuxtLink to="/suivi-humeurs">Mon suivi</NuxtLink>
         <NuxtLink v-if="loggedIn" to="/profil">Profil</NuxtLink>
         <NuxtLink v-else to="/connexion" class="nav-auth-link">Connexion</NuxtLink>
+        <NuxtLink to="/contact">Contact</NuxtLink>
       </nav>
 
       <div class="top-actions">
