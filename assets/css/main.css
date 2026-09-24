@@ -922,3 +922,32 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .profile-card h2{font-size:23px}
   .profile-card h3{font-size:17px;margin-top:14px}
 }
+
+
+/* Pied de page */
+.site-footer{
+  padding:24px 28px 30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  color:var(--muted);
+  font-size:10px;
+  text-align:center;
+}
+.site-footer a{
+  color:var(--cocoa);
+  font-weight:800;
+  text-decoration:none;
+}
+.site-footer a:hover{text-decoration:underline;text-underline-offset:3px}
+.footer-contact{font-weight:800!important}
+.footer-heart{color:var(--peach);margin:0 2px}
+.footer-separator{opacity:.5}
+@media(max-width:560px){
+  .site-footer{
+    padding:18px 16px 92px;
+    font-size:9px;
+    flex-wrap:wrap;
+  }
+}
