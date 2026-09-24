@@ -1470,3 +1470,16 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     transform:scale(1.12);
   }
 }
+
+@media(max-width:560px){
+  .mobile-nav .nav-follow-icon{
+    display:block!important;
+    width:auto!important;
+    height:auto!important;
+    margin:0!important;
+    font-size:18px!important;
+    line-height:18px!important;
+    transform:scale(1.65)!important;
+    transform-origin:center center;
+  }
+}
