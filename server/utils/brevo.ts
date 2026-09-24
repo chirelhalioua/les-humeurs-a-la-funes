@@ -3,6 +3,7 @@ export async function sendBrevoEmail(options: {
   toName?: string
   subject: string
   htmlContent: string
+  replyTo?: string
 }) {
   const config = useRuntimeConfig()
 
@@ -23,6 +24,7 @@ export async function sendBrevoEmail(options: {
         email: config.brevoSenderEmail
       },
       to: [{ email: options.to, name: options.toName }],
+      ...(options.replyTo ? { replyTo: { email: options.replyTo } } : {}),
       subject: options.subject,
       htmlContent: options.htmlContent
     }
