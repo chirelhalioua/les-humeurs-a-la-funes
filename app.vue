@@ -26,10 +26,10 @@ watch(dark, value => {
         <NuxtLink to="/choisir-humeurs">Mon humeur</NuxtLink>
         <NuxtLink to="/suivi-humeurs">Mon suivi</NuxtLink>
         <NuxtLink to="/profil">Profil</NuxtLink>
+        <NuxtLink to="/connexion" class="nav-auth-link">Connexion</NuxtLink>
       </nav>
 
       <div class="top-actions">
-        <NuxtLink to="/connexion" class="auth-top-link">Connexion</NuxtLink>
         <button class="theme-button" type="button" :aria-label="dark ? 'Passer en mode clair' : 'Passer en mode sombre'" @click="dark=!dark">
           {{ dark ? '☀' : '☾' }}
         </button>
@@ -44,6 +44,7 @@ watch(dark, value => {
       <NuxtLink to="/choisir-humeurs"><span>☻</span>Humeur</NuxtLink>
       <NuxtLink to="/suivi-humeurs"><span>◔</span>Suivi</NuxtLink>
       <NuxtLink to="/profil"><span>○</span>Profil</NuxtLink>
+      <NuxtLink to="/connexion"><span>↗</span>Connexion</NuxtLink>
     </nav>
   </div>
 </template>
