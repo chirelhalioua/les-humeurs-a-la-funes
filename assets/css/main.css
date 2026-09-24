@@ -1706,3 +1706,11 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   background:var(--brown);
   color:var(--paper);
 }
+
+
+.profile-head-actions{display:flex;align-items:center;gap:18px;flex:none}
+.profile-head-logout{margin-top:0}
+@media(max-width:560px){
+  .profile-head-actions{gap:8px;align-items:flex-start}
+  .profile-head-logout{padding:9px 11px;font-size:9px;white-space:nowrap}
+}
