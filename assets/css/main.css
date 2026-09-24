@@ -1898,3 +1898,48 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     width:145px;
   }
 }
+
+
+/* Dernière finition du profil : icône photo réellement positionnée + titre plus dense */
+.profile-avatar-camera{
+  position:absolute!important;
+  right:5px;
+  bottom:5px;
+  width:26px!important;
+  height:26px!important;
+  border-radius:50%;
+  display:grid!important;
+  place-items:center!important;
+  background:var(--paper);
+  color:var(--cocoa);
+  border:2px solid var(--gold);
+  box-shadow:0 4px 10px rgba(57,43,36,.16);
+  z-index:3;
+  overflow:hidden;
+}
+.profile-avatar-camera svg{
+  width:12px;
+  height:12px;
+  display:block;
+  fill:currentColor;
+}
+.profile-head-copy h1{
+  font-weight:800;
+  -webkit-text-stroke:.38px currentColor;
+}
+@media(max-width:560px){
+  .profile-avatar-camera{
+    right:2px;
+    bottom:2px;
+    width:21px!important;
+    height:21px!important;
+    border-width:1px;
+  }
+  .profile-avatar-camera svg{
+    width:10px;
+    height:10px;
+  }
+  .profile-head-copy h1{
+    -webkit-text-stroke:.42px currentColor;
+  }
+}
