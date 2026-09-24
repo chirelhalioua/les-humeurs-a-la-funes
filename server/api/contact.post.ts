@@ -1,4 +1,5 @@
 import { getHumeursDb } from '../utils/mongodb'
+import { sendBrevoEmail } from '../utils/brevo'
 
 export default defineEventHandler(async (event) => {
   const body = await readBody<{ name?: string; email?: string; message?: string }>(event)
@@ -17,6 +18,30 @@ export default defineEventHandler(async (event) => {
     message,
     createdAt: new Date()
   })
+
+  const config = useRuntimeConfig(event)
+
+  try {
+    await sendBrevoEmail({
+      to: 'contact@chirelhalioua.fr',
+      toName: 'Chirel Dev',
+      subject: `Nouveau message de contact — Les Humeurs à la Funes`,
+      htmlContent: `
+        <div style="font-family:Arial,sans-serif;max-width:600px;margin:auto;color:#392b24">
+          <h1>Nouveau message de contact</h1>
+          <p><strong>Nom :</strong> ${name}</p>
+          <p><strong>E-mail :</strong> ${email}</p>
+          <p><strong>Message :</strong></p>
+          <div style="padding:16px;background:#f5efe5;border-radius:10px;white-space:pre-wrap">${message}</div>
+          <p style="margin-top:24px">
+            Tu peux répondre directement à <a href="mailto:${email}">${email}</a>.
+          </p>
+        </div>
+      `
+    })
+  } catch (error) {
+    console.error('Erreur Brevo formulaire de contact:', error)
+  }
 
   return { ok: true }
 })
