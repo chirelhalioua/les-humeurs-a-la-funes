@@ -44,7 +44,6 @@ watch(dark, value => {
       <NuxtLink to="/choisir-humeurs"><span>☻</span>Humeur</NuxtLink>
       <NuxtLink to="/suivi-humeurs"><span>◔</span>Suivi</NuxtLink>
       <NuxtLink to="/profil"><span>○</span>Profil</NuxtLink>
-      <NuxtLink to="/connexion"><span>↗</span>Connexion</NuxtLink>
     </nav>
   </div>
 </template>
