@@ -63,32 +63,14 @@ const selectMood = (mood: Mood) => {
         </button>
       </div>
 
-      <Transition name="mood-detail">
-        <div v-if="selected" class="mood-detail" :class="'tone-' + selected.tone">
-          <div class="detail-photo">
-            <img
-              v-if="selected.image"
-              :src="selected.image"
-              :alt="'Louis de Funès — ' + selected.name"
-            >
-          </div>
-
-          <div class="detail-copy">
-            <div class="detail-title">
-              <span>{{ selected.emoji }}</span>
-              <strong>{{ selected.name }}</strong>
-            </div>
-            <blockquote>« {{ selected.quote }} »</blockquote>
-            <p>🎬 <span>{{ selected.film }}</span></p>
-          </div>
-
-          <button class="detail-save" type="button">
-            Enregistrer <span>→</span>
-          </button>
+      <Transition name="save-only">
+        <div v-if="selected" class="selection-bar mood-save-only">
+          <span>{{ selected.emoji }} <b>{{ selected.name }}</b></span>
+          <button type="button">Enregistrer <span>→</span></button>
         </div>
       </Transition>
 
-      <p v-if="!selected" class="mood-hint">Une humeur t'attire ? Touche-la pour découvrir son petit mot.</p>
+      <p v-if="!selected" class="mood-hint">Choisis ton humeur, puis enregistre-la.</p>
     </template>
   </section>
 </template>
