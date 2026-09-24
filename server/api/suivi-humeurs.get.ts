@@ -1,5 +1,5 @@
 import { ObjectId } from 'mongodb'
-import { getHumeursDb } from '../../utils/mongodb'
+import { getHumeursDb } from '../utils/mongodb'
 
 export default defineEventHandler(async (event) => {
   const session = await requireUserSession(event)
