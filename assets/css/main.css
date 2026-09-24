@@ -1437,3 +1437,12 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   }
   .top-actions{gap:6px}
 }
+
+/* Harmonise l'icône Suivi dans la navigation mobile */
+@media(max-width:560px){
+  .mobile-nav a:nth-child(3) span{
+    font-size:18px !important;
+    line-height:18px;
+    transform:scale(1.08);
+  }
+}
