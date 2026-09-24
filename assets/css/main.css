@@ -1094,3 +1094,46 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .faq-section details{padding:11px 2px}
   .faq-section details p{font-size:10px}
 }
+
+/* Contact desktop compact : formulaire + infos + FAQ visibles ensemble */
+@media(min-width:1100px){
+  .contact-page{padding-top:30px}
+  .contact-heading{margin-bottom:16px}
+  .contact-heading h1{font-size:52px;line-height:.98;margin:10px 0}
+  .contact-heading>p{max-width:650px;font-size:11px;line-height:1.45}
+  .contact-layout{
+    display:grid;
+    grid-template-columns:minmax(250px,.78fr) minmax(390px,1.25fr) minmax(250px,.78fr);
+    gap:18px;
+    align-items:start;
+  }
+  .contact-layout>.contact-card:nth-child(1),
+  .contact-layout>.contact-card:nth-child(2),
+  .contact-layout>.faq-section{
+    grid-column:auto;
+    grid-row:auto;
+    margin:0;
+  }
+  .contact-layout>.contact-card{min-width:0}
+  .contact-layout>.contact-card:nth-child(1){padding:30px 26px}
+  .contact-layout>.contact-card:nth-child(2){padding:26px}
+  .contact-layout>.faq-section{
+    max-width:none;
+    padding:24px 20px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:28px;
+    box-shadow:0 14px 35px rgba(57,43,36,.06);
+  }
+  .faq-heading h2{font-size:25px;margin:9px 0 12px}
+  .faq-section details{padding:12px 0}
+  .faq-section summary{font-size:10px;line-height:1.35;padding-right:10px}
+  .faq-section details p{font-size:9px;line-height:1.45;margin-top:7px}
+}
+@media(min-width:851px) and (max-width:1099px){
+  .contact-layout>.faq-section{
+    grid-column:1/-1;
+    grid-row:auto;
+    margin-top:16px;
+  }
+}
