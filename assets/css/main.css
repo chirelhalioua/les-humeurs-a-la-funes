@@ -424,3 +424,18 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   }
   .slide-photo span{font-size:38px}
 }
+
+
+/* Cadrage spécifique de la photo Heureux : visage centré dans le cercle */
+.mood-slide .slide-photo img{
+  object-position:50% 50%;
+}
+@media(max-width:560px){
+  .mood-slide .slide-photo{
+    justify-self:center;
+    align-self:center;
+  }
+  .mood-slide .slide-photo img{
+    object-position:50% 43%;
+  }
+}
