@@ -1,5 +1,6 @@
 <template>
   <section class="legal-page">
+    <NuxtLink to="/connexion" class="legal-back">← Retour à l’inscription</NuxtLink>
     <span class="eyebrow"><span></span> informations</span>
     <h1>Conditions<br><i>générales.</i></h1>
     <div class="legal-card">
