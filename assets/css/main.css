@@ -1027,3 +1027,42 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 .contact-success p{color:var(--muted);font-size:11px;line-height:1.6}
 .contact-success button{margin-top:15px;border:0;background:none;text-decoration:underline;color:var(--cocoa);font-size:10px;font-weight:800;cursor:pointer}
 @media(max-width:700px){.contact-page{padding:30px 16px 100px}.contact-heading h1{font-size:43px}.contact-layout{grid-template-columns:1fr;margin-top:24px}.contact-card{padding:20px;border-radius:22px}}
+
+
+/* Choix du moment de l'humeur */
+.mood-time{
+  max-width:680px;
+  margin:24px auto 0;
+  padding:18px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:24px;
+}
+.mood-time-heading p{margin:7px 0 13px;color:var(--muted);font-size:10px}
+.moment-options{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.moment-option{
+  border:1px solid var(--line);background:var(--cream);color:var(--cocoa);
+  border-radius:16px;padding:11px 8px;cursor:pointer;text-align:center;
+  display:grid;gap:3px;transition:.2s;
+}
+.moment-option.active{background:var(--cocoa);color:var(--paper);border-color:var(--cocoa)}
+.moment-emoji{font-size:18px}.moment-option strong{font-size:10px}.moment-option small{font-size:8px;opacity:.7}
+.exact-time{margin-top:10px;display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:9px;font-weight:800}
+.exact-time input{border:1px solid var(--line);background:var(--cream);color:var(--cocoa);border-radius:10px;padding:7px 9px;font-size:11px}
+@media(max-width:560px){
+  .mood-time{margin-top:15px;padding:13px;border-radius:20px}
+  .moment-options{gap:6px}.moment-option{padding:9px 4px;border-radius:13px}
+  .moment-option small{font-size:7px}.exact-time{font-size:8px}
+}
+
+/* FAQ */
+.faq-section{max-width:850px;margin:55px auto 0}
+.faq-heading h2{font-family:Sora,var(--font);font-size:32px;letter-spacing:-.05em;margin:12px 0 20px}
+.faq-heading h2 i{font-family:Caveat,cursive;font-weight:500}
+.faq-section details{border-top:1px solid var(--line);padding:16px 2px}
+.faq-section details:last-child{border-bottom:1px solid var(--line)}
+.faq-section summary{cursor:pointer;list-style:none;font-size:12px;font-weight:800;color:var(--cocoa)}
+.faq-section summary::-webkit-details-marker{display:none}
+.faq-section summary:after{content:'+';float:right;font-size:17px;font-weight:500}
+.faq-section details[open] summary:after{content:'−'}
+.faq-section details p{max-width:720px;margin:10px 0 2px;color:var(--muted);font-size:11px;line-height:1.6}
