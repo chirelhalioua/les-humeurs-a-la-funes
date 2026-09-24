@@ -6,7 +6,13 @@ export default defineNuxtConfig({
   runtimeConfig: {
     mongodbUri: '',
     mongodbDbName: 'humeurs_funes',
-    mongodbCollection: 'humeurs'
+    mongodbCollection: 'humeurs',
+    brevoApiKey: '',
+    brevoSenderEmail: '',
+    brevoSenderName: 'Les Humeurs à la Funes',
+    public: {
+      siteUrl: ''
+    }
   },
   app: {
     head: {
