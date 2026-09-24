@@ -19,14 +19,11 @@ async function deleteAccount() {
 <template>
   <section class="profile-page">
     <div class="profile-head">
-      <div>
+      <div class="profile-avatar">{{ (user?.name || 'M').charAt(0).toUpperCase() }}</div>
+      <div class="profile-head-copy">
         <span class="eyebrow"><span></span> mon espace</span>
         <h1>Mon profil,<br><i>à ma façon.</i></h1>
         <p>Ton espace personnel pour retrouver tes informations et tes humeurs.</p>
-      </div>
-      <div class="profile-head-actions">
-        <button class="profile-logout profile-head-logout" type="button" @click="logout">Se déconnecter <span>↗</span></button>
-        <div class="profile-avatar">☺</div>
       </div>
     </div>
 
@@ -35,7 +32,10 @@ async function deleteAccount() {
         <span class="card-kicker">MON COMPTE</span>
         <h2>{{ user?.name || 'Membre' }}</h2>
         <p>{{ user?.email }}</p>
-        <div class="profile-status"><span></span> Compte connecté</div>
+        <div class="profile-status-row">
+          <div class="profile-status"><span></span> Compte connecté</div>
+          <button class="profile-logout profile-card-logout" type="button" @click="logout">Se déconnecter <span>↗</span></button>
+        </div>
       </article>
 
       <article class="profile-card">
