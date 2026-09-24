@@ -4,6 +4,7 @@ const form = reactive({ name: '', email: '', password: '', confirmPassword: '' }
 const loading = ref(false)
 const errorMessage = ref('')
 const successMessage = ref('')
+const acceptedTerms = ref(false)
 
 const resetMessages = () => {
   errorMessage.value = ''
@@ -12,6 +13,10 @@ const resetMessages = () => {
 
 async function submit() {
   resetMessages()
+  if (mode.value === 'register' && !acceptedTerms.value) {
+    errorMessage.value = 'Tu dois accepter les conditions générales d’utilisation.'
+    return
+  }
   loading.value = true
   try {
     if (mode.value === 'login') {
@@ -80,6 +85,11 @@ function switchMode(next: 'login' | 'register') {
             placeholder="Retape ton mot de passe"
             required
           >
+        </label>
+
+        <label v-if="mode === 'register'" class="terms-check">
+          <input v-model="acceptedTerms" type="checkbox" required>
+          <span>J’accepte les <NuxtLink to="/conditions-generales" target="_blank">conditions générales d’utilisation</NuxtLink>.</span>
         </label>
 
         <p v-if="errorMessage" class="auth-message auth-error">{{ errorMessage }}</p>
