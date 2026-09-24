@@ -520,3 +520,16 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   background:#392b24 !important;
   color:#fffaf2 !important;
 }
+
+
+/* Portrait Heureux : cadrage remonté dans le cercle */
+.mood-slide.tone-gold .slide-photo img{
+  object-position:center bottom !important;
+  transform:scale(1.15) translateY(-6px);
+}
+@media(max-width:560px){
+  .mood-slide.tone-gold .slide-photo img{
+    object-position:center bottom !important;
+    transform:scale(1.18) translateY(-6px);
+  }
+}
