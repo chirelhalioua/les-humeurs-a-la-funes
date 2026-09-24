@@ -748,3 +748,26 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 }
 .auth-top-link:hover{color:var(--cocoa)}
 @media(max-width:560px){.auth-top-link{display:none}}
+
+
+/* Navigation : connexion intégrée au menu */
+.desktop-nav{gap:22px}
+.desktop-nav .nav-auth-link{font-weight:800;color:var(--cocoa)}
+.desktop-nav .nav-auth-link:hover{color:var(--brown)}
+
+@media(max-width:560px){
+  .mobile-nav{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    justify-items:center;
+    gap:2px;
+    padding:5px 4px;
+  }
+  .mobile-nav a{
+    min-width:0;
+    width:100%;
+    font-size:8px;
+    line-height:1.05;
+  }
+  .mobile-nav span{font-size:16px}
+}
