@@ -1507,3 +1507,38 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 @media(max-width:560px){
   .mood-final-save{margin-top:11px;padding:11px 14px;font-size:10px}
 }
+
+/* Bouton d'enregistrement mobile */
+.mood-final-save{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  box-sizing:border-box;
+  min-height:46px;
+  border:0;
+  border-radius:14px;
+  background:var(--cocoa);
+  color:var(--paper);
+  box-shadow:0 8px 18px rgba(57,43,36,.14);
+  font-family:Inter,var(--font),sans-serif;
+  font-size:12px;
+  font-weight:800;
+  line-height:1;
+}
+.mood-final-save:disabled{
+  background:var(--muted);
+  color:var(--paper);
+  opacity:.45;
+  box-shadow:none;
+}
+@media(max-width:560px){
+  .mood-final-save{
+    width:100%;
+    min-height:48px;
+    margin-top:12px;
+    padding:13px 16px;
+    border-radius:14px;
+    font-size:11px;
+  }
+}
