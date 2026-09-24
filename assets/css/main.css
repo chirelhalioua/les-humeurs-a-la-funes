@@ -439,3 +439,14 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     object-position:50% 43%;
   }
 }
+
+
+/* Heureux : remonter le visage dans le cercle */
+.mood-slide.tone-gold .slide-photo img{
+  object-position:50% 70%;
+}
+@media(max-width:560px){
+  .mood-slide.tone-gold .slide-photo img{
+    object-position:50% 76%;
+  }
+}
