@@ -1297,3 +1297,29 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     transform:scale(1.38) translateY(-12px) !important;
   }
 }
+
+.terms-check{
+  display:flex!important;
+  grid-template-columns:none!important;
+  flex-direction:row;
+  align-items:flex-start;
+  gap:8px!important;
+  color:var(--muted)!important;
+  font-size:9px!important;
+  font-weight:600!important;
+  line-height:1.4;
+}
+.terms-check input{
+  width:14px!important;
+  height:14px;
+  flex:0 0 14px;
+  margin:0;
+  accent-color:var(--cocoa);
+}
+.terms-check span{display:block}
+.terms-check a{
+  color:var(--cocoa);
+  font-weight:800;
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
