@@ -42,6 +42,7 @@ const selectMood = (mood: Mood) => {
           :key="mood.key"
           class="mood-choice"
           :class="['tone-' + mood.tone, { selected: selected?.key === mood.key }]"
+          :data-quote="mood.quote"
           type="button"
           @click="selectMood(mood)"
         >
