@@ -10,12 +10,11 @@ type Mood = {
 }
 
 const { data, pending, error } = await useFetch<Mood[]>('/api/humeurs')
-
 const moods = computed(() => data.value || [])
-const selected = ref('')
+const selected = ref<Mood | null>(null)
 
-const selectMood = (name: string) => {
-  selected.value = name
+const selectMood = (mood: Mood) => {
+  selected.value = mood
 }
 </script>
 
@@ -36,38 +35,56 @@ const selectMood = (name: string) => {
       Impossible de charger les humeurs pour le moment.
     </div>
 
-    <div v-else class="mood-grid">
-      <button
-        v-for="mood in moods"
-        :key="mood.key"
-        class="mood-tile"
-        :class="[selected === mood.name ? 'selected' : '', 'tone-' + mood.tone]"
-        type="button"
-        @click="selectMood(mood.name)"
-      >
-        <img
-          v-if="mood.image"
-          class="tile-image"
-          :src="mood.image"
-          :alt="'Louis de Funès — ' + mood.name"
-          loading="lazy"
+    <template v-else>
+      <div class="mood-gallery">
+        <button
+          v-for="mood in moods"
+          :key="mood.key"
+          class="mood-choice"
+          :class="['tone-' + mood.tone, { selected: selected?.key === mood.key }]"
+          type="button"
+          @click="selectMood(mood)"
         >
+          <span class="choice-photo">
+            <img
+              v-if="mood.image"
+              :src="mood.image"
+              :alt="'Louis de Funès — ' + mood.name"
+              loading="lazy"
+            >
+            <span v-else class="choice-emoji">{{ mood.emoji }}</span>
+          </span>
+          <span class="choice-name">{{ mood.emoji }} {{ mood.name }}</span>
+          <span class="choice-dot">{{ selected?.key === mood.key ? '✓' : '' }}</span>
+        </button>
+      </div>
 
-        <span v-else class="tile-emoji">{{ mood.emoji }}</span>
+      <Transition name="mood-detail">
+        <div v-if="selected" class="mood-detail" :class="'tone-' + selected.tone">
+          <div class="detail-photo">
+            <img
+              v-if="selected.image"
+              :src="selected.image"
+              :alt="'Louis de Funès — ' + selected.name"
+            >
+          </div>
 
-        <span class="tile-content">
-          <strong><span class="mood-emoji">{{ mood.emoji }}</span>{{ mood.name }}</strong>
-          <small class="mood-quote">« {{ mood.quote }} »</small>
-          <small class="mood-film">🎬 {{ mood.film }}</small>
-        </span>
+          <div class="detail-copy">
+            <div class="detail-title">
+              <span>{{ selected.emoji }}</span>
+              <strong>{{ selected.name }}</strong>
+            </div>
+            <blockquote>« {{ selected.quote }} »</blockquote>
+            <p>🎬 <span>{{ selected.film }}</span></p>
+          </div>
 
-        <span class="tile-check">{{ selected === mood.name ? '✓' : '↗' }}</span>
-      </button>
-    </div>
+          <button class="detail-save" type="button">
+            Enregistrer <span>→</span>
+          </button>
+        </div>
+      </Transition>
 
-    <div v-if="selected" class="selection-bar">
-      <span>Ton humeur : <b>{{ selected }}</b></span>
-      <button type="button">Enregistrer <span>→</span></button>
-    </div>
+      <p v-if="!selected" class="mood-hint">Une humeur t'attire ? Touche-la pour découvrir son petit mot.</p>
+    </template>
   </section>
 </template>
