@@ -30,13 +30,13 @@ export default defineEventHandler(async (event) => {
 
   try {
     await sendBrevoEmail({
-      to: 'contact@chirelhalioua.fr',
-      toName: 'Chirel Dev',
+      to: 'chirelhalioua@gmail.com',
+      toName: 'Chirel',
       replyTo: email,
-      subject: 'Nouveau message de contact — Les Humeurs à la Funes',
+      subject: 'TEST — Nouveau message de contact — Les Humeurs à la Funes',
       htmlContent: `
         <div style="font-family:Arial,sans-serif;max-width:600px;margin:auto;color:#392b24">
-          <h1>Nouveau message de contact</h1>
+          <h1>Test — Nouveau message de contact</h1>
           <p><strong>Nom :</strong> ${escapeHtml(name)}</p>
           <p><strong>E-mail :</strong> ${escapeHtml(email)}</p>
           <p><strong>Message :</strong></p>
