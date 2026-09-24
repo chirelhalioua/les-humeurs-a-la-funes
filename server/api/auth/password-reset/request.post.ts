@@ -20,7 +20,7 @@ export default defineEventHandler(async (event) => {
     })
 
     const config = useRuntimeConfig(event)
-    const siteUrl = String(config.public.siteUrl || 'https://unes-flax.vercel.app').replace(/\/$/, '')
+    const siteUrl = String(config.public.siteUrl || 'https://les-humeurs-a-la-funes-flax.vercel.app').replace(/\/$/, '')
     const resetUrl = `${siteUrl}/reinitialiser-mot-de-passe?token=${token}`
     try {
       await sendBrevoEmail({
