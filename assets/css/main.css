@@ -479,3 +479,24 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     transform:scale(1.15);
   }
 }
+
+
+/* Mode sombre : contraste renforcé dans les cartes d'humeurs */
+:root[data-theme="dark"] .mood-slide.tone-gold{background:#6b5424;color:#fff6e9}
+:root[data-theme="dark"] .mood-slide.tone-sage{background:#46533f;color:#fff6e9}
+:root[data-theme="dark"] .mood-slide.tone-sand{background:#55493b;color:#fff6e9}
+:root[data-theme="dark"] .mood-slide.tone-peach{background:#66453b;color:#fff6e9}
+:root[data-theme="dark"] .mood-slide.tone-cocoa{background:#514039;color:#fff6e9}
+:root[data-theme="dark"] .mood-slide .slide-copy blockquote,
+:root[data-theme="dark"] .mood-slide .slide-title,
+:root[data-theme="dark"] .mood-slide .slide-title h2,
+:root[data-theme="dark"] .mood-slide .slide-film,
+:root[data-theme="dark"] .mood-slide .choose-label,
+:root[data-theme="dark"] .mood-slide .selected-label{
+  color:#fff6e9;
+}
+:root[data-theme="dark"] .mood-slide .slide-film,
+:root[data-theme="dark"] .mood-slide .choose-label,
+:root[data-theme="dark"] .mood-slide .selected-label{
+  opacity:.9;
+}
