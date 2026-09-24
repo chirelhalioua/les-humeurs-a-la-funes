@@ -1,5 +1,6 @@
 import { getHumeursDb } from '../../utils/mongodb'
 import { hashPassword } from '../../utils/password'
+import { sendBrevoEmail } from '../../utils/brevo'
 
 export default defineEventHandler(async (event) => {
   const body = await readBody<{ name?: string; email?: string; password?: string; confirmPassword?: string }>(event)
@@ -25,6 +26,17 @@ export default defineEventHandler(async (event) => {
     passwordHash,
     createdAt: new Date()
   })
+
+  try {
+    await sendBrevoEmail({
+      to: email,
+      toName: name,
+      subject: 'Bienvenue sur Les Humeurs à la Funes',
+      htmlContent: `<div style="font-family:Arial,sans-serif;max-width:600px;margin:auto;color:#392b24"><h1>Bienvenue, ${name} !</h1><p>Ton compte Les Humeurs à la Funes vient d’être créé.</p><p>Tu peux maintenant enregistrer tes humeurs et retrouver ton suivi dans le temps.</p><p style="margin-top:28px">À bientôt,<br><strong>Les Humeurs à la Funes</strong></p></div>`
+    })
+  } catch (error) {
+    console.error('Erreur Brevo confirmation inscription:', error)
+  }
 
   await setUserSession(event, {
     user: { id: result.insertedId.toString(), name, email }
