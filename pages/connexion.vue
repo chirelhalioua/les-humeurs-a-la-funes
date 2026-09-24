@@ -89,7 +89,7 @@ function switchMode(next: 'login' | 'register') {
 
         <label v-if="mode === 'register'" class="terms-check">
           <input v-model="acceptedTerms" type="checkbox" required>
-          <span>J’accepte les <NuxtLink to="/conditions-generales" target="_blank">conditions générales d’utilisation</NuxtLink>.</span>
+          <span>J’accepte les <NuxtLink to="/conditions-generales">conditions générales d’utilisation</NuxtLink>.</span>
         </label>
 
         <p v-if="errorMessage" class="auth-message auth-error">{{ errorMessage }}</p>
