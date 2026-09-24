@@ -546,3 +546,48 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     transform:scale(1.38) translateY(-22px) !important;
   }
 }
+
+
+/* Accueil : icônes et libellés parfaitement centrés dans les mini-cartes */
+.mood-chip{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.mood-chip span,
+.mood-chip strong{
+  display:block;
+  line-height:1;
+}
+@media(max-width:850px){
+  .mood-chip{
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    gap:4px;
+  }
+  .mood-chip span{font-size:22px;line-height:1}
+  .mood-chip strong{font-size:9px;line-height:1.1}
+}
+@media(max-width:560px){
+  .mood-strip{
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:5px;
+  }
+  .mood-chip{
+    min-height:58px;
+    height:58px;
+    padding:6px 2px;
+    border-radius:14px;
+    justify-content:center;
+    align-items:center;
+  }
+  .mood-chip span{font-size:21px;line-height:1}
+  .mood-chip strong{
+    font-size:8px;
+    line-height:1.1;
+    white-space:nowrap;
+  }
+}
