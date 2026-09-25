@@ -11,48 +11,45 @@ defineOptions({ inheritAttrs: false })
     v-bind="$attrs"
   >
     <title id="brand-title">Les Humeurs à la Funes</title>
-    <desc id="brand-desc">Logo des Humeurs à la Funes avec un visage expressif inspiré du cinéma.</desc>
+    <desc id="brand-desc">Logo typographique et théâtral des Humeurs à la Funes.</desc>
 
-    <!-- Emblème : bulle + visage expressif, volontairement différent de l'ancien logo -->
+    <!-- Nouveau concept : médaillon cinéma + bulles d'humeur, sans visage -->
     <g transform="translate(8 9)">
-      <rect x="4" y="4" width="92" height="92" rx="30" fill="var(--sage-soft)"/>
-      <path d="M27 87c10 9 24 13 39 10l15 9-2-17c10-7 17-18 17-32 0-25-20-45-45-45S6 32 6 57c0 12 5 23 13 31Z"
-        fill="var(--paper)" stroke="var(--cocoa)" stroke-width="5"/>
+      <circle cx="50" cy="50" r="44" fill="var(--cocoa)"/>
+      <circle cx="50" cy="50" r="35" fill="var(--paper)" stroke="var(--gold)" stroke-width="3"/>
 
-      <!-- sourcils / regard très expressif -->
-      <path d="M30 48c5-5 12-6 18-2M61 46c6-4 13-3 18 2"
-        fill="none" stroke="var(--cocoa)" stroke-width="5" stroke-linecap="round"/>
+      <!-- rideau de théâtre stylisé -->
+      <path d="M27 28h46v8c-5-3-9-3-13 0-4 3-8 3-13 0-5-3-9-3-13 0-4 3-6 3-7 3Z"
+        fill="var(--peach)"/>
+      <path d="M29 36c3 4 5 8 5 13v18h32V49c0-5 2-9 5-13"
+        fill="none" stroke="var(--cocoa)" stroke-width="4" stroke-linecap="round"/>
+      <path d="M40 43v23M50 43v23M60 43v23"
+        stroke="var(--sage)" stroke-width="3" stroke-linecap="round"/>
 
-      <!-- yeux -->
-      <circle cx="43" cy="55" r="3.2" fill="var(--cocoa)"/>
-      <circle cx="69" cy="55" r="3.2" fill="var(--cocoa)"/>
-
-      <!-- sourire -->
-      <path d="M35 68c8 13 28 15 39 2"
-        fill="none" stroke="var(--cocoa)" stroke-width="5.5" stroke-linecap="round"/>
-
-      <!-- petit accent cinéma / humeur -->
-      <path d="M18 22l-7-10M25 17l-2-12"
-        stroke="var(--gold)" stroke-width="5" stroke-linecap="round"/>
-      <path d="M82 21l8-9"
-        stroke="var(--gold)" stroke-width="5" stroke-linecap="round"/>
-      <circle cx="17" cy="84" r="7" fill="var(--peach)"/>
+      <!-- bulles représentant les humeurs -->
+      <circle cx="23" cy="76" r="7" fill="var(--gold)"/>
+      <circle cx="75" cy="76" r="7" fill="var(--sage)"/>
+      <circle cx="50" cy="80" r="5" fill="var(--peach)"/>
+      <path d="M19 87l-5 6M81 87l5 6" stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/>
     </g>
 
-    <g fill="var(--cocoa)">
-      <text x="120" y="51"
-        font-family="Sora, Inter, Arial, sans-serif"
-        font-size="35"
-        font-weight="800"
-        letter-spacing="-1.8">Les Humeurs</text>
-      <text x="121" y="82"
-        font-family="Caveat, Inter, cursive"
-        font-size="27"
-        font-weight="600">à la Funes</text>
-    </g>
+    <text x="112" y="52"
+      fill="var(--cocoa)"
+      font-family="Sora, Inter, Arial, sans-serif"
+      font-size="34"
+      font-weight="800"
+      letter-spacing="-1.8">Les Humeurs</text>
 
-    <!-- deux petits traits dorés encadrent la signature -->
-    <rect x="264" y="70" width="24" height="4" rx="2" fill="var(--gold)"/>
-    <rect x="384" y="70" width="24" height="4" rx="2" fill="var(--gold)"/>
+    <path d="M114 66h72" stroke="var(--gold)" stroke-width="4" stroke-linecap="round"/>
+
+    <text x="114" y="91"
+      fill="var(--brown)"
+      font-family="Caveat, Inter, cursive"
+      font-size="27"
+      font-weight="600">à la Funes</text>
+
+    <circle cx="257" cy="84" r="4" fill="var(--gold)"/>
+    <circle cx="272" cy="84" r="4" fill="var(--peach)"/>
+    <circle cx="287" cy="84" r="4" fill="var(--sage)"/>
   </svg>
 </template>
