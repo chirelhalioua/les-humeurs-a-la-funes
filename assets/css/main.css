@@ -2148,3 +2148,17 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   }
 }
 \n
+
+/* Humeurs : geste de balayage naturel sur mobile */
+.mood-slide{
+  touch-action:pan-y;
+  user-select:none;
+}
+@media(max-width:560px){
+  .mood-slide{
+    cursor:grab;
+  }
+  .mood-slide:active{
+    cursor:grabbing;
+  }
+}
