@@ -228,6 +228,10 @@ const wellbeingAdvice = computed(() => {
         </div>
 
         <template v-else>
+          <div class="tracking-day-action">
+            <NuxtLink to="/choisir-humeurs" class="tracking-add">Mettre à jour</NuxtLink>
+          </div>
+
           <div class="daily-moments">
             <article v-for="item in moments" :key="item.key" class="daily-moment" :class="{ filled: currentMomentEntry(item.key) }">
               <div class="daily-moment-top">
@@ -254,9 +258,6 @@ const wellbeingAdvice = computed(() => {
             </div>
           </section>
 
-          <div class="tracking-day-action">
-            <NuxtLink to="/choisir-humeurs" class="tracking-add">+ Ajouter / modifier une humeur</NuxtLink>
-          </div>
         </template>
       </div>
 
