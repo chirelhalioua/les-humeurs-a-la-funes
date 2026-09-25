@@ -11,36 +11,41 @@ defineOptions({ inheritAttrs: false })
     v-bind="$attrs"
   >
     <title id="brand-title">Les Humeurs à la Funes</title>
-    <desc id="brand-desc">Logo des Humeurs à la Funes avec un clap de cinéma dans un médaillon rond.</desc>
+    <desc id="brand-desc">Logo des Humeurs à la Funes avec un clap de cinéma inspiré de l'emoji 🎬.</desc>
 
-    <!-- Médaillon rond conservé + clap inspiré de l'emoji cinéma -->
     <g transform="translate(7 8)">
+      <!-- médaillon rond -->
       <circle cx="52" cy="51" r="48" fill="var(--sage-soft)"/>
       <circle cx="52" cy="51" r="48" fill="none" stroke="var(--cocoa)" stroke-width="4"/>
 
-      <!-- clap de tournage : silhouette proche de 🎬 -->
-      <g transform="translate(13 13)">
-        <!-- charnière / corps -->
-        <rect x="11" y="39" width="56" height="45" rx="11"
+      <!-- clap 🎬 : corps rectangulaire arrondi + battant supérieur ouvert -->
+      <g transform="translate(13 14)">
+        <!-- corps -->
+        <rect x="12" y="38" width="58" height="48" rx="10"
           fill="var(--paper)" stroke="var(--cocoa)" stroke-width="5"/>
 
-        <!-- clap supérieur ouvert -->
-        <path d="M7 38 L17 17 Q18 14 22 14 H69 Q72 14 73 17 L80 35 Q81 38 77 38 Z"
-          fill="var(--cocoa)" stroke="var(--cocoa)" stroke-width="3" stroke-linejoin="round"/>
+        <!-- battant inférieur / charnière -->
+        <path d="M14 39H68"
+          fill="none" stroke="var(--cocoa)" stroke-width="5" stroke-linecap="round"/>
 
-        <!-- bandes diagonales caractéristiques du clap -->
-        <path d="M24 16 L36 35 M42 16 L54 35 M60 16 L72 35"
-          fill="none" stroke="var(--gold)" stroke-width="6" stroke-linecap="round"/>
+        <!-- battant supérieur : vraie forme de clap, incliné comme 🎬 -->
+        <g transform="rotate(-13 40 36)">
+          <rect x="7" y="25" width="66" height="17" rx="4"
+            fill="var(--cocoa)"/>
+          <!-- bandes diagonales -->
+          <path d="M20 27l11 13M40 27l11 13M60 27l11 13"
+            fill="none" stroke="var(--gold)" stroke-width="6" stroke-linecap="round"/>
+        </g>
 
-        <!-- ligne de séparation du clap -->
-        <path d="M12 40h54" stroke="var(--cocoa)" stroke-width="5" stroke-linecap="round"/>
+        <!-- petite charnière visible -->
+        <circle cx="17" cy="40" r="4.5" fill="var(--gold)"/>
 
-        <!-- détails minimalistes dans le clap -->
-        <path d="M23 54h25M23 64h18M23 74h25"
+        <!-- détails du clap -->
+        <path d="M24 54h26M24 64h18M24 74h26"
           stroke="var(--sage)" stroke-width="3.5" stroke-linecap="round"/>
-        <circle cx="57" cy="55" r="3.5" fill="var(--peach)"/>
-        <circle cx="57" cy="65" r="3.5" fill="var(--sage)"/>
-        <circle cx="57" cy="75" r="3.5" fill="var(--gold)"/>
+        <circle cx="58" cy="55" r="3.5" fill="var(--peach)"/>
+        <circle cx="58" cy="65" r="3.5" fill="var(--sage)"/>
+        <circle cx="58" cy="75" r="3.5" fill="var(--gold)"/>
       </g>
     </g>
 
