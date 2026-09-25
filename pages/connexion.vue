@@ -85,7 +85,7 @@ function togglePassword(event: Event) {
             autocomplete="new-password"
             placeholder="8 caractères minimum"
             required
-          ><button type="button" class="password-toggle" aria-label="Afficher le mot de passe" data-password-target="password-field-1" @click="togglePassword">◉</button></div>
+          ><button type="button" class="password-toggle" aria-label="Afficher le mot de passe" data-password-target="register-password" @click="togglePassword">◉</button></div>
         </label>
         <label v-if="mode === 'register'">Confirmer le mot de passe
           <div class="password-field"><input
@@ -96,7 +96,7 @@ function togglePassword(event: Event) {
             autocomplete="new-password"
             placeholder="Retape ton mot de passe"
             required
-          ><button type="button" class="password-toggle" aria-label="Afficher le mot de passe" data-password-target="password-field-1" @click="togglePassword">◉</button></div>
+          ><button type="button" class="password-toggle" aria-label="Afficher le mot de passe" data-password-target="register-password-confirm" @click="togglePassword">◉</button></div>
         </label>
 
         <label v-if="mode === 'register'" class="terms-check">
