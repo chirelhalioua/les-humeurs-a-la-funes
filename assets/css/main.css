@@ -1878,27 +1878,7 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   width:100%;
   height:100%;
 }
-@media(max-width:560px){
-  .profile-avatar-camera{
-    right:2px;
-    bottom:2px;
-    width:21px!important;
-    height:21px!important;
-    border-width:1px;
-  }
-  .profile-avatar-camera svg{
-    width:10px;
-    height:10px;
-  }
-  .profile-photo-menu{
-    left:0;
-    min-width:145px;
-  }
-  .profile-photo-error{
-    top:calc(100% + 125px);
-    width:145px;
-  }
-}
+/* Réglages photo mobile */
 
 
 /* Dernière finition du profil : icône photo réellement positionnée + titre plus dense */
@@ -1964,5 +1944,31 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .brand-mark img{
     width:100%;
     height:100%;
+  }
+}
+
+
+@media (max-width: 560px) {
+  .profile-avatar-camera {
+    right: 2px;
+    bottom: 2px;
+    width: 21px !important;
+    height: 21px !important;
+    border-width: 1px;
+  }
+
+  .profile-avatar-camera svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  .profile-photo-menu {
+    left: 0;
+    min-width: 145px;
+  }
+
+  .profile-photo-error {
+    top: calc(100% + 125px);
+    width: 145px;
   }
 }
