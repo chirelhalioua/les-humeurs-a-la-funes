@@ -19,9 +19,7 @@ watch(dark, value => {
   <div class="app-shell">
     <header class="topbar">
       <NuxtLink to="/" class="brand" aria-label="Les Humeurs à la Funes">
-        <span class="brand-mark"><img src="/logo-mark.svg" alt="" aria-hidden="true"></span>
-        <span>Les Humeurs <em>à la Funes</em></span>
-      </NuxtLink>
+        <span class="brand-mark"><img src="/logo-full.svg" alt="Les Humeurs à la Funes"></span></NuxtLink>
 
       <nav class="desktop-nav" aria-label="Navigation principale">
         <NuxtLink to="/choisir-humeurs">Mon humeur</NuxtLink>
