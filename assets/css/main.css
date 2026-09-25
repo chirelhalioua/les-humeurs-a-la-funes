@@ -2417,3 +2417,18 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .wellbeing-card{padding:15px;gap:10px}
   .wellbeing-icon{width:32px;height:32px;font-size:15px}
 }
+
+
+/* Choix de l'humeur : périodes futures indisponibles */
+.moment-option:disabled{
+  cursor:not-allowed;
+  opacity:.42;
+}
+.moment-option:disabled:hover{
+  transform:none;
+  box-shadow:none;
+}
+.moment-future{
+  color:var(--muted);
+  opacity:.8;
+}
