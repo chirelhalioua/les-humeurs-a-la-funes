@@ -13,7 +13,7 @@ export default defineEventHandler(async (event) => {
   const entries = await db
     .collection('suivi_humeurs')
     .find({ userId: new ObjectId(userId) })
-    .sort({ createdAt: -1 })
+    .sort({ updatedAt: -1, createdAt: -1 })
     .limit(200)
     .toArray()
 
@@ -28,6 +28,8 @@ export default defineEventHandler(async (event) => {
     image: entry.image,
     moment: entry.moment,
     exactTime: entry.exactTime || null,
-    createdAt: entry.createdAt
+    dayKey: entry.dayKey || null,
+    createdAt: entry.createdAt,
+    updatedAt: entry.updatedAt || entry.createdAt
   }))
 })
