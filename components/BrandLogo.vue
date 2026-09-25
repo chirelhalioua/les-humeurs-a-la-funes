@@ -19,7 +19,7 @@ defineOptions({ inheritAttrs: false })
       <circle cx="52" cy="51" r="48" fill="none" stroke="var(--cocoa)" stroke-width="4"/>
 
       <!-- clap 🎬 : corps rectangulaire arrondi + battant supérieur ouvert -->
-      <g transform="translate(13 14)">
+      <g transform="translate(8 14)">
         <!-- corps -->
         <rect x="12" y="38" width="58" height="48" rx="10"
           fill="var(--paper)" stroke="var(--cocoa)" stroke-width="5"/>
