@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 330" role="img" aria-labelledby="title desc">
+  <title id="title">Les Humeurs à la Funes</title>
+  <desc id="desc">Logo Les Humeurs à la Funes dans la palette chocolat, ivoire, sauge, sable et doré.</desc>
+  <g transform="translate(18 18)">
+    <circle cx="128" cy="92" r="78" fill="#A9B89D"/>
+    <ellipse cx="158" cy="177" rx="74" ry="45" fill="#DED0B6"/>
+    <circle cx="164" cy="128" r="80" fill="#FFFAF2" stroke="#392B24" stroke-width="13"/>
+    <path d="M119 120c8-16 29-16 38 0M171 120c8-16 29-16 38 0" fill="none" stroke="#392B24" stroke-width="13" stroke-linecap="round"/>
+    <path d="M120 153c18 27 56 32 82 7" fill="none" stroke="#392B24" stroke-width="14" stroke-linecap="round"/>
+    <path d="M194 159c15 10 20 27 13 43" fill="none" stroke="#392B24" stroke-width="14" stroke-linecap="round"/>
+    <path d="M62 174c8-18 31-22 45-7 14 15 7 36-15 47-20-8-34-20-30-40Z" fill="#E7BD58" stroke="#FFFAF2" stroke-width="7"/>
+    <path d="M239 50l18-31M274 72l33-12M269 105l35 6" fill="none" stroke="#E7BD58" stroke-width="13" stroke-linecap="round"/>
+  </g>
+  <text x="340" y="152" font-family="Sora, Arial, sans-serif" font-size="83" font-weight="800" letter-spacing="-4" fill="#392B24">Les Humeurs</text>
+  <rect x="438" y="188" width="54" height="8" rx="4" fill="#E7BD58"/>
+  <text x="510" y="213" font-family="Sora, Arial, sans-serif" font-size="47" font-weight="500" letter-spacing="-1.5" fill="#392B24">à la Funes</text>
+  <rect x="758" y="188" width="54" height="8" rx="4" fill="#E7BD58"/>
+</svg>
