@@ -2309,7 +2309,22 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   line-height:1.55;
   max-width:680px;
 }
-.tracking-day-action{margin-top:12px;text-align:right}
+.tracking-day-action{
+  display:flex;
+  justify-content:flex-end;
+  margin:2px 0 16px;
+  position:relative;
+  z-index:2;
+}
+.tracking-day-action .tracking-add{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:34px;
+  padding:8px 15px;
+  background:var(--paper);
+  box-shadow:0 5px 14px rgba(57,43,36,.08);
+}
 .tracking-card.week-card{padding:14px}
 .week-grid{
   display:grid;
