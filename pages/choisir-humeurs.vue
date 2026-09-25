@@ -32,15 +32,15 @@ const loadingToday = ref(false)
 const todayEntries = ref<MoodEntry[]>([])
 
 const moments = [
-  { key: 'matin', label: 'Matin', hours: '08:00 – 13:00', emoji: '☀️' },
-  { key: 'apres-midi', label: 'Après-midi', hours: '13:00 – 18:00', emoji: '🌤️' },
+  { key: 'matin', label: 'Matin', hours: '08:00 – 12:00', emoji: '☀️' },
+  { key: 'apres-midi', label: 'Après-midi', hours: '12:00 – 18:00', emoji: '🌤️' },
   { key: 'soir', label: 'Soir', hours: '18:00 – 00:00', emoji: '🌙' }
 ]
 
 const getCurrentMoment = () => {
   const hour = new Date().getHours()
   if (hour >= 18) return 'soir'
-  if (hour >= 13) return 'apres-midi'
+  if (hour >= 12) return 'apres-midi'
   return 'matin'
 }
 
