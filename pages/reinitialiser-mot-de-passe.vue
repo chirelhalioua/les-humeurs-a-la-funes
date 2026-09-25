@@ -30,6 +30,17 @@ async function confirmReset() {
     error.value = e?.data?.statusMessage || 'Impossible de réinitialiser le mot de passe.'
   }
 }
+
+function togglePassword(event: Event) {
+  const button = event.currentTarget as HTMLButtonElement
+  const id = button.dataset.passwordTarget
+  if (!id) return
+  const input = document.getElementById(id) as HTMLInputElement | null
+  if (!input) return
+  input.type = input.type === 'password' ? 'text' : 'password'
+  button.textContent = input.type === 'password' ? '◉' : '◌'
+  button.setAttribute('aria-label', input.type === 'password' ? 'Afficher le mot de passe' : 'Masquer le mot de passe')
+}
 </script>
 
 <template>
@@ -45,10 +56,10 @@ async function confirmReset() {
       <template v-if="token && !resetDone">
         <form @submit.prevent="confirmReset">
           <label>Nouveau mot de passe
-            <input v-model="password" type="password" autocomplete="new-password" minlength="8" required>
+            <div class="password-field"><input v-model="password" id="password-field-1" type="password" autocomplete="new-password" minlength="8" required><button type="button" class="password-toggle" aria-label="Afficher le mot de passe" data-password-target="password-field-1" @click="togglePassword">◉</button></div>
           </label>
           <label>Confirmer le mot de passe
-            <input v-model="confirmPassword" type="password" autocomplete="new-password" minlength="8" required>
+            <div class="password-field"><input v-model="confirmPassword" id="password-field-2" type="password" autocomplete="new-password" minlength="8" required><button type="button" class="password-toggle" aria-label="Afficher le mot de passe" data-password-target="password-field-2" @click="togglePassword">◉</button></div>
           </label>
           <p v-if="error" class="auth-message auth-error">{{ error }}</p>
           <button class="auth-submit">Enregistrer le nouveau mot de passe <span>→</span></button>
