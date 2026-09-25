@@ -41,11 +41,11 @@ defineOptions({ inheritAttrs: false })
         <circle cx="17" cy="40" r="4.5" fill="var(--gold)"/>
 
         <!-- détails du clap -->
-        <path d="M24 54h26M24 64h18M24 74h26"
+        <circle cx="22" cy="55" r="3.5" fill="var(--peach)"/>
+        <circle cx="22" cy="65" r="3.5" fill="var(--sage)"/>
+        <circle cx="22" cy="75" r="3.5" fill="var(--gold)"/>
+        <path d="M29 54h26M29 64h18M29 74h26"
           stroke="var(--sage)" stroke-width="3.5" stroke-linecap="round"/>
-        <circle cx="58" cy="55" r="3.5" fill="var(--peach)"/>
-        <circle cx="58" cy="65" r="3.5" fill="var(--sage)"/>
-        <circle cx="58" cy="75" r="3.5" fill="var(--gold)"/>
       </g>
     </g>
 
