@@ -96,6 +96,7 @@ onMounted(loadTodayEntries)
 const swipeStartX = ref<number | null>(null)
 const swipeStartY = ref<number | null>(null)
 const swiping = ref(false)
+const lastSwipeAt = ref(0)
 
 const handleSwipeStart = (event: TouchEvent) => {
   const touch = event.touches[0]
@@ -126,6 +127,7 @@ const handleSwipeEnd = (event: TouchEvent) => {
   if (Math.abs(dx) >= 55 && Math.abs(dx) > Math.abs(dy) * 1.2) {
     if (dx < 0) nextMood()
     else previousMood()
+    lastSwipeAt.value = Date.now()
   }
   swipeStartX.value = null
   swipeStartY.value = null
@@ -140,6 +142,7 @@ const goTo = (index: number) => {
 const nextMood = () => goTo(currentIndex.value + 1)
 const previousMood = () => goTo(currentIndex.value - 1)
 const selectCurrent = () => {
+  if (Date.now() - lastSwipeAt.value < 350) return
   if (currentMood.value) {
     selected.value = currentMood.value
     saveError.value = ''
@@ -206,7 +209,7 @@ const saveMood = async () => {
         <article
           class="mood-slide"
           :class="['tone-' + currentMood.tone, { selected: selected?.key === currentMood.key }]"
-          @click="!swiping && selectCurrent"
+          @click="selectCurrent"
           @touchstart.passive="handleSwipeStart"
           @touchmove="handleSwipeMove"
           @touchend="handleSwipeEnd"
