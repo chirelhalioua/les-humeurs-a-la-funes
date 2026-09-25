@@ -1943,3 +1943,25 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     -webkit-text-stroke:.42px currentColor;
   }
 }
+
+
+/* Logo de marque : symbole vectoriel net sur toutes les tailles */
+.brand-mark{
+  overflow:visible!important;
+  background:transparent!important;
+  border-radius:0!important;
+  display:block!important;
+  line-height:0!important;
+}
+.brand-mark img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+@media(max-width:560px){
+  .brand-mark img{
+    width:100%;
+    height:100%;
+  }
+}
