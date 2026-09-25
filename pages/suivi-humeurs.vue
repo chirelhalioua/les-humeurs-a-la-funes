@@ -109,7 +109,7 @@ const maxCount = computed(() => Math.max(1, ...moodStats.value.map(item => item.
               <span class="eyebrow"><span></span> historique</span>
               <h2>Les dernières<br><i>humeurs.</i></h2>
             </div>
-            <NuxtLink to="/choisir-humeurs" class="tracking-add">+ Ajouter</NuxtLink>
+            <NuxtLink to="/choisir-humeurs" class="tracking-add">+ Ajouter / modifier</NuxtLink>
           </div>
 
           <div class="tracking-list">
