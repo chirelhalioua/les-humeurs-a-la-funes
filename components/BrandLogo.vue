@@ -11,45 +11,31 @@ defineOptions({ inheritAttrs: false })
     v-bind="$attrs"
   >
     <title id="brand-title">Les Humeurs à la Funes</title>
-    <desc id="brand-desc">Logo inspiré d'une scène de théâtre et du cinéma de Louis de Funès.</desc>
+    <desc id="brand-desc">Logo cinéma des Humeurs à la Funes avec clap de tournage.</desc>
 
-    <!-- Médaillon scène : rideaux clairement reconnaissables -->
-    <g transform="translate(8 9)">
-      <circle cx="50" cy="50" r="44" fill="var(--cocoa)"/>
-      <circle cx="50" cy="50" r="36" fill="var(--paper)" stroke="var(--gold)" stroke-width="3"/>
+    <!-- Clap cinéma : symbole immédiatement identifiable -->
+    <g transform="translate(8 10)">
+      <circle cx="50" cy="49" r="43" fill="var(--sage-soft)"/>
+      
+      <!-- corps du clap -->
+      <rect x="18" y="43" width="64" height="47" rx="7"
+        fill="var(--paper)" stroke="var(--cocoa)" stroke-width="4"/>
+      
+      <!-- bande du clap -->
+      <path d="M15 39 L25 23 L83 23 L88 39 Z"
+        fill="var(--cocoa)" stroke="var(--cocoa)" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M29 24 L40 39 M49 24 L60 39 M69 24 L80 39"
+        stroke="var(--gold)" stroke-width="5" stroke-linecap="round"/>
 
-      <!-- grand rideau gauche -->
-      <path d="M18 25
-               C28 18 37 18 43 23
-               C39 31 39 38 42 46
-               C38 52 38 60 42 69
-               C34 72 26 69 20 63
-               C25 54 25 44 21 35
-               C20 31 19 28 18 25Z"
-        fill="var(--peach)" stroke="var(--cocoa)" stroke-width="2.5" stroke-linejoin="round"/>
-      <!-- grand rideau droit -->
-      <path d="M82 25
-               C72 18 63 18 57 23
-               C61 31 61 38 58 46
-               C62 52 62 60 58 69
-               C66 72 74 69 80 63
-               C75 54 75 44 79 35
-               C80 31 81 28 82 25Z"
-        fill="var(--peach)" stroke="var(--cocoa)" stroke-width="2.5" stroke-linejoin="round"/>
-
-      <!-- cordeau du rideau -->
-      <path d="M22 29c6-5 12-7 20-6M78 29c-6-5-12-7-20-6"
-        fill="none" stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/>
-
-      <!-- ouverture de scène -->
-      <rect x="42" y="27" width="16" height="43" rx="3" fill="var(--sage-soft)" stroke="var(--cocoa)" stroke-width="2.5"/>
-      <path d="M50 31v35" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/>
-
-      <!-- petites bulles = humeurs -->
-      <circle cx="25" cy="77" r="6" fill="var(--gold)"/>
-      <circle cx="50" cy="82" r="5" fill="var(--peach)"/>
-      <circle cx="75" cy="77" r="6" fill="var(--sage)"/>
-      <path d="M21 88l-4 5M79 88l4 5" stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/>
+      <!-- petit bouton -->
+      <circle cx="73" cy="70" r="5" fill="var(--gold)"/>
+      
+      <!-- lignes de cinéma -->
+      <path d="M29 55h27M29 65h19M29 75h25"
+        stroke="var(--sage)" stroke-width="3.5" stroke-linecap="round"/>
+      <circle cx="67" cy="61" r="3" fill="var(--peach)"/>
+      <circle cx="67" cy="70" r="3" fill="var(--sage)"/>
+      <circle cx="67" cy="79" r="3" fill="var(--gold)"/>
     </g>
 
     <text x="112" y="52"
