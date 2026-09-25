@@ -21,9 +21,14 @@ export default defineEventHandler(async (event) => {
   const image = String(body?.image || '').trim()
   const moment = String(body?.moment || '').trim()
   const exactTime = String(body?.exactTime || '').trim()
+  const dayKey = String(body?.dayKey || '').trim()
 
   if (!moodKey || !moodName || !allowedMoments.has(moment)) {
     throw createError({ statusCode: 400, statusMessage: 'Humeur ou moment invalide.' })
+  }
+
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(dayKey)) {
+    throw createError({ statusCode: 400, statusMessage: 'Date invalide.' })
   }
 
   if (exactTime && !/^([01]\d|2[0-3]):[0-5]\d$/.test(exactTime)) {
@@ -31,25 +36,42 @@ export default defineEventHandler(async (event) => {
   }
 
   const db = await getHumeursDb(event)
+  const now = new Date()
 
-  const entry = {
-    userId: new ObjectId(userId),
-    moodKey,
-    moodName,
-    emoji,
-    tone,
-    quote,
-    film,
-    image,
-    moment,
-    exactTime: exactTime || null,
-    createdAt: new Date()
-  }
-
-  const result = await db.collection('suivi_humeurs').insertOne(entry)
+  const result = await db.collection('suivi_humeurs').findOneAndUpdate(
+    {
+      userId: new ObjectId(userId),
+      dayKey,
+      moment
+    },
+    {
+      $set: {
+        moodKey,
+        moodName,
+        emoji,
+        tone,
+        quote,
+        film,
+        image,
+        exactTime: exactTime || null,
+        updatedAt: now
+      },
+      $setOnInsert: {
+        userId: new ObjectId(userId),
+        dayKey,
+        moment,
+        createdAt: now
+      }
+    },
+    {
+      upsert: true,
+      returnDocument: 'after'
+    }
+  )
 
   return {
     ok: true,
-    id: result.insertedId.toString()
+    id: result?._id?.toString(),
+    updated: Boolean(result?.createdAt && result.createdAt.getTime() !== now.getTime())
   }
 })
