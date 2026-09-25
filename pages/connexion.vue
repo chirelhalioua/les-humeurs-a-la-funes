@@ -38,6 +38,17 @@ function switchMode(next: 'login' | 'register') {
   mode.value = next
   resetMessages()
 }
+
+function togglePassword(event: Event) {
+  const button = event.currentTarget as HTMLButtonElement
+  const id = button.dataset.passwordTarget
+  if (!id) return
+  const input = document.getElementById(id) as HTMLInputElement | null
+  if (!input) return
+  input.type = input.type === 'password' ? 'text' : 'password'
+  button.textContent = input.type === 'password' ? '◉' : '◌'
+  button.setAttribute('aria-label', input.type === 'password' ? 'Afficher le mot de passe' : 'Masquer le mot de passe')
+}
 </script>
 
 <template>
@@ -66,7 +77,7 @@ function switchMode(next: 'login' | 'register') {
           <input v-model="form.email" type="email" autocomplete="email" placeholder="toi@exemple.fr" required>
         </label>
         <label>Mot de passe
-          <input
+          <div class="password-field"><input
             v-model="form.password"
             id="register-password"
             name="password"
@@ -74,10 +85,10 @@ function switchMode(next: 'login' | 'register') {
             autocomplete="new-password"
             placeholder="8 caractères minimum"
             required
-          >
+          ><button type="button" class="password-toggle" aria-label="Afficher le mot de passe" data-password-target="password-field-1" @click="togglePassword">◉</button></div>
         </label>
         <label v-if="mode === 'register'">Confirmer le mot de passe
-          <input
+          <div class="password-field"><input
             v-model="form.confirmPassword"
             id="register-password-confirm"
             name="password_confirmation"
@@ -85,7 +96,7 @@ function switchMode(next: 'login' | 'register') {
             autocomplete="new-password"
             placeholder="Retape ton mot de passe"
             required
-          >
+          ><button type="button" class="password-toggle" aria-label="Afficher le mot de passe" data-password-target="password-field-1" @click="togglePassword">◉</button></div>
         </label>
 
         <label v-if="mode === 'register'" class="terms-check">
