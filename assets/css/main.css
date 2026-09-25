@@ -1991,3 +1991,160 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 @media(max-width:560px){
   .brand-logo{width:168px}
 }
+
+/* Animations discrètes — mouvements courts, doux et cohérents avec l'identité */
+@keyframes page-reveal{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes soft-float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-3px)}
+}
+@keyframes gentle-pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(231,189,88,0)}
+  50%{box-shadow:0 0 0 5px rgba(231,189,88,.10)}
+}
+
+.app-shell>main> *{
+  animation:page-reveal .42s ease-out both;
+}
+
+/* Logo : très léger mouvement au survol */
+.brand-logo{
+  transition:transform .25s ease,filter .25s ease;
+  transform-origin:left center;
+}
+.brand:hover .brand-logo{
+  transform:scale(1.025) translateY(-1px);
+}
+
+/* Liens de navigation : soulignement discret */
+.desktop-nav a{
+  position:relative;
+  transition:color .2s ease,transform .2s ease;
+}
+.desktop-nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-6px;
+  height:2px;
+  border-radius:99px;
+  background:var(--gold);
+  transform:scaleX(0);
+  transform-origin:center;
+  transition:transform .22s ease;
+}
+.desktop-nav a:hover{
+  transform:translateY(-1px);
+}
+.desktop-nav a:hover::after,
+.desktop-nav a.router-link-exact-active::after{
+  transform:scaleX(1);
+}
+
+/* Boutons / liens d'action */
+.primary-button,
+.top-action,
+.detail-save,
+.mood-final-save,
+.profile-link,
+.profile-delete{
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,background-color .2s ease;
+}
+.primary-button:hover,
+.top-action:hover,
+.detail-save:hover,
+.mood-final-save:not(:disabled):hover,
+.profile-link:hover,
+.profile-delete:hover{
+  transform:translateY(-2px);
+  box-shadow:0 9px 22px rgba(57,43,36,.13);
+}
+.primary-button:active,
+.top-action:active,
+.detail-save:active,
+.mood-final-save:not(:disabled):active{
+  transform:translateY(0) scale(.985);
+}
+
+/* Cartes : zoom minime + bordure plus présente au survol */
+.funes-card,
+.profile-card,
+.tracking-card,
+.tracking-stat,
+.tracking-entry,
+.contact-card,
+.faq-section,
+.coming,
+.tracking-empty{
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+@media (hover:hover){
+  .funes-card:hover,
+  .profile-card:hover,
+  .tracking-card:hover,
+  .tracking-stat:hover,
+  .tracking-entry:hover,
+  .contact-card:hover,
+  .tracking-empty:hover{
+    transform:translateY(-3px);
+    border-color:rgba(231,189,88,.42);
+    box-shadow:0 16px 38px rgba(57,43,36,.10);
+  }
+}
+
+/* Cartes d'humeur : mouvement léger sans perturber la sélection */
+.mood-choice,
+.mood-tile,
+.mood-slide{
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+}
+@media (hover:hover){
+  .mood-choice:hover,
+  .mood-tile:hover{
+    transform:translateY(-3px) scale(1.012);
+  }
+}
+.mood-choice.selected,
+.mood-tile.selected,
+.mood-slide.selected{
+  animation:gentle-pulse 1.8s ease-in-out 1;
+}
+
+/* Avatar : petite interaction tactile/visuelle */
+.profile-avatar{
+  transition:transform .22s ease,box-shadow .22s ease;
+}
+.profile-avatar:hover{
+  transform:scale(1.035);
+  box-shadow:0 20px 42px rgba(57,43,36,.17);
+}
+
+/* Toggle thème */
+.theme-button{
+  transition:transform .2s ease,background-color .2s ease,border-color .2s ease;
+}
+.theme-button:hover{
+  transform:rotate(8deg) scale(1.05);
+  background:var(--sage-soft);
+  border-color:rgba(231,189,88,.55);
+}
+
+/* Respecte les préférences d'accessibilité */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .app-shell>main> *{
+    animation:none!important;
+  }
+  *,
+  *::before,
+  *::after{
+    transition-duration:.01ms!important;
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+  }
+}
+\n
