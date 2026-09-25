@@ -1,23 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 855 207" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 300" role="img" aria-labelledby="title desc">
   <title id="title">Les Humeurs à la Funes</title>
-  <desc id="desc">Logo Les Humeurs à la Funes avec le personnage souriant de la référence.</desc>
-  <rect width="855" height="207" rx="0" fill="#F5EFE5"/>
-  <ellipse cx="111" cy="103" rx="75" ry="99" fill="#A9B89D"/>
-  <path d="M169 151c27 8 48 25 54 51H105c16-32 37-49 64-51Z" fill="#DED0B6"/>
-  <path d="M72 106c0-44 24-76 61-76s72 32 72 76v31c0 45-29 68-73 68-37 0-60-25-60-68Z"
-        fill="#FFFAF2" stroke="#392B24" stroke-width="13" stroke-linejoin="round"/>
-  <path d="M99 99c4-18 25-23 36-6 8-17 30-13 34 6"
-        fill="none" stroke="#392B24" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M94 133c8 29 35 39 59 32 13-4 22-12 27-24"
-        fill="none" stroke="#392B24" stroke-width="13" stroke-linecap="round"/>
-  <path d="M177 141c5 13 8 27 5 43" fill="none" stroke="#392B24" stroke-width="13" stroke-linecap="round"/>
-  <path d="M174 183c-9 11-27 19-45 19" fill="none" stroke="#392B24" stroke-width="13" stroke-linecap="round"/>
-  <path d="M69 145c13 0 24 11 24 24 0 12-7 25-19 34-11-5-21-15-24-25-4-14 5-30 19-33Z"
-        fill="#E7BD58" stroke="#FFFAF2" stroke-width="7"/>
-  <path d="M215 19l19-35M246 51l32-12M247 85l35 6"
-        fill="none" stroke="#E7BD58" stroke-width="11" stroke-linecap="round"/>
-  <text x="275" y="109" font-family="Arial Black, Arial, sans-serif" font-size="55" font-weight="900" letter-spacing="-2.4" fill="#392B24">Les Humeurs</text>
-  <rect x="423" y="142" width="46" height="7" rx="3.5" fill="#E7BD58"/>
-  <text x="482" y="166" font-family="Arial, sans-serif" font-size="35" font-weight="400" letter-spacing="-1.2" fill="#392B24">à la Funes</text>
-  <rect x="637" y="142" width="46" height="7" rx="3.5" fill="#E7BD58"/>
+  <desc id="desc">Nouveau logo chaleureux avec un personnage souriant et une touche cinéma rétro.</desc>
+
+  <g transform="translate(24 18)">
+    <path d="M18 110c0-71 49-110 113-110 45 0 82 17 103 47 16 23 20 52 12 82-12 46-47 80-97 93-54 14-102-3-119-42-8-18-12-42-12-70Z" fill="#A9B89D"/>
+    <path d="M112 179c28-29 76-32 111-7 18 13 26 29 29 51H78c7-18 18-32 34-44Z" fill="#DED0B6"/>
+    <path d="M57 132c0-52 34-96 84-96s89 43 89 96v37c0 49-38 87-89 87s-84-36-84-87Z" fill="#FFFAF2" stroke="#392B24" stroke-width="12"/>
+
+    <path d="M88 119c7-17 28-22 43-8 5 5 8 9 10 15 3-7 6-11 11-15 15-14 36-9 43 8"
+          fill="none" stroke="#392B24" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M91 155c8 23 28 37 53 38 27 1 50-11 61-37"
+          fill="none" stroke="#392B24" stroke-width="13" stroke-linecap="round"/>
+    <path d="M204 156c5 10 7 23 5 35-3 21-17 38-35 48"
+          fill="none" stroke="#392B24" stroke-width="13" stroke-linecap="round"/>
+
+    <path d="M51 177c10-13 29-15 41-4 12 10 13 29 4 43-7 12-19 21-31 25-13-7-23-17-27-28-4-12 1-26 13-36Z"
+          fill="#E7BD58" stroke="#FFFAF2" stroke-width="8"/>
+    <path d="M246 47l18-34M278 69l34-12M284 101l35 6"
+          fill="none" stroke="#E7BD58" stroke-width="12" stroke-linecap="round"/>
+  </g>
+
+  <text x="322" y="132" font-family="Sora, Arial, sans-serif" font-size="77" font-weight="800" letter-spacing="-4" fill="#392B24">Les Humeurs</text>
+
+  <g transform="translate(468 171)">
+    <rect x="-92" y="-6" width="50" height="8" rx="4" fill="#E7BD58"/>
+    <text x="-22" y="19" font-family="Inter, Arial, sans-serif" font-size="43" font-weight="500" letter-spacing="-1.2" fill="#392B24">à la Funes</text>
+    <rect x="244" y="-6" width="50" height="8" rx="4" fill="#E7BD58"/>
+  </g>
 </svg>
