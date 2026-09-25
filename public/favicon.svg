@@ -1,13 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
-  <title id="title">Les Humeurs à la Funes</title>
-  <desc id="desc">Visage souriant représentant une humeur positive.</desc>
-  <circle cx="24" cy="23" r="19" fill="#A9B89D"/>
-  <ellipse cx="41" cy="43" rx="16" ry="10" fill="#DED0B6"/>
-  <circle cx="33.5" cy="31.5" r="19" fill="#FFFAF2" stroke="#392B24" stroke-width="3.2"/>
-  <path d="M24.2 29.7c1.6-2.8 5.4-2.8 7 0" fill="none" stroke="#392B24" stroke-width="2.8" stroke-linecap="round"/>
-  <path d="M36.2 29.7c1.6-2.8 5.4-2.8 7 0" fill="none" stroke="#392B24" stroke-width="2.8" stroke-linecap="round"/>
-  <path d="M24.8 37.4c3.5 4.8 10.2 5.8 15.2 1.1" fill="none" stroke="#392B24" stroke-width="3.1" stroke-linecap="round"/>
-  <path d="M39.6 38.8c2.5 1.8 3.6 4.3 3.2 7" fill="none" stroke="#392B24" stroke-width="3.1" stroke-linecap="round"/>
-  <path d="M12.8 39.3c1.6-2.6 5.3-3 7.3-.8 2 2.2.9 5.1-1.7 6.7-2.8-1.3-4.9-3.2-5.6-5.9Z" fill="#E7BD58"/>
-  <path d="M51.5 15.5l2.5-4.4M55 21l4.6-1.6M54 26.8l4.8.8" fill="none" stroke="#E7BD58" stroke-width="2.7" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <circle cx="26" cy="23" r="20" fill="#A9B89D"/>
+  <ellipse cx="42" cy="44" rx="18" ry="11" fill="#DED0B6"/>
+  <circle cx="35" cy="32" r="19.5" fill="#FFFAF2" stroke="#392B24" stroke-width="3.4"/>
+  <path d="M24.2 29.4c1.8-3.2 5.9-3.2 7.7 0M37.2 29.4c1.8-3.2 5.9-3.2 7.7 0" fill="none" stroke="#392B24" stroke-width="3" stroke-linecap="round"/>
+  <path d="M24.8 37.4c3.9 5 10.9 5.7 16 1.1M40.2 38.5c3.3 1.8 4.4 5.3 2.8 8.4" fill="none" stroke="#392B24" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M13.2 39.5c1.6-3.1 5.9-3.7 8.1-1.1 2.2 2.6.9 6.1-2.3 7.8-3.1-1.5-5.3-3.7-5.8-6.7Z" fill="#E7BD58"/>
+  <path d="M51.2 15.5l2.7-4.8M55 21.3l4.8-1.7M54.2 27.5l5 .8" fill="none" stroke="#E7BD58" stroke-width="3" stroke-linecap="round"/>
 </svg>
