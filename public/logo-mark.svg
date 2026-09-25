@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Les Humeurs à la Funes</title>
+  <desc id="desc">Symbole souriant inspiré du cinéma et des émotions.</desc>
+  <circle cx="32" cy="32" r="30" fill="#392B24"/>
+  <circle cx="32" cy="32" r="20" fill="#FFFAF2"/>
+  <circle cx="25" cy="28" r="2.6" fill="#392B24"/>
+  <circle cx="39" cy="28" r="2.6" fill="#392B24"/>
+  <path d="M22.5 36.5c2.7 5 7 7.5 9.5 7.5s6.8-2.5 9.5-7.5" fill="none" stroke="#392B24" stroke-width="3.2" stroke-linecap="round"/>
+  <circle cx="49" cy="14" r="6" fill="#E7BD58"/>
+  <path d="M46.5 14h5M49 11.5v5" stroke="#392B24" stroke-width="1.7" stroke-linecap="round"/>
+</svg>
