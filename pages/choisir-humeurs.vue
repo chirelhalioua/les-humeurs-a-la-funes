@@ -44,7 +44,16 @@ const getCurrentMoment = () => {
   return 'matin'
 }
 
+const momentOrder = ['matin', 'apres-midi', 'soir']
+
+const getCurrentMomentIndex = () => momentOrder.indexOf(getCurrentMoment())
+
 const moment = ref(getCurrentMoment())
+
+const isMomentAvailable = (key: string) => {
+  const currentIndex = getCurrentMomentIndex()
+  return momentOrder.indexOf(key) <= currentIndex
+}
 const exactTime = ref('')
 
 const currentMood = computed(() => moods.value[currentIndex.value] || null)
@@ -271,12 +280,14 @@ const saveMood = async () => {
             type="button"
             class="moment-option"
             :class="{ active: moment === item.key }"
-            @click="selected && (moment = item.key)"
+            :disabled="!selected || !isMomentAvailable(item.key)"
+            @click="selected && isMomentAvailable(item.key) && (moment = item.key)"
           >
             <span class="moment-emoji">{{ item.emoji }}</span>
             <strong>{{ item.label }}</strong>
             <small>{{ item.hours }}</small>
             <span v-if="todayEntries.some(entry => entry.moment === item.key)" class="moment-saved">✓ noté</span>
+            <span v-else-if="!isMomentAvailable(item.key)" class="moment-saved moment-future">Pas encore</span>
           </button>
         </div>
 
