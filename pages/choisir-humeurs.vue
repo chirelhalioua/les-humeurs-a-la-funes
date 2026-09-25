@@ -25,6 +25,45 @@ const moments = [
 ]
 const currentMood = computed(() => moods.value[currentIndex.value] || null)
 
+const swipeStartX = ref<number | null>(null)
+const swipeStartY = ref<number | null>(null)
+const swiping = ref(false)
+
+const handleSwipeStart = (event: TouchEvent) => {
+  const touch = event.touches[0]
+  if (!touch) return
+  swipeStartX.value = touch.clientX
+  swipeStartY.value = touch.clientY
+  swiping.value = false
+}
+
+const handleSwipeMove = (event: TouchEvent) => {
+  if (swipeStartX.value === null || swipeStartY.value === null) return
+  const touch = event.touches[0]
+  if (!touch) return
+  const dx = touch.clientX - swipeStartX.value
+  const dy = touch.clientY - swipeStartY.value
+  if (Math.abs(dx) > 12 && Math.abs(dx) > Math.abs(dy)) {
+    swiping.value = true
+    event.preventDefault()
+  }
+}
+
+const handleSwipeEnd = (event: TouchEvent) => {
+  if (swipeStartX.value === null || swipeStartY.value === null) return
+  const touch = event.changedTouches[0]
+  if (!touch) return
+  const dx = touch.clientX - swipeStartX.value
+  const dy = touch.clientY - swipeStartY.value
+  if (Math.abs(dx) >= 55 && Math.abs(dx) > Math.abs(dy) * 1.2) {
+    if (dx < 0) nextMood()
+    else previousMood()
+  }
+  swipeStartX.value = null
+  swipeStartY.value = null
+  window.setTimeout(() => { swiping.value = false }, 0)
+}
+
 const goTo = (index: number) => {
   if (!moods.value.length) return
   currentIndex.value = (index + moods.value.length) % moods.value.length
@@ -97,7 +136,10 @@ const saveMood = async () => {
         <article
           class="mood-slide"
           :class="['tone-' + currentMood.tone, { selected: selected?.key === currentMood.key }]"
-          @click="selectCurrent"
+          @click="!swiping && selectCurrent"
+          @touchstart.passive="handleSwipeStart"
+          @touchmove="handleSwipeMove"
+          @touchend="handleSwipeEnd"
         >
           <div class="slide-photo">
             <img
