@@ -1884,8 +1884,11 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 /* Dernière finition du profil : icône photo réellement positionnée + titre plus dense */
 .profile-avatar-camera{
   position:absolute!important;
-  right:5px;
-  bottom:5px;
+  left:50%;
+  top:50%;
+  right:auto;
+  bottom:auto;
+  transform:translate(-50%,-50%);
   width:26px!important;
   height:26px!important;
   border-radius:50%;
@@ -1910,8 +1913,11 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 }
 @media(max-width:560px){
   .profile-avatar-camera{
-    right:2px;
-    bottom:2px;
+    left:50%;
+    top:50%;
+    right:auto;
+    bottom:auto;
+    transform:translate(-50%,-50%);
     width:21px!important;
     height:21px!important;
     border-width:1px;
