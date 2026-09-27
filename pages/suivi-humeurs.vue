@@ -289,13 +289,15 @@ const yearInsight = computed(() => {
           <p>Une vue d’ensemble légère pour voir les grands repères de ton année.</p>
         </div>
 
-        <section class="year-timeline">
-          <article v-for="month in monthSummaries" :key="month.month" class="year-month" :class="{ 'has-data': month.count }">
-            <strong>{{ month.label }}</strong>
-            <span v-if="month.dominant">{{ month.dominant.emoji }}</span>
-            <span v-else class="year-month-empty">·</span>
-            <small>{{ month.count ? month.count + ' humeur' + (month.count > 1 ? 's' : '') : 'Pas noté' }}</small>
-          </article>
+        <section class="year-flow">
+          <div class="year-flow-line" aria-hidden="true"></div>
+          <div v-for="month in monthSummaries" :key="month.month" class="year-flow-month" :class="{ 'has-data': month.count }">
+            <span class="year-flow-dot">{{ month.dominant?.emoji || '·' }}</span>
+            <div class="year-flow-content">
+              <strong>{{ month.label }}</strong>
+              <small>{{ month.count ? month.count + ' humeur' + (month.count > 1 ? 's' : '') : 'Pas noté' }}</small>
+            </div>
+          </div>
         </section>
 
         <div class="year-overview">
