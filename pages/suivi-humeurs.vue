@@ -113,6 +113,36 @@ const weekMoodStats = computed(() => {
   return [...counts.values()].sort((a, b) => b.count - a.count)
 })
 const weekDominant = computed(() => weekMoodStats.value[0] || null)
+
+const moodColors: Record<string, string> = {
+  Heureux: '#E7BD58',
+  Bien: '#A9B89D',
+  Moyen: '#DED0B6',
+  Fatigué: '#E7A58E',
+  Énervé: '#392B24'
+}
+
+const donutSegments = (stats: Array<{ name: string; emoji: string; count: number }>) => {
+  const total = stats.reduce((sum, item) => sum + item.count, 0)
+  if (!total) return []
+  const radius = 52
+  const circumference = 2 * Math.PI * radius
+  let offset = 0
+  return stats.map(item => {
+    const length = (item.count / total) * circumference
+    const segment = {
+      ...item,
+      percent: Math.round((item.count / total) * 100),
+      color: moodColors[item.name] || '#A9B89D',
+      dasharray: `${length} ${circumference - length}`,
+      dashoffset: -offset
+    }
+    offset += length
+    return segment
+  })
+}
+
+const weekDonut = computed(() => donutSegments(weekMoodStats.value))
 const weekFilledDays = computed(() => weekDays.value.filter(day => day.entries.length).length)
 
 const weekInsight = computed(() => {
@@ -179,6 +209,7 @@ const yearMoodStats = computed(() => {
 })
 
 const yearDominant = computed(() => yearMoodStats.value[0] || null)
+const yearDonut = computed(() => donutSegments(yearMoodStats.value.map(item => ({ ...item, emoji: item.emoji }))))
 const yearFilledDays = computed(() => new Set(yearEntries.value.map(entry => getEntryDayKey(entry))).size)
 
 const yearInsight = computed(() => {
@@ -293,15 +324,30 @@ const yearInsight = computed(() => {
         <section v-if="weekEntries.length" class="tracking-card mood-distribution">
           <div class="tracking-card-heading">
             <span class="eyebrow"><span></span> mes humeurs</span>
-            <h2>Ce qui revient<br><i>cette semaine.</i></h2>
+            <h2>Ma semaine<br><i>en un coup d’œil.</i></h2>
           </div>
-          <div class="mood-bars">
-            <div v-for="item in weekMoodStats" :key="item.name" class="mood-bar">
-              <div class="mood-bar-label">
-                <span>{{ item.emoji }} {{ item.name }}</span>
-                <strong>{{ item.count }}</strong>
+          <div class="donut-layout">
+            <div class="mood-donut" aria-hidden="true">
+              <svg viewBox="0 0 120 120">
+                <circle class="donut-track" cx="60" cy="60" r="52" />
+                <circle
+                  v-for="item in weekDonut"
+                  :key="item.name"
+                  class="donut-segment"
+                  cx="60" cy="60" r="52"
+                  :stroke="item.color"
+                  :stroke-dasharray="item.dasharray"
+                  :stroke-dashoffset="item.dashoffset"
+                />
+              </svg>
+              <div class="donut-center"><strong>{{ weekEntries.length }}</strong><span>humeurs</span></div>
+            </div>
+            <div class="donut-legend">
+              <div v-for="item in weekDonut" :key="item.name" class="donut-legend-item">
+                <span class="donut-dot" :style="{ background: item.color }"></span>
+                <span class="donut-name">{{ item.emoji }} {{ item.name }}</span>
+                <strong>{{ item.percent }}%</strong>
               </div>
-              <div class="mood-bar-track"><span :style="{ width: ((item.count / Math.max(1, ...weekMoodStats.map(item => item.count))) * 100) + '%' }"></span></div>
             </div>
           </div>
         </section>
@@ -351,13 +397,28 @@ const yearInsight = computed(() => {
             <span class="eyebrow"><span></span> vue d’ensemble</span>
             <h2>Mes humeurs<br><i>au fil de l’année.</i></h2>
           </div>
-          <div class="mood-bars">
-            <div v-for="item in yearMoodStats" :key="item.name" class="mood-bar">
-              <div class="mood-bar-label">
-                <span>{{ item.emoji }} {{ item.name }}</span>
-                <strong>{{ item.count }}</strong>
+          <div class="donut-layout">
+            <div class="mood-donut" aria-hidden="true">
+              <svg viewBox="0 0 120 120">
+                <circle class="donut-track" cx="60" cy="60" r="52" />
+                <circle
+                  v-for="item in yearDonut"
+                  :key="item.name"
+                  class="donut-segment"
+                  cx="60" cy="60" r="52"
+                  :stroke="item.color"
+                  :stroke-dasharray="item.dasharray"
+                  :stroke-dashoffset="item.dashoffset"
+                />
+              </svg>
+              <div class="donut-center"><strong>{{ yearEntries.length }}</strong><span>humeurs</span></div>
+            </div>
+            <div class="donut-legend">
+              <div v-for="item in yearDonut" :key="item.name" class="donut-legend-item">
+                <span class="donut-dot" :style="{ background: item.color }"></span>
+                <span class="donut-name">{{ item.emoji }} {{ item.name }}</span>
+                <strong>{{ item.percent }}%</strong>
               </div>
-              <div class="mood-bar-track"><span :style="{ width: ((item.count / Math.max(1, ...yearMoodStats.map(item => item.count))) * 100) + '%' }"></span></div>
             </div>
           </div>
           <p class="tracking-disclaimer">Ces chiffres correspondent uniquement aux humeurs que tu as enregistrées.</p>
