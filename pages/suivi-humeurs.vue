@@ -329,12 +329,12 @@ const yearInsight = computed(() => {
           <div class="donut-layout">
             <div class="mood-donut" aria-hidden="true">
               <svg viewBox="0 0 120 120">
-                <circle class="donut-track" cx="60" cy="60" r="52" />
+                <circle class="donut-track" cx="60" cy="60" r="26" />
                 <circle
                   v-for="item in weekDonut"
                   :key="item.name"
                   class="donut-segment"
-                  cx="60" cy="60" r="52"
+                  cx="60" cy="60" r="26"
                   :stroke="item.color"
                   :stroke-dasharray="item.dasharray"
                   :stroke-dashoffset="item.dashoffset"
@@ -400,12 +400,12 @@ const yearInsight = computed(() => {
           <div class="donut-layout">
             <div class="mood-donut" aria-hidden="true">
               <svg viewBox="0 0 120 120">
-                <circle class="donut-track" cx="60" cy="60" r="52" />
+                <circle class="donut-track" cx="60" cy="60" r="26" />
                 <circle
                   v-for="item in yearDonut"
                   :key="item.name"
                   class="donut-segment"
-                  cx="60" cy="60" r="52"
+                  cx="60" cy="60" r="26"
                   :stroke="item.color"
                   :stroke-dasharray="item.dasharray"
                   :stroke-dashoffset="item.dashoffset"
