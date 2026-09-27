@@ -2512,49 +2512,60 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 .mood-distribution{
   margin-top:16px;
 }
-.year-timeline{
-  display:grid;
-  grid-template-columns:repeat(12,1fr);
-  gap:5px;
-  align-items:stretch;
-}
-.year-timeline .year-month{
-  min-height:105px;
-  padding:12px 5px;
-  border-radius:17px;
-}
-.year-overview{
+.year-flow{
+  position:relative;
   display:flex;
-  justify-content:center;
+  align-items:flex-start;
   gap:0;
-  margin-top:16px;
-  padding:14px 8px;
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-radius:18px;
+  margin:8px 0 2px;
+  padding:20px 4px 12px;
+  overflow-x:auto;
+  scrollbar-width:none;
 }
-.year-overview div{
-  min-width:0;
-  flex:1;
+.year-flow::-webkit-scrollbar{display:none}
+.year-flow-line{
+  position:absolute;
+  left:24px;
+  right:24px;
+  top:42px;
+  height:2px;
+  background:var(--line);
+}
+.year-flow-month{
+  position:relative;
+  z-index:1;
+  flex:1 0 76px;
   text-align:center;
-  padding:0 12px;
-  border-right:1px solid var(--line);
 }
-.year-overview div:last-child{border-right:0}
-.year-overview strong,.year-overview span{display:block}
-.year-overview strong{
-  color:var(--cocoa);
-  font-family:Sora,var(--font);
-  font-size:18px;
-  letter-spacing:-.04em;
+.year-flow-dot{
+  width:34px;
+  height:34px;
+  margin:0 auto;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--paper);
+  border:2px solid var(--line);
+  font-size:15px;
+  box-shadow:0 4px 10px rgba(57,43,36,.05);
 }
-.year-overview span{
-  margin-top:3px;
+.year-flow-month.has-data .year-flow-dot{
+  border-color:var(--sage);
+  background:var(--sage-soft);
+}
+.year-flow-content{margin-top:9px}
+.year-flow-content strong,
+.year-flow-content small{display:block}
+.year-flow-content strong{
+  color:var(--brown);
+  font-size:8px;
+  text-transform:uppercase;
+}
+.year-flow-content small{
+  margin-top:4px;
   color:var(--muted);
-  font-size:7px;
-}
-@media(max-width:900px){
-  .year-timeline{grid-template-columns:repeat(6,1fr);gap:7px}
+  font-size:6.5px;
+  white-space:nowrap;
 }
 @media(max-width:560px){
   .insight-card{padding:16px;gap:10px;border-radius:18px}
@@ -2562,8 +2573,9 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .insight-card h3{font-size:13px}
   .insight-card p{font-size:8px}
   .week-meta{font-size:7px}
-  .year-timeline{grid-template-columns:repeat(4,1fr)}
-  .year-timeline .year-month{min-height:82px;padding:9px 4px}
+  .year-flow{padding-left:0;padding-right:0}
+  .year-flow-month{flex-basis:70px}
+  .year-flow-line{left:18px;right:18px;top:42px}
   .year-overview{border-radius:15px}
   .year-overview div{padding:0 5px}
   .year-overview strong{font-size:15px}
