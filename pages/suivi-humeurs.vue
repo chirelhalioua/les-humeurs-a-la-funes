@@ -142,7 +142,6 @@ const donutSegments = (stats: Array<{ name: string; emoji: string; count: number
   })
 }
 
-const weekDonut = computed(() => donutSegments(weekMoodStats.value))
 const weekFilledDays = computed(() => weekDays.value.filter(day => day.entries.length).length)
 
 const weekInsight = computed(() => {
@@ -206,18 +205,6 @@ const selectedMonthEntries = computed(() => {
   const prefix = `${year.value}-${pad(selectedYearMonth.value + 1)}-`
   return entries.value.filter(entry => getEntryDayKey(entry).startsWith(prefix))
 })
-
-const selectedMonthMoodStats = computed(() => {
-  const counts = new Map<string, number>()
-  selectedMonthEntries.value.forEach(entry => counts.set(entry.moodName, (counts.get(entry.moodName) || 0) + 1))
-  return [...counts.entries()]
-    .sort((a, b) => b[1] - a[1])
-    .map(([name, count]) => ({ name, emoji: moodEmojis[name] || '🙂', count }))
-})
-
-const selectedMonthDonut = computed(() => donutSegments(
-  selectedMonthMoodStats.value.map(item => ({ ...item }))
-))
 
 const changeYearMonth = (direction: number) => {
   selectedYearMonth.value = Math.min(11, Math.max(0, selectedYearMonth.value + direction))
@@ -348,34 +335,12 @@ const yearInsight = computed(() => {
           </div>
         </section>
 
-        <section v-if="weekEntries.length" class="tracking-card mood-distribution">
-          <div class="tracking-card-heading">
-            <span class="eyebrow"><span></span> mes humeurs</span>
-            <h2>Ma semaine<br><i>en un coup d’œil.</i></h2>
-          </div>
-          <div class="donut-layout">
-            <div class="mood-donut" aria-hidden="true">
-              <svg viewBox="0 0 120 120">
-                <circle class="donut-track" cx="60" cy="60" r="26" />
-                <circle
-                  v-for="item in weekDonut"
-                  :key="item.name"
-                  class="donut-segment"
-                  cx="60" cy="60" r="26"
-                  :stroke="item.color"
-                  :stroke-dasharray="item.dasharray"
-                  :stroke-dashoffset="item.dashoffset"
-                />
-              </svg>
-              <div class="donut-center"><strong>{{ weekEntries.length }}</strong><span>humeurs</span></div>
-            </div>
-            <div class="donut-legend">
-              <div v-for="item in weekDonut" :key="item.name" class="donut-legend-item">
-                <span class="donut-dot" :style="{ background: item.color }"></span>
-                <span class="donut-name">{{ item.emoji }} {{ item.name }}</span>
-                <strong>{{ item.percent }}%</strong>
-              </div>
-            </div>
+        <section class="insight-card insight-sage">
+          <div class="insight-mark">✨</div>
+          <div>
+            <span class="eyebrow"><span></span> mon repère de la semaine</span>
+            <h3>{{ weekDominant ? weekDominant.emoji + " " + weekDominant.name : "À découvrir" }}</h3>
+            <p>{{ weekDominant ? "C’est l’humeur que tu as le plus souvent enregistrée cette semaine." : "Continue à noter quelques humeurs pour faire apparaître tes repères." }}</p>
           </div>
         </section>
       </div>
@@ -421,21 +386,10 @@ const yearInsight = computed(() => {
             </p>
             <p v-else>Aucune humeur enregistrée ce mois-ci.</p>
 
-            <div v-if="selectedMonthEntries.length" class="month-focus-chart">
-              <div class="mood-pie mood-pie-small" aria-hidden="true">
-                <svg viewBox="0 0 120 120">
-                  <circle class="donut-track" cx="60" cy="60" r="26" />
-                  <circle
-                    v-for="item in selectedMonthDonut"
-                    :key="item.name"
-                    class="donut-segment"
-                    cx="60" cy="60" r="26"
-                    :stroke="item.color"
-                    :stroke-dasharray="item.dasharray"
-                    :stroke-dashoffset="item.dashoffset"
-                  />
-                </svg>
-              </div>
+            <div class="month-focus-facts">
+              <span>{{ selectedMonthEntries.length }} humeur{{ selectedMonthEntries.length > 1 ? 's' : '' }} enregistrée{{ selectedMonthEntries.length > 1 ? 's' : '' }}</span>
+              <strong v-if="selectedMonthSummary.dominant">{{ selectedMonthSummary.dominant.emoji }} {{ selectedMonthSummary.dominant.name }}</strong>
+            </div>
               <div class="donut-legend">
                 <div v-for="item in selectedMonthDonut" :key="item.name" class="donut-legend-item">
                   <span class="donut-dot" :style="{ background: item.color }"></span>
