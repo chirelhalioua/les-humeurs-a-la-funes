@@ -125,7 +125,7 @@ const moodColors: Record<string, string> = {
 const donutSegments = (stats: Array<{ name: string; emoji: string; count: number }>) => {
   const total = stats.reduce((sum, item) => sum + item.count, 0)
   if (!total) return []
-  const radius = 52
+  const radius = 26
   const circumference = 2 * Math.PI * radius
   let offset = 0
   return stats.map(item => {
@@ -195,6 +195,33 @@ const monthSummaries = computed(() =>
     }
   })
 )
+
+const selectedYearMonth = ref(todayDate.value.getMonth())
+
+const selectedMonthSummary = computed(() =>
+  monthSummaries.value[selectedYearMonth.value]
+)
+
+const selectedMonthEntries = computed(() => {
+  const prefix = `${year.value}-${pad(selectedYearMonth.value + 1)}-`
+  return entries.value.filter(entry => getEntryDayKey(entry).startsWith(prefix))
+})
+
+const selectedMonthMoodStats = computed(() => {
+  const counts = new Map<string, number>()
+  selectedMonthEntries.value.forEach(entry => counts.set(entry.moodName, (counts.get(entry.moodName) || 0) + 1))
+  return [...counts.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .map(([name, count]) => ({ name, emoji: moodEmojis[name] || '🙂', count }))
+})
+
+const selectedMonthDonut = computed(() => donutSegments(
+  selectedMonthMoodStats.value.map(item => ({ ...item }))
+))
+
+const changeYearMonth = (direction: number) => {
+  selectedYearMonth.value = Math.min(11, Math.max(0, selectedYearMonth.value + direction))
+}
 
 const yearEntries = computed(() =>
   entries.value.filter(entry => getEntryDayKey(entry).startsWith(`${year.value}-`))
@@ -375,6 +402,49 @@ const yearInsight = computed(() => {
               <small>{{ month.count ? month.count + ' humeur' + (month.count > 1 ? 's' : '') : 'Pas noté' }}</small>
             </div>
           </div>
+        </section>
+
+        <section class="month-focus">
+          <button class="month-focus-arrow" type="button" :disabled="selectedYearMonth === 0" @click="changeYearMonth(-1)" aria-label="Mois précédent">←</button>
+          <div class="month-focus-main">
+            <div class="month-focus-heading">
+              <div>
+                <span class="eyebrow"><span></span> mois sélectionné</span>
+                <h3>{{ selectedMonthSummary.label }}</h3>
+              </div>
+              <span v-if="selectedMonthSummary.dominant" class="month-focus-mood">{{ selectedMonthSummary.dominant.emoji }}</span>
+            </div>
+            <p v-if="selectedMonthEntries.length">
+              {{ selectedMonthEntries.length }} humeur{{ selectedMonthEntries.length > 1 ? 's' : '' }} enregistrée{{ selectedMonthEntries.length > 1 ? 's' : '' }} ce mois-ci.
+              <template v-if="selectedMonthSummary.dominant"> L’humeur la plus présente est {{ selectedMonthSummary.dominant.emoji }} {{ selectedMonthSummary.dominant.name }}.</template>
+            </p>
+            <p v-else>Aucune humeur enregistrée ce mois-ci.</p>
+
+            <div v-if="selectedMonthEntries.length" class="month-focus-chart">
+              <div class="mood-pie mood-pie-small" aria-hidden="true">
+                <svg viewBox="0 0 120 120">
+                  <circle class="donut-track" cx="60" cy="60" r="26" />
+                  <circle
+                    v-for="item in selectedMonthDonut"
+                    :key="item.name"
+                    class="donut-segment"
+                    cx="60" cy="60" r="26"
+                    :stroke="item.color"
+                    :stroke-dasharray="item.dasharray"
+                    :stroke-dashoffset="item.dashoffset"
+                  />
+                </svg>
+              </div>
+              <div class="donut-legend">
+                <div v-for="item in selectedMonthDonut" :key="item.name" class="donut-legend-item">
+                  <span class="donut-dot" :style="{ background: item.color }"></span>
+                  <span class="donut-name">{{ item.emoji }} {{ item.name }}</span>
+                  <strong>{{ item.percent }}%</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="month-focus-arrow" type="button" :disabled="selectedYearMonth === 11" @click="changeYearMonth(1)" aria-label="Mois suivant">→</button>
         </section>
 
         <div class="year-overview">
