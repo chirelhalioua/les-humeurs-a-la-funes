@@ -2457,3 +2457,115 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 .profile-avatar{
   flex:none;
 }
+
+
+/* Nouvelle présentation du suivi : plus éditoriale, moins "tableau de bord" */
+.insight-card{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  margin-top:16px;
+  padding:20px 22px;
+  background:var(--sage-soft);
+  border:1px solid rgba(169,184,157,.65);
+  border-radius:22px;
+}
+.insight-card.insight-sage{background:var(--sage-soft)}
+.insight-card.insight-gold{
+  background:rgba(231,189,88,.14);
+  border-color:rgba(231,189,88,.48);
+}
+.insight-mark{
+  width:40px;
+  height:40px;
+  flex:none;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--paper);
+  font-size:18px;
+  box-shadow:0 4px 12px rgba(57,43,36,.06);
+}
+.insight-card h3{
+  margin:7px 0 4px;
+  font-family:Sora,var(--font);
+  font-size:15px;
+  letter-spacing:-.02em;
+}
+.insight-card p{
+  margin:0;
+  color:var(--brown);
+  font-size:9px;
+  line-height:1.6;
+  max-width:720px;
+}
+.week-meta{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:14px;
+  padding-top:12px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:8px;
+}
+.mood-distribution{
+  margin-top:16px;
+}
+.year-timeline{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:5px;
+  align-items:stretch;
+}
+.year-timeline .year-month{
+  min-height:105px;
+  padding:12px 5px;
+  border-radius:17px;
+}
+.year-overview{
+  display:flex;
+  justify-content:center;
+  gap:0;
+  margin-top:16px;
+  padding:14px 8px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:18px;
+}
+.year-overview div{
+  min-width:0;
+  flex:1;
+  text-align:center;
+  padding:0 12px;
+  border-right:1px solid var(--line);
+}
+.year-overview div:last-child{border-right:0}
+.year-overview strong,.year-overview span{display:block}
+.year-overview strong{
+  color:var(--cocoa);
+  font-family:Sora,var(--font);
+  font-size:18px;
+  letter-spacing:-.04em;
+}
+.year-overview span{
+  margin-top:3px;
+  color:var(--muted);
+  font-size:7px;
+}
+@media(max-width:900px){
+  .year-timeline{grid-template-columns:repeat(6,1fr);gap:7px}
+}
+@media(max-width:560px){
+  .insight-card{padding:16px;gap:10px;border-radius:18px}
+  .insight-mark{width:34px;height:34px;font-size:15px}
+  .insight-card h3{font-size:13px}
+  .insight-card p{font-size:8px}
+  .week-meta{font-size:7px}
+  .year-timeline{grid-template-columns:repeat(4,1fr)}
+  .year-timeline .year-month{min-height:82px;padding:9px 4px}
+  .year-overview{border-radius:15px}
+  .year-overview div{padding:0 5px}
+  .year-overview strong{font-size:15px}
+  .year-overview span{font-size:6px}
+}
