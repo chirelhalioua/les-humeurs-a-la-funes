@@ -394,7 +394,8 @@ const yearInsight = computed(() => {
             :key="month.month"
             :ref="month.month === currentMonth ? setCurrentMonthRef : undefined"
             class="year-flow-month"
-            :class="{ 'has-data': month.count, current: month.month === currentMonth }"
+            :class="{ 'has-data': month.count, current: month.month === currentMonth, selected: month.month === selectedYearMonth }"
+            @click="selectedYearMonth = month.month"
           >
             <span class="year-flow-dot">{{ month.dominant?.emoji || '·' }}</span>
             <div class="year-flow-content">
