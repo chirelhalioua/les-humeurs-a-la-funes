@@ -131,13 +131,23 @@ const setCurrentMonthRef = (el: Element | null) => {
   currentMonthRef.value = el as HTMLElement | null
 }
 
-onMounted(async () => {
+const centerCurrentMonth = async () => {
   await nextTick()
-  const flow = yearFlowRef.value
-  const month = currentMonthRef.value
-  if (flow && month) {
-    flow.scrollLeft = Math.max(0, month.offsetLeft - (flow.clientWidth - month.offsetWidth) / 2)
-  }
+  requestAnimationFrame(() => {
+    const flow = yearFlowRef.value
+    const month = currentMonthRef.value
+    if (flow && month) {
+      flow.scrollLeft = Math.max(0, month.offsetLeft - (flow.clientWidth - month.offsetWidth) / 2)
+    }
+  })
+}
+
+watch(activeView, (view) => {
+  if (view === 'annee') centerCurrentMonth()
+})
+
+onMounted(() => {
+  if (activeView.value === 'annee') centerCurrentMonth()
 })
 
 const monthSummaries = computed(() =>
