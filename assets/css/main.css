@@ -2595,6 +2595,15 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   border-color:var(--sage);
   background:var(--sage-soft);
 }
+.year-flow-month.current .year-flow-dot{
+  border-color:var(--gold);
+  background:var(--gold);
+  box-shadow:0 5px 14px rgba(231,189,88,.22);
+}
+.year-flow-month.current .year-flow-content strong{
+  color:var(--cocoa);
+}
+
 .year-flow-content{margin-top:9px}
 .year-flow-content strong,
 .year-flow-content small{display:block}
