@@ -124,6 +124,13 @@ const weekInsight = computed(() => {
 })
 
 const year = computed(() => todayDate.value.getFullYear())
+const currentMonth = computed(() => todayDate.value.getMonth())
+const currentMonthRef = ref<HTMLElement | null>(null)
+
+onMounted(async () => {
+  await nextTick()
+  currentMonthRef.value?.scrollIntoView({ behavior: 'instant', block: 'nearest', inline: 'center' })
+})
 
 const monthSummaries = computed(() =>
   Array.from({ length: 12 }, (_, month) => {
