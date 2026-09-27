@@ -126,6 +126,9 @@ const weekInsight = computed(() => {
 const year = computed(() => todayDate.value.getFullYear())
 const currentMonth = computed(() => todayDate.value.getMonth())
 const currentMonthRef = ref<HTMLElement | null>(null)
+const setCurrentMonthRef = (el: Element | null) => {
+  currentMonthRef.value = el as HTMLElement | null
+}
 
 onMounted(async () => {
   await nextTick()
