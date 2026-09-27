@@ -2512,6 +2512,47 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 .mood-distribution{
   margin-top:16px;
 }
+.year-overview{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  margin-top:16px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 8px 22px rgba(57,43,36,.05);
+}
+.year-overview div{
+  position:relative;
+  min-width:0;
+  padding:16px 10px 15px;
+  text-align:center;
+}
+.year-overview div+div::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:14px;
+  bottom:14px;
+  width:1px;
+  background:var(--line);
+}
+.year-overview strong{
+  display:block;
+  color:var(--cocoa);
+  font-family:Sora,var(--font);
+  font-size:20px;
+  line-height:1;
+  letter-spacing:-.04em;
+}
+.year-overview span{
+  display:block;
+  margin-top:7px;
+  color:var(--muted);
+  font-size:7.5px;
+  line-height:1.2;
+}
+.year-overview div:last-child strong{font-size:22px}
 .year-flow{
   position:relative;
   display:flex;
@@ -2526,8 +2567,9 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 .year-flow-line{
   position:absolute;
   left:24px;
-  right:24px;
   top:42px;
+  width:calc(12 * 76px - 48px);
+  min-width:calc(12 * 76px - 48px);
   height:2px;
   background:var(--line);
 }
@@ -2575,9 +2617,11 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .week-meta{font-size:7px}
   .year-flow{padding-left:0;padding-right:0}
   .year-flow-month{flex-basis:70px}
-  .year-flow-line{left:18px;right:18px;top:42px}
-  .year-overview{border-radius:15px}
-  .year-overview div{padding:0 5px}
+  .year-flow-line{left:18px;top:42px;width:calc(12 * 70px - 36px);min-width:calc(12 * 70px - 36px)}
+  .year-overview{border-radius:16px}
+  .year-overview div{padding:14px 5px}
+  .year-overview div+div::before{top:11px;bottom:11px}
   .year-overview strong{font-size:15px}
-  .year-overview span{font-size:6px}
+  .year-overview span{font-size:6.5px}
+  .year-overview div:last-child strong{font-size:18px}
 }
