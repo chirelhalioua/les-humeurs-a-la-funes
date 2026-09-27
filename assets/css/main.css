@@ -2658,7 +2658,7 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 .donut-track,
 .donut-segment{
   fill:none;
-  stroke-width:12;
+  stroke-width:52;
 }
 .donut-track{stroke:var(--cream)}
 .donut-segment{
