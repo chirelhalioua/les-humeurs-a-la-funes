@@ -39,21 +39,28 @@ const moments = [
 
 const getCurrentMoment = () => {
   const hour = new Date().getHours()
-  if (hour >= 18) return 'soir'
-  if (hour >= 12) return 'apres-midi'
-  return 'matin'
+  if (hour >= 8 && hour < 12) return 'matin'
+  if (hour >= 12 && hour < 18) return 'apres-midi'
+  if (hour >= 18 && hour < 24) return 'soir'
+  return null
 }
 
 const momentOrder = ['matin', 'apres-midi', 'soir']
 
-const getCurrentMomentIndex = () => momentOrder.indexOf(getCurrentMoment())
+const getCurrentMomentIndex = () => {
+  const current = getCurrentMoment()
+  return current ? momentOrder.indexOf(current) : -1
+}
 
-const moment = ref(getCurrentMoment())
+const currentMoment = getCurrentMoment()
+const moment = ref(currentMoment || 'matin')
 
 const isMomentAvailable = (key: string) => {
   const currentIndex = getCurrentMomentIndex()
-  return momentOrder.indexOf(key) <= currentIndex
+  return currentIndex >= 0 && momentOrder.indexOf(key) <= currentIndex
 }
+
+const isWithinMoodHours = computed(() => getCurrentMoment() !== null)
 const exactTime = ref('')
 
 const currentMood = computed(() => moods.value[currentIndex.value] || null)
@@ -160,7 +167,7 @@ const selectCurrent = () => {
 }
 
 const saveMood = async () => {
-  if (!selected.value || saving.value) return
+  if (!selected.value || saving.value || !isWithinMoodHours.value || !isMomentAvailable(moment.value)) return
   saving.value = true
   saveError.value = ''
   try {
@@ -264,12 +271,13 @@ const saveMood = async () => {
       </div>
       <div class="carousel-counter">{{ currentIndex + 1 }} / {{ moods.length }}</div>
 
-      <div class="mood-time" :class="{ disabled: !selected }">
+      <div class="mood-time" :class="{ disabled: !selected || !isWithinMoodHours }">
         <div class="mood-time-heading">
           <span class="eyebrow"><span></span> ② quand ?</span>
           <p v-if="selected">
             {{ isEditing ? 'Modifie ton humeur pour ce moment si tu le souhaites.' : 'Choisis le moment où tu ressens cette humeur.' }}
           </p>
+          <p v-else-if="!isWithinMoodHours">Les humeurs sont disponibles de 08:00 à 00:00.</p>
           <p v-else>Choisis d’abord ton humeur ci-dessus.</p>
         </div>
 
@@ -293,7 +301,7 @@ const saveMood = async () => {
 
         <label class="exact-time">
           Heure précise <span>(facultatif)</span>
-          <input v-model="exactTime" type="time" :disabled="!selected">
+          <input v-model="exactTime" type="time" :disabled="!selected || !isWithinMoodHours">
         </label>
 
         <p v-if="currentEntry" class="mood-update-note">
@@ -301,7 +309,7 @@ const saveMood = async () => {
         </p>
 
         <p v-if="saveError" class="mood-save-error">{{ saveError }}</p>
-        <button type="button" class="mood-final-save" :disabled="!selected || saving" @click="saveMood">
+        <button type="button" class="mood-final-save" :disabled="!selected || saving || !isWithinMoodHours || !isMomentAvailable(moment)" @click="saveMood">
           {{ saving ? 'Enregistrement…' : isEditing ? 'Mettre à jour mon humeur' : 'Enregistrer mon humeur' }} <span>→</span>
         </button>
       </div>
