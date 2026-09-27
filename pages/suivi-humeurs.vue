@@ -125,6 +125,7 @@ const weekInsight = computed(() => {
 
 const year = computed(() => todayDate.value.getFullYear())
 const currentMonth = computed(() => todayDate.value.getMonth())
+const yearFlowRef = ref<HTMLElement | null>(null)
 const currentMonthRef = ref<HTMLElement | null>(null)
 const setCurrentMonthRef = (el: Element | null) => {
   currentMonthRef.value = el as HTMLElement | null
@@ -132,7 +133,11 @@ const setCurrentMonthRef = (el: Element | null) => {
 
 onMounted(async () => {
   await nextTick()
-  currentMonthRef.value?.scrollIntoView({ behavior: 'instant', block: 'nearest', inline: 'center' })
+  const flow = yearFlowRef.value
+  const month = currentMonthRef.value
+  if (flow && month) {
+    flow.scrollLeft = Math.max(0, month.offsetLeft - (flow.clientWidth - month.offsetWidth) / 2)
+  }
 })
 
 const monthSummaries = computed(() =>
@@ -299,9 +304,15 @@ const yearInsight = computed(() => {
           <p>Une vue d’ensemble légère pour voir les grands repères de ton année.</p>
         </div>
 
-        <section class="year-flow">
+        <section ref="yearFlowRef" class="year-flow">
           <div class="year-flow-line" aria-hidden="true"></div>
-          <div v-for="month in monthSummaries" :key="month.month" class="year-flow-month" :class="{ 'has-data': month.count }">
+          <div
+            v-for="month in monthSummaries"
+            :key="month.month"
+            :ref="month.month === currentMonth ? setCurrentMonthRef : undefined"
+            class="year-flow-month"
+            :class="{ 'has-data': month.count, current: month.month === currentMonth }"
+          >
             <span class="year-flow-dot">{{ month.dominant?.emoji || '·' }}</span>
             <div class="year-flow-content">
               <strong>{{ month.label }}</strong>
