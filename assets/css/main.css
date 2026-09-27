@@ -2836,3 +2836,26 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   }
   .mood-pie-small{width:78px;height:78px}
 }
+
+
+.month-focus-facts{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:12px;
+}
+.month-focus-facts span,
+.month-focus-facts strong{
+  display:inline-flex;
+  align-items:center;
+  min-height:28px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:var(--cream);
+  color:var(--brown);
+  font-size:8px;
+}
+.month-focus-facts strong{
+  background:var(--sage-soft);
+  color:var(--cocoa);
+}
