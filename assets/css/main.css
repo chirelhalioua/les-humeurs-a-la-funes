@@ -1860,7 +1860,7 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 }
 .profile-avatar{
   position:relative;
-  overflow:hidden;
+  overflow:visible;
   border:0;
   padding:0;
   cursor:pointer;
@@ -1871,6 +1871,7 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   height:100%;
   display:block;
   object-fit:cover;
+  border-radius:50%;
 }
 .profile-avatar > span:first-child{
   display:grid;
@@ -1885,10 +1886,10 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 .profile-avatar-camera{
   position:absolute!important;
   left:50%;
-  top:50%;
+  top:auto;
   right:auto;
-  bottom:auto;
-  transform:translate(-50%,-50%);
+  bottom:-13px;
+  transform:translateX(-50%);
   width:26px!important;
   height:26px!important;
   border-radius:50%;
@@ -1914,10 +1915,10 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 @media(max-width:560px){
   .profile-avatar-camera{
     left:50%;
-    top:50%;
+    top:auto;
     right:auto;
-    bottom:auto;
-    transform:translate(-50%,-50%);
+    bottom:-10px;
+    transform:translateX(-50%);
     width:21px!important;
     height:21px!important;
     border-width:1px;
