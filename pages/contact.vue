@@ -27,7 +27,6 @@ async function submit() {
       <span class="eyebrow"><span></span> nous écrire</span>
       <h1>Une question ?<br><i>On t’écoute.</i></h1>
       <p>Une remarque, une question ou simplement envie de nous écrire ? Laisse-nous un message.</p>
-      <div class="cinema-note"><span>🎬</span> Un petit clin d’œil au cinéma de Louis de Funès.</div>
     </div>
 
     <div class="contact-layout">
