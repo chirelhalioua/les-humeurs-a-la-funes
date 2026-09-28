@@ -29,6 +29,11 @@ async function submit() {
       <p>Une remarque, une question ou simplement envie de nous écrire ? Laisse-nous un message.</p>
     </div>
 
+    <div class="contact-funes-note">
+      <span>« Mais c’est formidable ! »</span>
+      <small>Un petit clin d’œil à l’univers de Louis de Funès.</small>
+    </div>
+
     <div class="contact-layout">
       <div class="contact-card">
         <form v-if="!sent" class="contact-form" @submit.prevent="submit">
