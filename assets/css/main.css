@@ -2893,3 +2893,15 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   font-weight:600;
   opacity:.9;
 }
+
+
+.profile-name-trigger{
+  border:0;
+  background:none;
+  padding:0;
+  cursor:pointer;
+  text-align:left;
+}
+.profile-name-trigger:hover{
+  opacity:.8;
+}
