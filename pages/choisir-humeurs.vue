@@ -219,7 +219,7 @@ const saveMood = async () => {
     </div>
 
     <template v-else-if="currentMood">
-      <div class="mood-scene-label"><span></span> scène du jour</div>
+      <div class="mood-scene-label"><span>✦</span> Quelle ambiance aujourd’hui ?</div>
       <div class="mood-carousel">
         <button class="carousel-arrow carousel-prev" type="button" aria-label="Humeur précédente" @click="previousMood">‹</button>
 
@@ -246,7 +246,7 @@ const saveMood = async () => {
               <h2>{{ currentMood.name }}</h2>
             </div>
             <blockquote>« {{ currentMood.quote }} »</blockquote>
-            <p class="slide-film">🎬 {{ currentMood.film }}</p>
+            <p class="slide-film"><span>À l’affiche</span> {{ currentMood.film }}</p>
 
             <div class="slide-action">
               <span v-if="selected?.key === currentMood.key" class="selected-label">
