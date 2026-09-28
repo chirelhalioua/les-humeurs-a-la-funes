@@ -3045,3 +3045,56 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   font-weight:600;
   color:var(--cocoa);
 }
+
+
+.profile-funes-note,
+.contact-funes-note{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:18px 0 26px;
+  color:var(--brown);
+}
+.profile-funes-note > div{
+  display:grid;
+  gap:2px;
+}
+.profile-funes-note span:first-child{
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-weight:800;
+  color:var(--muted);
+}
+.profile-funes-note strong,
+.contact-funes-note span{
+  font-family:Caveat,cursive;
+  font-size:20px;
+  font-weight:600;
+}
+.profile-funes-note small,
+.contact-funes-note small{
+  color:var(--muted);
+  font-size:11px;
+}
+.profile-funes-mark{
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--gold-soft);
+  color:var(--brown);
+  font-size:14px;
+}
+.contact-funes-note{
+  justify-content:center;
+  gap:9px;
+  margin-top:0;
+}
+@media(max-width:560px){
+  .profile-funes-note,
+  .contact-funes-note{margin-bottom:20px}
+  .profile-funes-note strong,
+  .contact-funes-note span{font-size:18px}
+}
