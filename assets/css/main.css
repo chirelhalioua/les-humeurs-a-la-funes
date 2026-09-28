@@ -3100,46 +3100,24 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 }
 
 
+
 .profile-funes-note{
-  display:flex;
-  align-items:center;
-  gap:13px;
-  margin:20px 0 28px;
+  margin:18px 0 26px;
   padding:14px 18px;
-  border:1px solid rgba(57,43,36,.12);
-  border-left:4px solid var(--gold);
-  border-radius:16px;
-  background:linear-gradient(90deg,rgba(231,189,88,.10),rgba(255,250,242,.55));
+  border-left:3px solid var(--gold);
+  background:rgba(231,189,88,.07);
+  border-radius:0 14px 14px 0;
 }
-.profile-funes-star{
-  width:36px;
-  height:36px;
-  display:grid;
-  place-items:center;
-  border-radius:50%;
-  background:var(--gold-soft);
-  color:var(--brown);
-  font-size:14px;
-}
-.profile-funes-note div{display:grid;gap:2px}
-.profile-funes-note small,
-.contact-funes-note small{
-  font-size:8px;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  font-weight:800;
-  color:var(--muted);
-}
-.profile-funes-note strong,
-.contact-funes-note span{
+.profile-funes-note div{display:grid;gap:1px}
+.profile-funes-note strong{
   font-family:Caveat,cursive;
-  font-size:20px;
+  font-size:21px;
   font-weight:600;
   color:var(--brown);
 }
 .profile-funes-note em{
   font-family:Caveat,cursive;
-  font-size:14px;
+  font-size:13px;
   color:var(--muted);
 }
 .contact-funes-note{
@@ -3148,9 +3126,19 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   justify-content:center;
   gap:10px;
   margin:0 0 24px;
-  padding:12px 16px;
+  padding:11px 16px;
   border-top:1px solid rgba(57,43,36,.10);
   border-bottom:1px solid rgba(57,43,36,.10);
+}
+.contact-funes-note span{
+  font-family:Caveat,cursive;
+  font-size:19px;
+  font-weight:600;
+  color:var(--brown);
+}
+.contact-funes-note small{
+  font-size:10px;
+  color:var(--muted);
 }
 .funes-reference{
   display:grid;
@@ -3179,3 +3167,4 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .contact-funes-note span{font-size:18px}
   .contact-funes-note{display:grid;gap:2px;text-align:center;margin-bottom:20px}
 }
+
