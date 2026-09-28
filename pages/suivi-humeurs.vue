@@ -387,9 +387,15 @@ const yearInsight = computed(() => {
             </p>
             <p v-else>Aucune humeur enregistrée ce mois-ci.</p>
 
+            <div class="month-focus-facts">
+              <span>{{ selectedMonthEntries.length }} humeur{{ selectedMonthEntries.length > 1 ? 's' : '' }} enregistrée{{ selectedMonthEntries.length > 1 ? 's' : '' }} ce mois-ci</span>
+              <strong v-if="selectedMonthSummary.dominant">{{ selectedMonthSummary.dominant.emoji }} {{ selectedMonthSummary.dominant.name }}</strong>
+            </div>
           </div>
           <button class="month-focus-arrow" type="button" :disabled="selectedYearMonth === 11" @click="changeYearMonth(1)" aria-label="Mois suivant">→</button>
         </section>
+
+        <div class="year-section-label"><span class="eyebrow"><span></span> mon année · {{ year }}</span></div>
 
         <div class="year-overview">
           <div><strong>{{ yearFilledDays }}</strong><span>jours renseignés</span></div>
