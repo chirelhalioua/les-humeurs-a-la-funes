@@ -239,7 +239,6 @@ const yearInsight = computed(() => {
       <span class="eyebrow"><span></span> mon suivi</span>
       <h1>Mon humeur<br><i>dans le temps.</i></h1>
       <p>Un espace pour regarder ce que tes humeurs te montrent, sans transformer ta journée en tableau de statistiques.</p>
-      <div class="cinema-note"><span>🎬</span> Une journée, une scène à la fois.</div>
     </div>
 
     <div v-if="pending" class="mood-loading">Ton suivi arrive…</div>
@@ -334,6 +333,10 @@ const yearInsight = computed(() => {
             <span class="eyebrow"><span></span> ce que ma semaine raconte</span>
             <h3>{{ weekDominant ? weekDominant.emoji + " " + weekDominant.name : "Ma semaine commence à prendre forme." }}</h3>
             <p>{{ weekInsight }}</p>
+            <div v-if="weekDominant" class="funes-reference">
+              <span>Dans la filmographie</span>
+              <strong>{{ weekEntries.find(entry => entry.moodName === weekDominant.name)?.film || 'Une scène de Louis de Funès' }}</strong>
+            </div>
           </div>
         </section>
 
