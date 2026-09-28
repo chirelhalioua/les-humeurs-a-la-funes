@@ -3322,3 +3322,105 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .home-badge{font-size:7px;padding:6px 9px}
   .mood-scene-label{margin-left:22px;margin-bottom:-11px;font-size:8px}
 }
+
+
+/* Pep's éditorial — signature visuelle */
+.home{
+  position:relative;
+}
+.funes-poster{
+  position:relative;
+  overflow:visible;
+}
+.funes-poster:before{
+  content:"";
+  position:absolute;
+  width:92px;
+  height:92px;
+  right:-30px;
+  top:-26px;
+  border:2px dashed rgba(231,189,88,.7);
+  border-radius:50%;
+  transform:rotate(11deg);
+  pointer-events:none;
+}
+.funes-poster:after{
+  content:"★";
+  position:absolute;
+  right:-18px;
+  top:-12px;
+  color:var(--gold);
+  font-size:22px;
+  transform:rotate(12deg);
+}
+.film-stamp{
+  transform:rotate(-4deg);
+  transition:transform .2s ease;
+}
+.film-stamp:hover{transform:rotate(2deg) scale(1.03)}
+.film-stamp span{
+  display:block;
+  margin-top:7px;
+  font-family:Caveat,cursive;
+  font-size:13px;
+  letter-spacing:0;
+  line-height:1;
+}
+.slide-scene-label{
+  display:inline-flex;
+  align-items:center;
+  margin-right:8px;
+  padding:4px 8px;
+  border-radius:999px;
+  background:var(--gold);
+  color:var(--brown);
+  font-size:7px;
+  font-weight:900;
+  letter-spacing:.13em;
+  vertical-align:middle;
+}
+.mood-slide{
+  position:relative;
+  overflow:visible;
+}
+.mood-slide:after{
+  content:"";
+  position:absolute;
+  width:42px;
+  height:12px;
+  right:18px;
+  top:-7px;
+  border-radius:2px;
+  background:var(--gold);
+  transform:rotate(4deg);
+  opacity:.9;
+}
+.mood-slide.tone-sage:after{background:var(--sage)}
+.mood-slide.tone-peach:after{background:var(--peach)}
+.mood-slide.tone-sand:after{background:var(--sand)}
+.mood-slide.tone-cocoa:after{background:var(--brown)}
+.tracking-view-intro h2,
+.contact-heading h1,
+.page-heading h1{
+  position:relative;
+}
+.tracking-view-intro h2:after{
+  content:"";
+  display:block;
+  width:64px;
+  height:5px;
+  margin-top:7px;
+  border-radius:99px;
+  background:var(--gold);
+  transform:rotate(-2deg);
+}
+.funes-reference strong{
+  display:inline-block;
+  transform:rotate(-1deg);
+}
+@media(max-width:560px){
+  .funes-poster:before{width:62px;height:62px;right:-18px;top:-18px}
+  .funes-poster:after{right:-9px;top:-8px;font-size:17px}
+  .mood-slide:after{right:12px}
+  .slide-scene-label{font-size:6px;padding:4px 7px}
+}
