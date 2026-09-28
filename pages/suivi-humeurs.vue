@@ -225,6 +225,17 @@ const yearMoodStats = computed(() => {
 
 const yearDominant = computed(() => yearMoodStats.value[0] || null)
 const yearDonut = computed(() => donutSegments(yearMoodStats.value.map(item => ({ ...item, emoji: item.emoji }))))
+const yearDonutGradient = computed(() => {
+  if (!yearDonut.value.length) return 'transparent'
+  let start = 0
+  const parts = yearDonut.value.map(item => {
+    const end = start + item.percent
+    const part = `${item.color} ${start}% ${end}%`
+    start = end
+    return part
+  })
+  return `conic-gradient(${parts.join(', ')})`
+})
 const yearFilledDays = computed(() => new Set(yearEntries.value.map(entry => getEntryDayKey(entry))).size)
 
 const yearInsight = computed(() => {
@@ -411,19 +422,11 @@ const yearInsight = computed(() => {
             <h2>Ce qui revient<br><i>au fil des mois.</i></h2>
           </div>
           <div class="donut-layout">
-            <div class="mood-donut" aria-hidden="true">
-              <svg viewBox="0 0 120 120">
-                <circle class="donut-track" cx="60" cy="60" r="26" />
-                <circle
-                  v-for="item in yearDonut"
-                  :key="item.name"
-                  class="donut-segment"
-                  cx="60" cy="60" r="26"
-                  :stroke="item.color"
-                  :stroke-dasharray="item.dasharray"
-                  :stroke-dashoffset="item.dashoffset"
-                />
-              </svg>
+            <div
+              class="mood-donut"
+              :style="{ '--donut-gradient': yearDonutGradient }"
+              aria-hidden="true"
+            >
               <div class="donut-center"><strong>{{ yearEntries.length }}</strong><span>humeurs</span></div>
             </div>
             <div class="donut-legend">
