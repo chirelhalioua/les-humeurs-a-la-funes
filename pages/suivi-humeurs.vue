@@ -252,6 +252,16 @@ const yearInsight = computed(() => {
       <p>Un espace pour prendre le temps de t’écouter, comprendre ton rythme et repérer les moments où tu te sens le mieux.</p>
     </div>
 
+    <div class="tracking-funes-banner">
+      <span class="tracking-funes-star">✦</span>
+      <div class="tracking-funes-copy">
+        <span class="tracking-funes-label">CINÉMA &amp; HUMEUR · L’INSTANT FUNÈS</span>
+        <strong>« Le rire, c’est ce dont on a besoin avant toute chose. »</strong>
+        <small>— Louis de Funès · Entretien, 1971</small>
+      </div>
+      <span class="tracking-funes-spark">✦</span>
+    </div>
+
     <div v-if="pending" class="mood-loading">Ton suivi arrive…</div>
     <div v-else-if="error" class="mood-error">Impossible de charger ton suivi.</div>
 
