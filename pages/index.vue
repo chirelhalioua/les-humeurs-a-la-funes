@@ -19,6 +19,8 @@ const moods = [
     </div>
 
     <div class="home-funes">
+      <span class="home-spark home-spark-one">✦</span>
+      <span class="home-spark home-spark-two">✦</span>
       <div class="funes-card">
         <div class="funes-topline"><span>★</span> LE PETIT MOT DU JOUR</div>
         <div class="funes-portrait" aria-hidden="true">
@@ -29,7 +31,7 @@ const moods = [
         <cite>— Louis de Funès</cite>
         <p class="quote-source">Entretien, 1971</p>
       </div>
-      <div class="film-stamp">LES<br>HUMEURS<br>À LA FUNES</div>
+      <div class="film-stamp"><span>SAISON</span><strong>LES HUMEURS<br>À LA FUNES</strong><small>ÉPISODE DU JOUR</small></div>
     </div>
 
     <div class="mood-strip" aria-label="Les cinq humeurs">
