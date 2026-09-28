@@ -158,7 +158,7 @@ async function deleteAccount() {
         <template v-if="!editingName">
           <h2>{{ user?.name || 'Membre' }}</h2>
           <p>{{ user?.email }}</p>
-          <button class="profile-edit-name" type="button" @click="startNameEdit">Modifier mon nom <span>↗</span></button>
+          <button class="profile-link profile-name-trigger" type="button" @click="startNameEdit">Modifier mon nom <span>→</span></button>
         </template>
         <form v-else class="profile-name-form" @submit.prevent="saveName">
           <label for="profile-name">Prénom ou nom</label>
