@@ -386,17 +386,9 @@ const yearInsight = computed(() => {
             </p>
             <p v-else>Aucune humeur enregistrée ce mois-ci.</p>
 
-            <div class="month-focus-facts">
+            <div v-if="selectedMonthEntries.length" class="month-focus-facts">
               <span>{{ selectedMonthEntries.length }} humeur{{ selectedMonthEntries.length > 1 ? 's' : '' }} enregistrée{{ selectedMonthEntries.length > 1 ? 's' : '' }}</span>
               <strong v-if="selectedMonthSummary.dominant">{{ selectedMonthSummary.dominant.emoji }} {{ selectedMonthSummary.dominant.name }}</strong>
-            </div>
-              <div class="donut-legend">
-                <div v-for="item in selectedMonthDonut" :key="item.name" class="donut-legend-item">
-                  <span class="donut-dot" :style="{ background: item.color }"></span>
-                  <span class="donut-name">{{ item.emoji }} {{ item.name }}</span>
-                  <strong>{{ item.percent }}%</strong>
-                </div>
-              </div>
             </div>
           </div>
           <button class="month-focus-arrow" type="button" :disabled="selectedYearMonth === 11" @click="changeYearMonth(1)" aria-label="Mois suivant">→</button>
