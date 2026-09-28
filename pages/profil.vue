@@ -174,6 +174,15 @@ async function deleteAccount() {
       </div>
     </div>
 
+    <div class="profile-funes-note">
+      <span class="profile-funes-star">★</span>
+      <div>
+        <small>LE PETIT CLIN D’ŒIL</small>
+        <strong>« Mais c’est formidable ! »</strong>
+        <em>— Le Corniaud</em>
+      </div>
+    </div>
+
     <div class="profile-grid">
       <article class="profile-card profile-main-card">
         <span class="card-kicker">MON COMPTE</span>
