@@ -219,6 +219,7 @@ const saveMood = async () => {
     </div>
 
     <template v-else-if="currentMood">
+      <div class="mood-scene-label"><span></span> scène du jour</div>
       <div class="mood-carousel">
         <button class="carousel-arrow carousel-prev" type="button" aria-label="Humeur précédente" @click="previousMood">‹</button>
 
