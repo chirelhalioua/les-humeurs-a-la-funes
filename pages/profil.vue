@@ -170,6 +170,7 @@ async function deleteAccount() {
         <span class="eyebrow"><span></span> mon espace</span>
         <h1>Mon profil,<br><i>à ma façon.</i></h1>
         <p>Ton espace personnel pour retrouver tes informations et tes humeurs.</p>
+        <div class="cinema-note"><span>🎬</span> Dans les coulisses de ton espace.</div>
       </div>
     </div>
 
