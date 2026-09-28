@@ -330,20 +330,12 @@ const yearInsight = computed(() => {
         <section class="insight-card insight-sage">
           <div class="insight-mark">👀</div>
           <div>
-            <span class="eyebrow"><span></span> ce que je remarque</span>
-            <h3>Ta semaine commence à prendre forme.</h3>
+            <span class="eyebrow"><span></span> ce que ma semaine raconte</span>
+            <h3>{{ weekDominant ? weekDominant.emoji + " " + weekDominant.name : "Ma semaine commence à prendre forme." }}</h3>
             <p>{{ weekInsight }}</p>
           </div>
         </section>
 
-        <section class="insight-card insight-sage">
-          <div class="insight-mark">✨</div>
-          <div>
-            <span class="eyebrow"><span></span> mon repère de la semaine</span>
-            <h3>{{ weekDominant ? weekDominant.emoji + " " + weekDominant.name : "À découvrir" }}</h3>
-            <p>{{ weekDominant ? "C’est l’humeur que tu as le plus souvent enregistrée cette semaine." : "Continue à noter quelques humeurs pour faire apparaître tes repères." }}</p>
-          </div>
-        </section>
       </div>
 
       <div v-else class="tracking-view">
