@@ -249,6 +249,7 @@ const saveMood = async () => {
             <p class="slide-film"><span>À l’affiche</span> {{ currentMood.film }}</p>
 
             <div class="slide-action">
+              <span class="slide-scene-label">SCÈNE DU JOUR</span>
               <span v-if="selected?.key === currentMood.key" class="selected-label">
                 {{ isEditing ? 'Humeur actuelle ✓' : 'Humeur choisie ✓' }}
               </span>
