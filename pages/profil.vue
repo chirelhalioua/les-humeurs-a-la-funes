@@ -11,6 +11,9 @@ const photoInput = ref<HTMLInputElement | null>(null)
 const photoSaving = ref(false)
 const photoError = ref('')
 const showPhotoMenu = ref(false)
+const showDeleteConfirm = ref(false)
+const deleteSaving = ref(false)
+const deleteError = ref('')
 
 function startNameEdit() {
   newName.value = user.value?.name || ''
@@ -121,11 +124,29 @@ async function logout() {
   await navigateTo('/')
 }
 
+function openDeleteConfirm() {
+  deleteError.value = ''
+  showDeleteConfirm.value = true
+}
+
+function closeDeleteConfirm() {
+  if (deleteSaving.value) return
+  showDeleteConfirm.value = false
+  deleteError.value = ''
+}
+
 async function deleteAccount() {
-  if (!window.confirm('Supprimer définitivement ton profil ?')) return
-  await $fetch('/api/auth/delete-account', { method: 'DELETE' })
-  await clearSession()
-  await navigateTo('/')
+  deleteSaving.value = true
+  deleteError.value = ''
+  try {
+    await $fetch('/api/auth/delete-account', { method: 'DELETE' })
+    await clearSession()
+    await navigateTo('/')
+  } catch (error: any) {
+    deleteError.value = error?.data?.statusMessage || 'Impossible de supprimer ton profil.'
+  } finally {
+    deleteSaving.value = false
+  }
 }
 </script>
 
@@ -196,8 +217,26 @@ async function deleteAccount() {
         <span class="card-kicker">ZONE COMPTE</span>
         <h3>Supprimer mon profil</h3>
         <p>Cette action supprime ton compte. Elle est définitive.</p>
-        <button class="profile-delete" type="button" @click="deleteAccount">Supprimer mon profil</button>
+        <button class="profile-delete" type="button" @click="openDeleteConfirm">Supprimer mon profil</button>
       </article>
     </div>
   </section>
+
+  <Teleport to="body">
+    <div v-if="showDeleteConfirm" class="profile-confirm-backdrop" @click.self="closeDeleteConfirm">
+      <div class="profile-confirm" role="dialog" aria-modal="true" aria-labelledby="delete-title">
+        <div class="profile-confirm-icon">!</div>
+        <span class="card-kicker">ZONE COMPTE</span>
+        <h2 id="delete-title">Supprimer ton profil ?</h2>
+        <p>Cette action est définitive. Ton compte et tes données associées seront supprimés.</p>
+        <p v-if="deleteError" class="profile-confirm-error">{{ deleteError }}</p>
+        <div class="profile-confirm-actions">
+          <button type="button" class="profile-confirm-cancel" :disabled="deleteSaving" @click="closeDeleteConfirm">Annuler</button>
+          <button type="button" class="profile-confirm-delete" :disabled="deleteSaving" @click="deleteAccount">
+            {{ deleteSaving ? 'Suppression…' : 'Oui, supprimer' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </Teleport>
 </template>
