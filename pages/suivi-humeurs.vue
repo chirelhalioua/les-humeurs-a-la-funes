@@ -247,7 +247,7 @@ const yearInsight = computed(() => {
 <template>
   <section class="tracking-page">
     <div class="page-heading">
-      <span class="eyebrow"><span></span> mon suivi</span>
+      <span class="eyebrow"><span></span> mon suivi · mes moments</span>
       <h1>Mon humeur<br><i>dans le temps.</i></h1>
       <p>Un espace pour prendre le temps de t’écouter, comprendre ton rythme et repérer les moments où tu te sens le mieux.</p>
     </div>
