@@ -22,7 +22,7 @@ const moods = [
     <div class="home-funes">
       <span class="home-spark home-spark-one">✦</span>
       <span class="home-spark home-spark-two">✦</span>
-      <div class="funes-card">
+      <div class="funes-card funes-poster">
         <div class="funes-topline"><span>★</span> L’INSTANT DU JOUR</div>
         <div class="funes-portrait" aria-hidden="true">
           <span class="portrait-head">•ᴗ•</span>
