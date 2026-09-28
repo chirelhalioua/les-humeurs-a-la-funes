@@ -189,6 +189,7 @@ const monthSummaries = computed(() =>
     return {
       month,
       label: new Intl.DateTimeFormat('fr-FR', { month: 'short' }).format(new Date(year.value, month, 1)).replace('.', ''),
+      fullLabel: new Intl.DateTimeFormat('fr-FR', { month: 'long' }).format(new Date(year.value, month, 1)),
       count: monthEntries.length,
       dominant: dominant ? { name: dominant[0], emoji: moodEmojis[dominant[0]] || '🙂' } : null
     }
@@ -376,7 +377,7 @@ const yearInsight = computed(() => {
             <div class="month-focus-heading">
               <div>
                 <span class="eyebrow"><span></span> mois sélectionné</span>
-                <h3>{{ selectedMonthSummary.label }}</h3>
+                <h3>{{ selectedMonthSummary.fullLabel }}</h3>
               </div>
               <span v-if="selectedMonthSummary.dominant" class="month-focus-mood">{{ selectedMonthSummary.dominant.emoji }}</span>
             </div>
@@ -386,10 +387,6 @@ const yearInsight = computed(() => {
             </p>
             <p v-else>Aucune humeur enregistrée ce mois-ci.</p>
 
-            <div v-if="selectedMonthEntries.length" class="month-focus-facts">
-              <span>{{ selectedMonthEntries.length }} humeur{{ selectedMonthEntries.length > 1 ? 's' : '' }} enregistrée{{ selectedMonthEntries.length > 1 ? 's' : '' }}</span>
-              <strong v-if="selectedMonthSummary.dominant">{{ selectedMonthSummary.dominant.emoji }} {{ selectedMonthSummary.dominant.name }}</strong>
-            </div>
           </div>
           <button class="month-focus-arrow" type="button" :disabled="selectedYearMonth === 11" @click="changeYearMonth(1)" aria-label="Mois suivant">→</button>
         </section>
