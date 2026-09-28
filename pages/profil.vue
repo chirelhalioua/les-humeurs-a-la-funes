@@ -169,16 +169,18 @@ async function deleteAccount() {
       <div class="profile-head-copy">
         <span class="eyebrow"><span></span> mon espace</span>
         <h1>Mon profil,<br><i>à ma façon.</i></h1>
-        <p>Ton espace personnel pour retrouver tes informations et tes humeurs.</p>
-        <div class="cinema-note"><span>🎬</span> Dans les coulisses de ton espace.</div>
+        <p>Ton espace personnel pour retrouver tes informations, tes préférences et ton petit univers.</p>
       </div>
     </div>
 
-    <div class="profile-funes-note">
-      <div>
-        <strong>« Mais c’est formidable ! »</strong>
-        <em>Le Corniaud</em>
+    <div class="profile-funes-banner">
+      <div class="profile-funes-ticket">✦</div>
+      <div class="profile-funes-copy">
+        <span>LES COULISSES À LA FUNES</span>
+        <strong>Ton espace, ton rythme, ton scénario.</strong>
+        <small>Pas besoin d’en faire des tonnes : ici, tu es chez toi.</small>
       </div>
+      <div class="profile-funes-mark">★</div>
     </div>
 
     <div class="profile-grid">
