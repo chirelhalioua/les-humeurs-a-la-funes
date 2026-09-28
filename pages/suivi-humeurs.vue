@@ -238,7 +238,7 @@ const yearInsight = computed(() => {
     <div class="page-heading">
       <span class="eyebrow"><span></span> mon suivi</span>
       <h1>Mon humeur<br><i>dans le temps.</i></h1>
-      <p>Un espace pour prendre du recul, retrouver tes petits moments et voir ce qui te fait du bien au fil du temps.</p>
+      <p>Un espace pour prendre le temps de t’écouter, comprendre ton rythme et repérer les moments où tu te sens le mieux.</p>
     </div>
 
     <div v-if="pending" class="mood-loading">Ton suivi arrive…</div>
@@ -308,7 +308,7 @@ const yearInsight = computed(() => {
         <div class="tracking-view-intro">
           <span class="eyebrow"><span></span> lundi → dimanche</span>
           <h2>Ma semaine</h2>
-          <p>Quelques repères pour prendre du recul sur ta semaine, sans chercher à tout mesurer.</p>
+          <p>Une petite pause pour regarder ta semaine avec recul et mieux comprendre ce qui revient dans ton quotidien.</p>
         </div>
 
         <section class="tracking-card week-card">
@@ -347,7 +347,7 @@ const yearInsight = computed(() => {
         <div class="tracking-view-intro">
           <span class="eyebrow"><span></span> janvier → décembre · {{ year }}</span>
           <h2>Mon année</h2>
-          <p>Quelques traces de ton année pour prendre du recul et voir les moments qui reviennent.</p>
+          <p>Quelques traces de ton année pour mieux voir ton rythme, tes moments forts et ceux où tu as eu besoin de souffler.</p>
         </div>
 
         <section ref="yearFlowRef" class="year-flow">
