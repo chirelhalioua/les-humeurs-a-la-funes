@@ -2995,3 +2995,31 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .profile-confirm{padding:24px;border-radius:20px}
   .profile-confirm-actions{grid-template-columns:1fr}
 }
+
+
+.cinema-note{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin-top:16px;
+  color:var(--brown);
+  font-family:Caveat,cursive;
+  font-size:18px;
+  line-height:1;
+}
+.cinema-note span{
+  font-family:Inter,ui-sans-serif,system-ui,sans-serif;
+  font-size:13px;
+}
+.tracking-card{
+  box-shadow:none;
+}
+.profile-card{
+  box-shadow:none;
+}
+.profile-card:hover{
+  border-color:rgba(231,189,88,.28);
+}
+@media(max-width:560px){
+  .cinema-note{font-size:16px;margin-top:13px}
+}
