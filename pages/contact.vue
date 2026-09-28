@@ -30,8 +30,8 @@ async function submit() {
     </div>
 
     <div class="contact-funes-note">
-      <span>« Mais c’est formidable ! »</span>
-      <small>Un petit clin d’œil à l’univers de Louis de Funès.</small>
+      <span>« On n’est pas là pour s’ennuyer ! »</span>
+      <small>À vous de jouer…</small>
     </div>
 
     <div class="contact-layout">
