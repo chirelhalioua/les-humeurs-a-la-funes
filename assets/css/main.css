@@ -46,10 +46,28 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .home-funes{justify-self:center;width:min(460px,100%)}.funes-card{padding:20px 21px 17px;border-radius:27px}.funes-portrait{height:82px}.portrait-head{font-size:43px}.funes-portrait .portrait-bow{font-size:28px}blockquote{font-size:25px}.film-stamp{width:74px;height:74px;font-size:7px}.mood-strip{grid-template-columns:repeat(5,1fr);gap:6px}.mood-chip{min-height:51px;padding:7px 4px;border-radius:14px;display:grid;gap:1px}.mood-chip span{font-size:23px}.mood-chip strong{font-size:9px}.home-lower{grid-template-columns:1fr;gap:12px;padding-bottom:15px}.home-lower>div{grid-template-columns:28px 1fr}.mood-page,.placeholder-page{padding-top:42px}.page-heading h1,.placeholder-page h1{font-size:50px}.mood-grid{margin-top:28px}
 }
 @media(max-width:560px){
-  .brand{font-size:13px}.brand-mark{width:30px;height:30px}.theme-button{width:34px;height:34px}.top-action{font-size:10px;padding:9px 11px}.top-action span{display:none}
-  .home{padding:25px 16px 92px}.home h1{font-size:48px;margin:15px 0 17px}.intro{font-size:13px;line-height:1.5;margin-bottom:17px}.primary-button{padding:13px 17px;font-size:12px}.microcopy{margin-top:8px}
-  .home-funes{margin-top:2px;margin-bottom:50px}.home-funes:after{width:125px;height:125px;right:-42px;bottom:-78px}.funes-card{padding:15px 17px 14px}.funes-topline{font-size:8px}.funes-portrait{height:60px}.portrait-head{font-size:33px}.portrait-bow{font-size:21px!important;bottom:2px}blockquote{font-size:22px;margin:2px 0 7px}.cite,cite{font-size:10px}.quote-source{font-size:8px}.film-stamp{display:none}
-  .mood-strip{gap:5px}.mood-chip{min-height:48px;border-radius:13px}.mood-chip span{font-size:20px}.mood-chip strong{font-size:8px}
+  .brand{font-size:12px}.brand-mark{width:28px;height:28px}.theme-button{width:32px;height:32px}.top-action{font-size:9px;padding:8px 10px}.top-action span{display:none}
+  /* Accueil mobile compact : les 5 humeurs restent visibles sans scroller */
+  .topbar{height:58px}
+  .home{padding:10px 14px 76px;gap:9px}
+  .home-copy{width:100%}
+  .home-copy .home-badge{padding:5px 9px;font-size:7px}
+  .home-copy .eyebrow{font-size:8px;gap:6px}
+  .home-copy .eyebrow>span{width:15px}
+  .home h1{font-size:40px;line-height:.94;margin:8px 0 10px}
+  .intro{font-size:11px;line-height:1.35;margin-bottom:10px;max-width:360px}
+  .primary-button{padding:10px 15px;font-size:11px;gap:12px}.primary-button span{font-size:15px}.microcopy{font-size:8px;margin-top:5px}
+  .home-funes{margin-top:0;margin-bottom:34px;width:min(410px,100%)}
+  .home-funes:after{width:105px;height:105px;right:-30px;bottom:-62px}
+  .funes-card{padding:10px 13px 9px;border-radius:22px}
+  .funes-topline{font-size:7px}
+  .funes-portrait{height:38px}
+  .portrait-head{font-size:27px}
+  .portrait-bow{font-size:17px!important;bottom:-1px}
+  blockquote{font-size:18px;margin:1px 0 5px;line-height:1!important}
+  .cite,cite{font-size:8px}.quote-source{font-size:7px}
+  .film-stamp{display:none}
+  .mood-strip{gap:4px}.mood-chip{min-height:42px;border-radius:11px;padding:5px 2px}.mood-chip span{font-size:18px}.mood-chip strong{font-size:7px}
   .home-lower{display:none}
   .mood-page,.placeholder-page{padding:30px 16px 100px}.page-heading h1,.placeholder-page h1{font-size:43px;margin:15px 0}.page-heading p{font-size:13px;margin:0}
   .mood-grid{grid-template-columns:1fr 1fr;gap:8px;margin-top:22px}.mood-tile{min-height:98px;border-radius:20px;padding:10px 9px;grid-template-columns:45px 1fr 22px}.tile-emoji{font-size:32px}.tile-content strong{font-size:15px}.tile-content small{font-size:9px}.tile-check{font-size:16px}.mood-tile:last-child{grid-column:1/-1;max-width:none;min-height:82px}
