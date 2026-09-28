@@ -238,7 +238,7 @@ const yearInsight = computed(() => {
     <div class="page-heading">
       <span class="eyebrow"><span></span> mon suivi</span>
       <h1>Mon humeur<br><i>dans le temps.</i></h1>
-      <p>Un espace pour regarder ce que tes humeurs te montrent, sans transformer ta journée en tableau de statistiques.</p>
+      <p>Un espace pour prendre du recul, retrouver tes petits moments et voir ce qui te fait du bien au fil du temps.</p>
     </div>
 
     <div v-if="pending" class="mood-loading">Ton suivi arrive…</div>
@@ -308,7 +308,7 @@ const yearInsight = computed(() => {
         <div class="tracking-view-intro">
           <span class="eyebrow"><span></span> lundi → dimanche</span>
           <h2>Ma semaine</h2>
-          <p>Un coup d’œil sur tes journées, puis un petit repère pour comprendre ce qui revient.</p>
+          <p>Quelques repères pour prendre du recul sur ta semaine, sans chercher à tout mesurer.</p>
         </div>
 
         <section class="tracking-card week-card">
@@ -322,8 +322,9 @@ const yearInsight = computed(() => {
           </div>
 
           <div class="week-meta">
-            <span>{{ weekFilledDays }}/7 jours renseignés</span>
-            <span>{{ weekEntries.length }} humeur{{ weekEntries.length > 1 ? 's' : '' }} notée{{ weekEntries.length > 1 ? 's' : '' }}</span>
+            <span>{{ weekFilledDays }}/7 jours où tu as pris un moment pour toi</span>
+            <span v-if="weekDominant">Ton humeur la plus présente : {{ weekDominant.emoji }} {{ weekDominant.name }}</span>
+            <span v-else>Ta semaine se dessinera ici, à ton rythme.</span>
           </div>
         </section>
 
@@ -346,7 +347,7 @@ const yearInsight = computed(() => {
         <div class="tracking-view-intro">
           <span class="eyebrow"><span></span> janvier → décembre · {{ year }}</span>
           <h2>Mon année</h2>
-          <p>Une vue d’ensemble légère pour voir les grands repères de ton année.</p>
+          <p>Quelques traces de ton année pour prendre du recul et voir les moments qui reviennent.</p>
         </div>
 
         <section ref="yearFlowRef" class="year-flow">
@@ -391,27 +392,23 @@ const yearInsight = computed(() => {
           <button class="month-focus-arrow" type="button" :disabled="selectedYearMonth === 11" @click="changeYearMonth(1)" aria-label="Mois suivant">→</button>
         </section>
 
-        <div class="year-section-label"><span class="eyebrow"><span></span> mon année · {{ year }}</span></div>
-
-        <div class="year-overview">
-          <div><strong>{{ yearFilledDays }}</strong><span>jours renseignés</span></div>
-          <div><strong>{{ yearEntries.length }}</strong><span>humeurs notées</span></div>
-          <div><strong>{{ yearDominant ? yearDominant.emoji : '—' }}</strong><span>{{ yearDominant ? yearDominant.name : 'à découvrir' }}</span></div>
-        </div>
-
-        <section class="insight-card insight-gold">
+        <section class="insight-card insight-gold year-reflection">
           <div class="insight-mark">✨</div>
           <div>
-            <span class="eyebrow"><span></span> mes repères</span>
-            <h3>Une année qui se dessine petit à petit.</h3>
-            <p>{{ yearInsight }}</p>
+            <span class="eyebrow"><span></span> ce que mon année raconte</span>
+            <h3>{{ yearEntries.length ? "Une année faite de petits moments." : "Ton année attend ses premiers souvenirs." }}</h3>
+            <p>{{ yearEntries.length ? "Tu as pris le temps de noter ton humeur " + yearFilledDays + " jour" + (yearFilledDays > 1 ? "s" : "") + ". Regarde surtout les périodes où tu t’es senti bien, fatigué ou plus tendu : elles peuvent t’aider à mieux comprendre ton rythme." : "Quelques humeurs suffiront déjà à faire apparaître des repères. Il n’y a rien à réussir ici." }}</p>
+            <div v-if="yearDominant" class="funes-reference">
+              <span>La scène qui revient le plus</span>
+              <strong>{{ yearEntries.find(entry => entry.moodName === yearDominant.name)?.film || 'Une scène de Louis de Funès' }}</strong>
+            </div>
           </div>
         </section>
 
         <section v-if="yearEntries.length" class="tracking-card mood-distribution">
           <div class="tracking-card-heading">
-            <span class="eyebrow"><span></span> vue d’ensemble</span>
-            <h2>Mes humeurs<br><i>au fil de l’année.</i></h2>
+            <span class="eyebrow"><span></span> mes traces de l’année</span>
+            <h2>Ce qui revient<br><i>au fil des mois.</i></h2>
           </div>
           <div class="donut-layout">
             <div class="mood-donut" aria-hidden="true">
