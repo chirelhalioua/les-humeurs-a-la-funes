@@ -252,16 +252,6 @@ const yearInsight = computed(() => {
       <p>Un espace pour prendre le temps de t’écouter, comprendre ton rythme et repérer les moments où tu te sens le mieux.</p>
     </div>
 
-    <div class="tracking-funes-banner">
-      <span class="tracking-funes-star">✦</span>
-      <div class="tracking-funes-copy">
-        <span class="tracking-funes-label">CINÉMA &amp; HUMEUR · L’INSTANT FUNÈS</span>
-        <strong>« Le rire, c’est ce dont on a besoin avant toute chose. »</strong>
-        <small>— Louis de Funès · Entretien, 1971</small>
-      </div>
-      <span class="tracking-funes-spark">✦</span>
-    </div>
-
     <div v-if="pending" class="mood-loading">Ton suivi arrive…</div>
     <div v-else-if="error" class="mood-error">Impossible de charger ton suivi.</div>
 
@@ -307,8 +297,9 @@ const yearInsight = computed(() => {
                 </div>
               </div>
               <div v-if="currentMomentEntry(item.key)" class="daily-mood">
-                <span>{{ currentMomentEntry(item.key)?.emoji }}</span>
-                <strong>{{ currentMomentEntry(item.key)?.moodName }}</strong>
+                <span class="daily-mood-label">Humeur notée</span>
+                <strong>{{ currentMomentEntry(item.key)?.emoji }} {{ currentMomentEntry(item.key)?.moodName }}</strong>
+                <small v-if="currentMomentEntry(item.key)?.film">🎬 {{ currentMomentEntry(item.key)?.film }}</small>
               </div>
               <div v-else class="daily-moment-empty">Pas encore noté</div>
             </article>
