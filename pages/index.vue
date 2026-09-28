@@ -11,6 +11,7 @@ const moods = [
 <template>
   <section class="home">
     <div class="home-copy">
+      <span class="home-badge">CINÉMA &amp; HUMEUR</span>
       <div class="eyebrow"><span></span> Les Humeurs à la Funes</div>
       <h1>On fait le point<br><i>sur ton humeur ?</i></h1>
       <p class="intro">Un petit moment pour dire comment tu vas, sans avoir besoin de trouver les bons mots.</p>
@@ -22,7 +23,7 @@ const moods = [
       <span class="home-spark home-spark-one">✦</span>
       <span class="home-spark home-spark-two">✦</span>
       <div class="funes-card">
-        <div class="funes-topline"><span>★</span> LE PETIT MOT DU JOUR</div>
+        <div class="funes-topline"><span>★</span> L’INSTANT DU JOUR</div>
         <div class="funes-portrait" aria-hidden="true">
           <span class="portrait-head">•ᴗ•</span>
           <span class="portrait-bow">⌁</span>
