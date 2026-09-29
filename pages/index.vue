@@ -24,9 +24,9 @@ const moods = [
       <span class="home-spark home-spark-two">✦</span>
       <div class="funes-card funes-poster">
         <div class="funes-topline"><span>★</span> L’INSTANT DU JOUR</div>
-        <div class="funes-portrait" aria-hidden="true">
-          <span class="portrait-head">•ᴗ•</span>
-          <span class="portrait-bow">⌁</span>
+        <div class="funes-portrait" aria-label="Louis de Funès pendant le tournage de L'Homme orchestre">
+          <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Louis%20de%20Fun%C3%A8s%204%20%E2%80%94%20L%27Homme%20orchestre%20%281970%29.jpg" alt="Louis de Funès sur le tournage de L'Homme orchestre">
+          <span class="portrait-badge">L'HOMME ORCHESTRE · 1970</span>
         </div>
         <blockquote>« Le rire, c’est ce dont on a besoin avant toute chose. »</blockquote>
         <cite>— Louis de Funès</cite>
