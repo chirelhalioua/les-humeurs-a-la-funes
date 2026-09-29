@@ -3555,8 +3555,8 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 /* Signature visuelle Louis de Funès */
 .funes-portrait{
   position:relative;
-  height:96px;
-  margin:12px 0 13px;
+  height:148px;
+  margin:12px 0 0;
   overflow:hidden;
   border-radius:18px;
   background:var(--sand);
@@ -3566,15 +3566,15 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   height:100%;
   display:block;
   object-fit:cover;
-  object-position:center 24%;
+  object-position:center 35%;
   filter:saturate(.9) contrast(1.02);
 }
 .portrait-caption{
-  margin:5px 0 0;
+  margin:5px 0 10px;
   text-align:left;
-  font-size:8px;
-  line-height:1;
-  letter-spacing:.12em;
+  font-size:7px;
+  line-height:1.1;
+  letter-spacing:.11em;
   font-weight:900;
   color:var(--muted);
 }
@@ -3606,11 +3606,14 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 }
 @media(max-width:560px){
   .funes-portrait{
-    height:82px!important;
-    margin:10px 0 12px;
+    height:126px!important;
+    margin:10px 0 0;
     border-radius:15px;
   }
-  .portrait-caption{font-size:7px}
+  .portrait-caption{
+    margin:5px 0 9px;
+    font-size:6.5px;
+  }
   .tracking-funes-intro{padding-right:60px}
   .tracking-funes-visual{width:47px}
   .tracking-funes-visual img{width:42px;height:42px;border-width:2px}
