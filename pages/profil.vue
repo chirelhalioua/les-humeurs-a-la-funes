@@ -174,7 +174,7 @@ async function deleteAccount() {
     </div>
 
     <div class="profile-funes-banner">
-      <div class="profile-funes-ticket">✦</div>
+      <div class="profile-funes-photo"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Louis%20de%20Fun%C3%A8s%204%20%E2%80%94%20L%27Homme%20orchestre%20%281970%29.jpg" alt="Louis de Funès, L'Homme orchestre, 1970"></div>
       <div class="profile-funes-copy">
         <span>LES COULISSES À LA FUNES</span>
         <strong>Ton espace, ton rythme, ton scénario.</strong>
