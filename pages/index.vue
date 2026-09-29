@@ -24,10 +24,10 @@ const moods = [
       <span class="home-spark home-spark-two">✦</span>
       <div class="funes-card funes-poster">
         <div class="funes-topline"><span>★</span> L’INSTANT DU JOUR</div>
-        <div class="funes-portrait" aria-label="Louis de Funès pendant le tournage de L'Homme orchestre">
-          <img src="https://www.rewizor.ru/files/258405lfhh.jpg" alt="Louis de Funès avec des jumelles dans son rôle de gendarme">
+        <div class="funes-portrait" aria-label="Louis de Funès pendant le tournage du Gendarme et les Extra-terrestres">
+          <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Louis_de_funes_1978_ws_1-zoom.jpg" alt="Louis de Funès lors du tournage du Gendarme et les Extra-terrestres">
                   </div>
-        <p class="portrait-caption">LE GENDARME DE SAINT-TROPEZ · 1964</p>
+        <p class="portrait-caption">LE GENDARME ET LES EXTRA-TERRESTRES · 1978</p>
         <blockquote>« Le rire, c’est ce dont on a besoin avant toute chose. »</blockquote>
         <cite>— Louis de Funès</cite>
         <p class="quote-source">Entretien, 1971</p>
