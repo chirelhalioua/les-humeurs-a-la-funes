@@ -297,9 +297,11 @@ const yearInsight = computed(() => {
                 </div>
               </div>
               <div v-if="currentMomentEntry(item.key)" class="daily-mood">
-                <span class="daily-mood-label">Humeur notée</span>
-                <strong>{{ currentMomentEntry(item.key)?.emoji }} {{ currentMomentEntry(item.key)?.moodName }}</strong>
-                <small v-if="currentMomentEntry(item.key)?.film">🎬 {{ currentMomentEntry(item.key)?.film }}</small>
+                <div class="daily-mood-main">
+                  <span>{{ currentMomentEntry(item.key)?.emoji }}</span>
+                  <strong>{{ currentMomentEntry(item.key)?.moodName }}</strong>
+                </div>
+                <small v-if="currentMomentEntry(item.key)?.film" class="daily-film">{{ currentMomentEntry(item.key)?.film }} · Louis de Funès</small>
               </div>
               <div v-else class="daily-moment-empty">Pas encore noté</div>
             </article>
