@@ -27,10 +27,10 @@ const moods = [
         <div class="funes-portrait" aria-label="Louis de Funès pendant le tournage de L'Homme orchestre">
           <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Louis%20de%20Fun%C3%A8s%204%20%E2%80%94%20L%27Homme%20orchestre%20%281970%29.jpg" alt="Louis de Funès sur le tournage de L'Homme orchestre">
                   </div>
+        <p class="portrait-caption">L’HOMME ORCHESTRE · 1970</p>
         <blockquote>« Le rire, c’est ce dont on a besoin avant toute chose. »</blockquote>
         <cite>— Louis de Funès</cite>
         <p class="quote-source">Entretien, 1971</p>
-        <p class="portrait-caption">L’HOMME ORCHESTRE · 1970</p>
       </div>
       <div class="film-stamp"><span>SAISON</span><strong>LES HUMEURS<br>À LA FUNES</strong><small>ÉPISODE DU JOUR</small></div>
     </div>
