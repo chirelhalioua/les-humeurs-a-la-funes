@@ -2369,31 +2369,30 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 .daily-moment-top small{margin-top:2px;color:var(--muted);font-size:8px}
 .daily-mood{
   margin-top:18px;
-  padding-top:12px;
+  padding-top:13px;
   border-top:1px solid var(--line);
   color:var(--cocoa);
+}
+.daily-mood-main{
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+.daily-mood-main span{font-size:27px;line-height:1}
+.daily-mood-main strong{
   font-family:Sora,var(--font);
+  font-size:15px;
+  letter-spacing:-.02em;
 }
-.daily-mood-label{
+.daily-film{
   display:block;
-  margin-bottom:4px;
+  margin:7px 0 0 36px;
   color:var(--muted);
-  font-size:7px;
-  font-weight:800;
-  letter-spacing:.11em;
-  text-transform:uppercase;
-}
-.daily-mood strong{
-  display:block;
-  font-size:13px;
-}
-.daily-mood small{
-  display:block;
-  margin-top:5px;
-  color:var(--brown);
   font-family:Caveat,cursive;
   font-size:15px;
+  line-height:1;
 }
+
 .daily-moment-empty{
   margin-top:30px;
   color:var(--muted);
