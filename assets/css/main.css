@@ -1647,14 +1647,12 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 }
 
 .tracking-page{max-width:1000px;margin:0 auto;padding:55px 5vw 80px}
-.tracking-page{padding:30px 16px 100px}.tracking-entry{grid-template-columns:38px 1fr;padding:13px}.tracking-entry time{grid-column:2;text-align:left}.tracking-entry-emoji{font-size:22px}
-  .tracking-funes-banner{margin:15px 0 20px;padding:12px 14px;border-radius:18px;gap:9px}
-  .tracking-funes-star{font-size:16px}
-  .tracking-funes-copy{gap:2px}
-  .tracking-funes-label{font-size:6px}
-  .tracking-funes-copy strong{font-size:17px;line-height:1.05}
-  .tracking-funes-copy small{font-size:7px}
-  .tracking-funes-spark{font-size:11px}
+
+@media(max-width:560px){
+  .tracking-page{padding:30px 16px 100px}
+  .tracking-entry{grid-template-columns:38px 1fr;padding:13px}
+  .tracking-entry time{grid-column:2;text-align:left}
+  .tracking-entry-emoji{font-size:22px}
 }
 
 .tracking-summary{
