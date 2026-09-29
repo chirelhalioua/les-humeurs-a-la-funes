@@ -57,17 +57,18 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .home h1{font-size:46px;line-height:.96;margin:11px 0 13px}
   .intro{font-size:12px;line-height:1.45;margin-bottom:13px;max-width:390px}
   .primary-button{padding:12px 17px;font-size:12px;gap:14px}.primary-button span{font-size:17px}.microcopy{font-size:9px;margin-top:7px}
-  .home-funes{margin-top:0;margin-bottom:42px;width:min(430px,100%)}
-  .home-funes:after{width:115px;height:115px;right:-34px;bottom:-70px}
-  .funes-card{padding:13px 16px 12px;border-radius:25px}
+  .home-funes{margin-top:0;margin-bottom:8px;width:min(430px,100%)}
+  .home-funes:after{width:100px;height:100px;right:-30px;bottom:-58px}
+  .funes-card{padding:11px 15px 10px;border-radius:24px}
   .funes-topline{font-size:8px}
-  .funes-portrait{height:52px}
+  .funes-portrait{height:98px}
   .portrait-head{font-size:31px}
   .portrait-bow{font-size:20px!important;bottom:0}
-  blockquote{font-size:21px;margin:2px 0 6px;line-height:1.03}
+  blockquote{font-size:19px;margin:3px 0 5px;line-height:1.04}
   .cite,cite{font-size:9px}.quote-source{font-size:8px}
+  .portrait-caption{margin:4px 0 7px;font-size:6px}
   .film-stamp{display:none}
-  .mood-strip{gap:5px}.mood-chip{min-height:46px;border-radius:13px;padding:6px 3px}.mood-chip span{font-size:20px}.mood-chip strong{font-size:8px}
+  .mood-strip{gap:5px}.mood-chip{min-height:48px;border-radius:13px;padding:6px 3px}.mood-chip span{font-size:20px}.mood-chip strong{font-size:8px}
   .home-lower{display:none}
   .mood-page,.placeholder-page{padding:30px 16px 100px}.page-heading h1,.placeholder-page h1{font-size:43px;margin:15px 0}.page-heading p{font-size:13px;margin:0}
   .mood-grid{grid-template-columns:1fr 1fr;gap:8px;margin-top:22px}.mood-tile{min-height:98px;border-radius:20px;padding:10px 9px;grid-template-columns:45px 1fr 22px}.tile-emoji{font-size:32px}.tile-content strong{font-size:15px}.tile-content small{font-size:9px}.tile-check{font-size:16px}.mood-tile:last-child{grid-column:1/-1;max-width:none;min-height:82px}
