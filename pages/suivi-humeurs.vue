@@ -269,7 +269,11 @@ const yearInsight = computed(() => {
       </div>
 
       <div v-if="activeView === 'jour'" class="tracking-view">
-        <div class="tracking-view-intro">
+        <div class="tracking-view-intro tracking-funes-intro">
+          <div class="tracking-funes-visual">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Louis%20de%20Fun%C3%A8s%204%20%E2%80%94%20L%27Homme%20orchestre%20%281970%29.jpg" alt="Louis de Funès, L'Homme orchestre, 1970">
+            <span>À LA FUNES</span>
+          </div>
           <span class="eyebrow"><span></span> aujourd’hui · {{ new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long' }).format(todayDate) }}</span>
           <h2>Ma journée</h2>
           <p>Trois petits repères pour voir comment ton humeur évolue au fil de la journée.</p>
@@ -319,7 +323,11 @@ const yearInsight = computed(() => {
       </div>
 
       <div v-else-if="activeView === 'semaine'" class="tracking-view">
-        <div class="tracking-view-intro">
+        <div class="tracking-view-intro tracking-funes-intro">
+          <div class="tracking-funes-visual">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Louis%20de%20Fun%C3%A8s%204%20%E2%80%94%20L%27Homme%20orchestre%20%281970%29.jpg" alt="Louis de Funès, L'Homme orchestre, 1970">
+            <span>À LA FUNES</span>
+          </div>
           <span class="eyebrow"><span></span> lundi → dimanche</span>
           <h2>Ma semaine</h2>
           <p>Une petite pause pour regarder ta semaine avec recul et mieux comprendre ce qui revient dans ton quotidien.</p>
@@ -358,7 +366,11 @@ const yearInsight = computed(() => {
       </div>
 
       <div v-else class="tracking-view">
-        <div class="tracking-view-intro">
+        <div class="tracking-view-intro tracking-funes-intro">
+          <div class="tracking-funes-visual">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Louis%20de%20Fun%C3%A8s%204%20%E2%80%94%20L%27Homme%20orchestre%20%281970%29.jpg" alt="Louis de Funès, L'Homme orchestre, 1970">
+            <span>À LA FUNES</span>
+          </div>
           <span class="eyebrow"><span></span> janvier → décembre · {{ year }}</span>
           <h2>Mon année</h2>
           <p>Quelques traces de ton année pour mieux voir ton rythme, tes moments forts et ceux où tu as eu besoin de souffler.</p>
