@@ -4712,3 +4712,19 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     font-size:5.5px!important;
   }
 }
+
+/* Accueil mobile — dock plus compact pour rester proportionné à la maquette */
+@media(max-width:560px){
+  .app-shell:has(.home) .mobile-nav{
+    left:auto!important;
+    right:18px!important;
+    width:min(320px,calc(100% - 36px))!important;
+  }
+}
+
+@media(max-width:370px){
+  .app-shell:has(.home) .mobile-nav{
+    right:12px!important;
+    width:calc(100% - 24px)!important;
+  }
+}
