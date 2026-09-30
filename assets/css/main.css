@@ -3815,3 +3815,44 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     line-height:1.2;
   }
 }
+
+/* Mobile — pied de page global toujours visible au-dessus de la navigation */
+@media(max-width:560px){
+  .site-footer{
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:78px;
+    z-index:19;
+    width:100%;
+    margin:0;
+    padding:4px 12px 5px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:6px;
+    font-size:8px;
+    line-height:1.2;
+    background:linear-gradient(to bottom, transparent 0%, color-mix(in srgb,var(--cream) 82%,transparent) 35%, color-mix(in srgb,var(--cream) 96%,transparent) 100%);
+    backdrop-filter:blur(5px);
+  }
+
+  .site-footer a{
+    color:var(--cocoa);
+  }
+
+  .footer-contact{
+    padding:3px 2px;
+  }
+
+  /* Le footer est hors du flux : les pages gardent leur propre rythme de défilement. */
+  .app-shell > main{
+    position:relative;
+  }
+
+  /* Le portrait doit remplir son cadre, sans bande beige sur les côtés. */
+  .funes-card.funes-poster .funes-portrait img{
+    object-fit:cover;
+    object-position:center center;
+  }
+}
