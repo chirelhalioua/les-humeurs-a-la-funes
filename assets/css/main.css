@@ -39,16 +39,13 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 .mood-page,.placeholder-page{max-width:900px;margin:auto;padding:55px 24px 110px}.page-heading p,.placeholder-page p{color:var(--muted);font-size:14px}
 .mood-grid{margin-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:12px}.mood-tile{border:0;border-radius:25px;min-height:105px;padding:14px 17px;display:grid;grid-template-columns:65px 1fr 28px;align-items:center;text-align:left;cursor:pointer;transition:.2s}.mood-tile:hover,.mood-tile.selected{transform:translateY(-2px);box-shadow:0 12px 28px rgba(57,43,36,.11)}.mood-tile.selected{outline:3px solid var(--cocoa);outline-offset:2px}.tile-emoji{font-size:42px;text-align:center}.tile-content{display:grid;gap:4px}.tile-content strong{font-size:20px}.tile-content small{font-size:11px;line-height:1.3;opacity:.72}.tile-check{font-size:20px;text-align:right}.mood-tile:last-child{grid-column:1/-1;max-width:calc(50% - 6px);justify-self:center}
 .selection-bar{position:sticky;bottom:18px;margin:24px auto 0;max-width:610px;padding:10px 11px 10px 18px;border-radius:999px;background:var(--cocoa);color:var(--paper);display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow);font-size:12px}.selection-bar button{border:0;border-radius:999px;padding:10px 16px;background:var(--gold);color:#392b24;font-weight:800;cursor:pointer}.coming{margin-top:45px;border:1px dashed var(--line);padding:30px;border-radius:24px;color:var(--muted);background:var(--paper)}
-
-.mobile-nav{display:none}
 @media(max-width:850px){
   .desktop-nav{display:none}.topbar{height:70px}.home{grid-template-columns:1fr;min-height:auto;padding-top:30px;gap:20px}.home-copy{text-align:center;margin:auto}.home-copy .eyebrow{justify-content:center}.home h1{font-size:clamp(42px,11vw,64px)}.intro{margin-left:auto;margin-right:auto;font-size:14px}
   .home-funes{justify-self:center;width:min(460px,100%)}.funes-card{padding:20px 21px 17px;border-radius:27px}.funes-portrait{height:82px}.portrait-head{font-size:43px}.funes-portrait .portrait-bow{font-size:28px}blockquote{font-size:25px}.film-stamp{width:74px;height:74px;font-size:7px}.mood-strip{grid-template-columns:repeat(5,1fr);gap:6px}.mood-chip{min-height:51px;padding:7px 4px;border-radius:14px;display:grid;gap:1px}.mood-chip span{font-size:23px}.mood-chip strong{font-size:9px}.home-lower{grid-template-columns:1fr;gap:12px;padding-bottom:15px}.home-lower>div{grid-template-columns:28px 1fr}.mood-page,.placeholder-page{padding-top:42px}.page-heading h1,.placeholder-page h1{font-size:50px}.mood-grid{margin-top:28px}
 }
 @media(max-width:560px){
   .brand{font-size:13px}.brand-mark{width:30px;height:30px}.theme-button{width:34px;height:34px}.top-action{font-size:10px;padding:9px 11px}.top-action span{display:none}
-  /* Accueil mobile : garder l'esprit de la maquette tout en faisant apparaître les humeurs */
-  .topbar{height:64px}
+.topbar{height:64px}
   .home{padding:17px 16px 82px;gap:14px}
   .home-copy{width:100%}
   .home-copy .home-badge{padding:6px 10px;font-size:8px}
@@ -122,8 +119,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .mood-tile:last-child{min-height:94px}
   .mood-tile:last-child .tile-image{height:70px}
 }
-
-/* Nouvelle présentation mobile : galerie + fiche sélectionnée */
 .mood-gallery{
   margin-top:30px;
   display:grid;
@@ -339,7 +334,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .mood-hint{display:none}
 }
 
-
 /* Correction citations visibles + cadrage photo */
 .choice-info{min-width:0;display:grid;gap:3px}
 .choice-name{font-size:11px;font-weight:800;white-space:nowrap}
@@ -381,7 +375,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   }
 }
 
-
 /* Carousel des humeurs */
 .mood-carousel{margin:28px auto 0;position:relative;display:grid;grid-template-columns:42px minmax(0,680px) 42px;align-items:center;gap:12px;justify-content:center}
 .mood-slide{min-height:255px;border-radius:30px;padding:22px;display:grid;grid-template-columns:180px 1fr;gap:24px;align-items:center;cursor:pointer;box-shadow:0 18px 45px rgba(57,43,36,.12);border:2px solid transparent;transition:transform .2s,border-color .2s,box-shadow .2s}
@@ -407,7 +400,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .slide-action{margin-top:13px;display:block}.choose-label,.selected-label{display:block;margin-bottom:7px;font-size:8px}
   .slide-save{width:100%;padding:10px 12px;font-size:10px}.carousel-arrow{width:27px;height:27px;font-size:21px}.carousel-dots{margin-top:11px}.carousel-counter{margin-top:5px}
 }
-
 
 /* Photos en rond : plus petites et centrées */
 .slide-photo{
@@ -444,7 +436,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .slide-photo span{font-size:38px}
 }
 
-
 /* Cadrage spécifique de la photo Heureux : visage centré dans le cercle */
 .mood-slide .slide-photo img{
   object-position:50% 50%;
@@ -459,7 +450,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   }
 }
 
-
 /* Heureux : remonter le visage dans le cercle */
 .mood-slide.tone-gold .slide-photo img{
   object-position:50% 70%;
@@ -469,7 +459,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     object-position:50% 76%;
   }
 }
-
 
 /* Réglage précis du portrait Heureux : visage nettement remonté */
 .mood-slide.tone-gold .slide-photo{
@@ -486,7 +475,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   }
 }
 
-
 /* Correction du cadrage : object-position Y bas = montre le haut de la photo */
 .mood-slide.tone-gold .slide-photo img{
   object-position:50% 15%;
@@ -498,7 +486,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     transform:scale(1.15);
   }
 }
-
 
 /* Mode sombre : contraste renforcé dans les cartes d'humeurs */
 :root[data-theme="dark"] .mood-slide.tone-gold{background:#6b5424;color:#fff6e9}
@@ -520,7 +507,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   opacity:.9;
 }
 
-
 /* Contraste réel sur la carte dorée en mode sombre */
 :root[data-theme="dark"] .mood-slide.tone-gold{
   background:#e7bd58 !important;
@@ -540,7 +526,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   color:#fffaf2 !important;
 }
 
-
 /* Portrait Heureux : cadrage remonté dans le cercle */
 .mood-slide.tone-gold .slide-photo img{
   object-position:center bottom !important;
@@ -553,7 +538,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   }
 }
 
-
 /* Portrait Heureux — déplacement très marqué vers le haut */
 .mood-slide.tone-gold .slide-photo img{
   object-position:50% 100% !important;
@@ -565,7 +549,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     transform:scale(1.38) translateY(-22px) !important;
   }
 }
-
 
 /* Accueil : icônes et libellés parfaitement centrés dans les mini-cartes */
 .mood-chip{
@@ -610,7 +593,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     white-space:nowrap;
   }
 }
-
 
 /* Connexion / inscription */
 .auth-page{
@@ -758,7 +740,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .auth-card input{padding:12px;font-size:12px}
 }
 
-
 .auth-top-link{
   font-size:11px;
   font-weight:800;
@@ -767,7 +748,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 }
 .auth-top-link:hover{color:var(--cocoa)}
 @media(max-width:560px){.auth-top-link{display:none}}
-
 
 /* Navigation : connexion intégrée au menu */
 .desktop-nav{gap:22px}
@@ -790,9 +770,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   }
   .mobile-nav span{font-size:16px}
 }
-
-
-/* Menu mobile : quatre rubriques et icônes uniformisées */
 @media(max-width:560px){
   .mobile-nav{
     display:grid !important;
@@ -821,7 +798,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     flex:none;
   }
 }
-
 
 /* Profil connecté */
 .profile-page{
@@ -1036,25 +1012,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .profile-card h2{font-size:23px}
   .profile-card h3{font-size:17px;margin-top:14px}
 }
-
-
-/* Pied de page */
-.site-footer{
-  padding:24px 28px 30px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  color:var(--muted);
-  font-size:10px;
-  text-align:center;
-}
-.site-footer a{
-  color:var(--cocoa);
-  font-weight:800;
-  text-decoration:none;
-}
-.site-footer a:hover{text-decoration:underline;text-underline-offset:3px}
 .footer-contact{font-weight:800!important}
 .footer-heart{color:var(--peach);margin:0 2px}
 .footer-separator{opacity:.5}
@@ -1065,7 +1022,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     flex-wrap:wrap;
   }
 }
-
 
 /* Options du compte */
 .profile-actions{display:grid;gap:5px;margin-top:12px}
@@ -1102,7 +1058,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .legal-card,.contact-card{padding:20px;border-radius:22px}
 }
 
-
 .auth-reset-link{
   display:block;
   margin:2px 0 -4px;
@@ -1113,7 +1068,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   text-decoration:underline;
   text-underline-offset:3px;
 }
-
 
 /* Contact */
 .contact-page{max-width:1050px;margin:auto;padding:55px 24px 110px}
@@ -1141,7 +1095,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 .contact-success p{color:var(--muted);font-size:11px;line-height:1.6}
 .contact-success button{margin-top:15px;border:0;background:none;text-decoration:underline;color:var(--cocoa);font-size:10px;font-weight:800;cursor:pointer}
 @media(max-width:700px){.contact-page{padding:30px 16px 100px}.contact-heading h1{font-size:43px}.contact-layout{grid-template-columns:1fr;margin-top:24px}.contact-card{padding:20px;border-radius:22px}}
-
 
 /* Choix du moment de l'humeur */
 .mood-time{
@@ -1180,7 +1133,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 .faq-section summary:after{content:'+';float:right;font-size:17px;font-weight:500}
 .faq-section details[open] summary:after{content:'−'}
 .faq-section details p{max-width:720px;margin:10px 0 2px;color:var(--muted);font-size:11px;line-height:1.6}
-
 
 /* Contact desktop : FAQ visible sans descendre */
 @media(min-width:851px){
@@ -1370,8 +1322,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   font-weight:800 !important;
   color:var(--cocoa) !important;
 }
-
-/* Finitions UI : alignements et footer */
 .app-shell{
   min-height:100vh;
   display:flex;
@@ -1379,9 +1329,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 }
 .app-shell>main{
   flex:1 0 auto;
-}
-.site-footer{
-  margin-top:auto;
 }
 .brand-mark,
 .theme-button{
@@ -1403,8 +1350,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   line-height:1.05;
   text-shadow:none;
 }
-
-/* Ajustement portrait Heureux sur mobile */
 @media(max-width:560px){
   .mood-slide.tone-gold .slide-photo img{
     object-position:50% 100% !important;
@@ -1460,11 +1405,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     height:42px;
     font-size:19px;
   }
-}
-
-/* Séparation discrète avant le pied de page */
-.site-footer{
-  border-top:1px solid var(--line);
 }
 
 /* Icônes plus grandes sans agrandir leurs cercles */
@@ -1551,8 +1491,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   }
   .top-actions{gap:6px}
 }
-
-/* Harmonise l'icône Suivi dans la navigation mobile */
 @media(max-width:560px){
   .mobile-nav a:nth-child(3) span{
     font-size:18px !important;
@@ -1621,8 +1559,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 @media(max-width:560px){
   .mood-final-save{margin-top:11px;padding:11px 14px;font-size:10px}
 }
-
-/* Bouton d'enregistrement mobile */
 .mood-final-save{
   display:flex;
   align-items:center;
@@ -1799,7 +1735,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .tracking-entry time{grid-column:2;text-align:left}
 }
 
-
 /* Contraste du bouton de suppression de compte */
 .profile-delete{
   display:inline-flex;
@@ -1820,14 +1755,12 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   color:var(--paper);
 }
 
-
 .profile-head-actions{display:flex;align-items:center;gap:18px;flex:none}
 .profile-head-logout{margin-top:0}
 @media(max-width:560px){
   .profile-head-actions{gap:8px;align-items:flex-start}
   .profile-head-logout{padding:9px 11px;font-size:9px;white-space:nowrap}
 }
-
 
 /* Profil : avatar à gauche + déconnexion dans le bloc compte */
 .profile-head{
@@ -1901,7 +1834,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   }
 }
 
-
 /* Modification du prénom / nom dans le profil */
 .profile-edit-name{
   margin-top:8px;
@@ -1965,7 +1897,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .profile-name-row button{padding:8px 8px}
 }
 
-
 /* Photo de profil */
 .profile-avatar-wrap{
   position:relative;
@@ -1992,9 +1923,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   width:100%;
   height:100%;
 }
-/* Réglages photo mobile */
-
-
 /* Dernière finition du profil : icône photo réellement positionnée + titre plus dense */
 .profile-avatar-camera{
   position:absolute!important;
@@ -2045,7 +1973,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   }
 }
 
-
 /* Logo de marque : symbole vectoriel net sur toutes les tailles */
 .brand-mark{
   overflow:visible!important;
@@ -2066,7 +1993,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     height:100%;
   }
 }
-
 
 @media (max-width: 560px) {
   .profile-avatar-camera {
@@ -2092,7 +2018,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     width: 145px;
   }
 }
-
 
 /* Logo inline : une seule source, compatible clair / sombre */
 .brand-logo{
@@ -2267,9 +2192,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     animation-iteration-count:1!important;
   }
 }
-
-
-/* Humeurs : geste de balayage naturel sur mobile */
 .mood-slide{
   touch-action:pan-y;
   user-select:none;
@@ -2312,7 +2234,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .moment-saved{font-size:6.5px}
   .mood-update-note{font-size:8px;padding:8px 9px}
 }
-
 
 /* Suivi : vues jour / semaine / année */
 .tracking-tabs{
@@ -2552,7 +2473,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .wellbeing-icon{width:32px;height:32px;font-size:15px}
 }
 
-
 /* Choix de l'humeur : périodes futures indisponibles */
 .moment-option:disabled{
   cursor:not-allowed;
@@ -2566,7 +2486,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   color:var(--muted);
   opacity:.8;
 }
-
 
 /* Correctif photo de profil : le champ fichier ne doit jamais prendre de place */
 .profile-photo-input{
@@ -2584,7 +2503,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 .profile-avatar{
   flex:none;
 }
-
 
 /* Nouvelle présentation du suivi : plus éditoriale, moins "tableau de bord" */
 .insight-card{
@@ -2762,7 +2680,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .year-overview div:last-child strong{font-size:18px}
 }
 
-
 /* Répartition des humeurs : graphique circulaire */
 .donut-layout{
   display:grid;
@@ -2859,7 +2776,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .donut-name{font-size:7.5px}
   .donut-legend-item strong{font-size:8px}
 }
-
 
 /* Lecture mensuelle dans le suivi annuel */
 .year-flow-month{cursor:pointer}
@@ -2958,7 +2874,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .mood-pie-small{width:78px;height:78px}
 }
 
-
 .month-focus-facts{
   display:flex;
   flex-wrap:wrap;
@@ -2980,7 +2895,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   background:var(--sage-soft);
   color:var(--cocoa);
 }
-
 
 .year-section-label{
   margin:18px 2px 8px;
@@ -3015,7 +2929,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   opacity:.9;
 }
 
-
 .profile-name-trigger{
   border:0;
   background:none;
@@ -3026,7 +2939,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
 .profile-name-trigger:hover{
   opacity:.8;
 }
-
 
 .profile-delete{
   background:rgba(178,76,67,.10);
@@ -3117,7 +3029,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .profile-confirm-actions{grid-template-columns:1fr}
 }
 
-
 .cinema-note{
   display:flex;
   align-items:center;
@@ -3145,7 +3056,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .cinema-note{font-size:16px;margin-top:13px}
 }
 
-
 .funes-reference{
   display:grid;
   gap:3px;
@@ -3166,7 +3076,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   font-weight:600;
   color:var(--cocoa);
 }
-
 
 .profile-funes-note,
 .contact-funes-note{
@@ -3219,8 +3128,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .profile-funes-note strong,
   .contact-funes-note span{font-size:18px}
 }
-
-
 
 .profile-funes-note{
   margin:18px 0 26px;
@@ -3288,8 +3195,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .contact-funes-note span{font-size:18px}
   .contact-funes-note{display:grid;gap:2px;text-align:center;margin-bottom:20px}
 }
-
-
 
 /* Pep's visuel — signature rétro moderne */
 .home{position:relative}
@@ -3391,7 +3296,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .mood-scene-label{margin-bottom:7px}
 }
 
-
 .home-badge{
   display:inline-flex;
   align-items:center;
@@ -3450,7 +3354,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .home-badge{font-size:7px;padding:6px 9px}
   .mood-scene-label{margin-left:22px;margin-bottom:-11px;font-size:8px}
 }
-
 
 /* Pep's éditorial — signature visuelle */
 .home{
@@ -3620,9 +3523,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .tracking-funes-visual img{width:42px;height:42px;border-width:2px}
   .tracking-funes-visual span{font-size:4.5px}
 }
-
-
-/* Accueil mobile — portrait lisible dans la carte */
 @media(max-width:560px){
   .funes-card.funes-poster{
     display:grid;
@@ -3682,7 +3582,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   }
 }
 
-
 /* Accueil desktop — photo horizontale sans recadrage */
 @media(min-width:561px){
   .funes-card.funes-poster .funes-portrait{
@@ -3697,7 +3596,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     filter:grayscale(1) contrast(1.02);
   }
 }
-
 
 /* Accueil — source de citation dans le même style que l'origine de la photo */
 .funes-card.funes-poster .quote-source{
@@ -3715,9 +3613,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     font-weight:900;
   }
 }
-
-
-/* Accueil mobile — éviter que l'étoile décorative masque la source */
 @media(max-width:560px){
   .funes-card.funes-poster .quote-source{
     max-width:175px;
@@ -3728,18 +3623,12 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     white-space:normal;
   }
 }
-
-
-/* Accueil mobile — rapprocher la source de la signature */
 @media(max-width:560px){
   .funes-card.funes-poster .quote-source{
     position:relative;
     top:-7px;
   }
 }
-
-
-/* Pied de page mobile — garder Contact visible au-dessus de la navigation */
 @media(max-width:560px){
   .site-footer{
     margin-bottom:76px;
@@ -3751,9 +3640,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     padding:4px 2px;
   }
 }
-
-
-/* Accueil mobile — version compacte pour garder le footer accessible sans défilement */
 @media(max-width:560px){
   .home{
     padding:10px 14px 10px;
@@ -3815,8 +3701,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     line-height:1.2;
   }
 }
-
-/* Mobile — pied de page global toujours visible au-dessus de la navigation */
 @media(max-width:560px){
   .site-footer{
     position:fixed;
@@ -3844,9 +3728,7 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .footer-contact{
     padding:3px 2px;
   }
-
-  /* Le footer est hors du flux : les pages gardent leur propre rythme de défilement. */
-  .app-shell > main{
+.app-shell > main{
     position:relative;
   }
 
@@ -3856,8 +3738,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     object-position:center center;
   }
 }
-
-/* Mobile — footer dans le flux, sans recouvrir le contenu */
 @media(max-width:560px){
   .app-shell{
     min-height:100dvh;
@@ -3893,9 +3773,7 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .footer-contact{
     padding:3px 2px;
   }
-
-  /* Le contenu de l'accueil reste compact pour laisser respirer le footer. */
-  .home{
+.home{
     padding-bottom:8px;
   }
 
@@ -3905,8 +3783,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     object-position:center center;
   }
 }
-
-/* Footer mobile — signature discrète, intégrée à la page */
 @media(max-width:560px){
   .app-shell{
     min-height:100dvh;
@@ -3974,9 +3850,7 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
   .footer-separator{
     opacity:.55;
   }
-
-  /* Sur l'accueil, le footer vient juste après les humeurs sans grand vide. */
-  .home{
+.home{
     padding-bottom:6px;
   }
 
@@ -3986,8 +3860,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     object-position:center center;
   }
 }
-
-/* Navigation mobile — footer intégré dans le même panneau */
 @media(max-width:560px){
   .site-footer{
     display:none!important;
@@ -4054,11 +3926,8 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     font-weight:800;
   }
 }
-
-/* Navigation mobile — nouvelle version type application */
 @media(max-width:560px){
-  /* Le footer classique reste utilisé sur desktop uniquement. */
-  .site-footer{
+.site-footer{
     display:none!important;
   }
 
@@ -4207,8 +4076,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     padding-bottom:130px!important;
   }
 }
-
-/* Mobile — navigation verticale type application */
 @media(max-width:560px){
   .site-footer{display:none!important;}
 
@@ -4336,10 +4203,7 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     padding-right:108px!important;
     padding-bottom:30px!important;
   }
-
-  /* Sur les pages qui utilisent toute la largeur, le dock reste au-dessus du fond,
-     sans forcer une largeur artificiellement étroite. */
-  .page-heading,
+.page-heading,
   .tracking-page,
   .profile-page,
   .contact-page,
@@ -4378,8 +4242,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     padding-right:91px!important;
   }
 }
-
-/* Mobile — dock d'application compact, sans réduire la largeur du contenu */
 @media(max-width:560px){
   .site-footer{display:none!important;}
 
@@ -4502,9 +4364,7 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     font-size:6.5px!important;
     font-weight:800!important;
   }
-
-  /* Aucun espace latéral artificiel : le site garde sa vraie largeur mobile. */
-  .home,
+.home,
   .mood-page,
   .placeholder-page{
     padding-right:16px!important;
@@ -4540,8 +4400,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     font-size:15px!important;
   }
 }
-
-/* Mobile — dock final : navigation 4 colonnes + signature en dessous */
 @media(max-width:560px){
   .mobile-nav{
     position:fixed!important;
@@ -4712,8 +4570,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     font-size:5.5px!important;
   }
 }
-
-/* Navigation mobile — même dock strictement sur toutes les pages */
 @media(max-width:560px){
   .mobile-nav{
     position:fixed!important;
@@ -4856,8 +4712,6 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     max-height:90px!important;
   }
 }
-
-/* Dock mobile — proportions de la navigation Humeur de référence */
 @media(max-width:560px){
   .mobile-nav{
     left:14px!important;
