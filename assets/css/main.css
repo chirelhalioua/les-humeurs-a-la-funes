@@ -3697,3 +3697,21 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     filter:grayscale(1) contrast(1.02);
   }
 }
+
+
+/* Accueil — source de citation dans le même style que l'origine de la photo */
+.funes-card.funes-poster .quote-source{
+  font-size:7px;
+  line-height:1.1;
+  letter-spacing:.11em;
+  font-weight:900;
+  color:var(--muted);
+}
+@media(max-width:560px){
+  .funes-card.funes-poster .quote-source{
+    font-size:6.5px;
+    line-height:1.15;
+    letter-spacing:.11em;
+    font-weight:900;
+  }
+}
