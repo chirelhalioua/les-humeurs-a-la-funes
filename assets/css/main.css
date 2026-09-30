@@ -3715,3 +3715,16 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     font-weight:900;
   }
 }
+
+
+/* Accueil mobile — éviter que l'étoile décorative masque la source */
+@media(max-width:560px){
+  .funes-card.funes-poster .quote-source{
+    max-width:175px;
+    padding-right:8px;
+    font-size:6px;
+    line-height:1.2;
+    letter-spacing:.09em;
+    white-space:normal;
+  }
+}
