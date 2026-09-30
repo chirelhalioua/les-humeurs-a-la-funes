@@ -3856,3 +3856,52 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     object-position:center center;
   }
 }
+
+/* Mobile — footer dans le flux, sans recouvrir le contenu */
+@media(max-width:560px){
+  .app-shell{
+    min-height:100dvh;
+    display:flex;
+    flex-direction:column;
+    overflow:visible;
+  }
+
+  .app-shell > main{
+    flex:1 0 auto;
+    width:100%;
+  }
+
+  .site-footer{
+    position:relative;
+    left:auto;
+    right:auto;
+    bottom:auto;
+    z-index:2;
+    width:auto;
+    margin:0 0 82px;
+    padding:10px 12px 8px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:6px;
+    font-size:8px;
+    line-height:1.2;
+    background:transparent;
+    backdrop-filter:none;
+  }
+
+  .footer-contact{
+    padding:3px 2px;
+  }
+
+  /* Le contenu de l'accueil reste compact pour laisser respirer le footer. */
+  .home{
+    padding-bottom:8px;
+  }
+
+  /* Le portrait remplit bien son cadre. */
+  .funes-card.funes-poster .funes-portrait img{
+    object-fit:cover;
+    object-position:center center;
+  }
+}
