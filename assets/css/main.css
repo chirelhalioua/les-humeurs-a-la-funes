@@ -4856,3 +4856,111 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     max-height:90px!important;
   }
 }
+
+/* Dock mobile — proportions de la navigation Humeur de référence */
+@media(max-width:560px){
+  .mobile-nav{
+    left:14px!important;
+    right:14px!important;
+    bottom:10px!important;
+    width:auto!important;
+    height:140px!important;
+    min-height:140px!important;
+    max-height:140px!important;
+    padding:7px 8px 6px!important;
+    border-radius:26px!important;
+  }
+
+  .mobile-nav-links{
+    top:7px!important;
+    left:8px!important;
+    right:8px!important;
+    bottom:31px!important;
+    height:auto!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:2px!important;
+  }
+
+  .mobile-nav-links a{
+    height:100%!important;
+    min-height:0!important;
+    padding:5px 2px!important;
+    gap:4px!important;
+    border-radius:18px!important;
+    font-size:10px!important;
+  }
+
+  .mobile-nav-links a span{
+    width:31px!important;
+    height:31px!important;
+    min-width:31px!important;
+    border-radius:11px!important;
+    font-size:20px!important;
+  }
+
+  .mobile-nav-footer{
+    left:14px!important;
+    right:14px!important;
+    bottom:7px!important;
+    height:25px!important;
+    min-height:25px!important;
+    padding:6px 0 0!important;
+    font-size:7px!important;
+    gap:6px!important;
+  }
+
+  .mobile-nav-footer > a,
+  .mobile-nav-footer > span,
+  .mobile-nav-footer .footer-heart,
+  .mobile-nav-footer a[href*="chirelhalioua.fr"]{
+    font-size:7px!important;
+  }
+
+  .home{
+    padding-bottom:145px!important;
+  }
+
+  .mood-page,
+  .placeholder-page{
+    padding-bottom:150px!important;
+  }
+}
+
+@media(max-width:370px){
+  .mobile-nav{
+    left:8px!important;
+    right:8px!important;
+    bottom:8px!important;
+    height:132px!important;
+    min-height:132px!important;
+    max-height:132px!important;
+    border-radius:23px!important;
+  }
+
+  .mobile-nav-links{
+    bottom:29px!important;
+  }
+
+  .mobile-nav-links a{
+    font-size:9px!important;
+  }
+
+  .mobile-nav-links a span{
+    width:28px!important;
+    height:28px!important;
+    min-width:28px!important;
+    font-size:18px!important;
+  }
+
+  .mobile-nav-footer{
+    bottom:6px!important;
+    font-size:6px!important;
+  }
+
+  .mobile-nav-footer > a,
+  .mobile-nav-footer > span,
+  .mobile-nav-footer .footer-heart,
+  .mobile-nav-footer a[href*="chirelhalioua.fr"]{
+    font-size:6px!important;
+  }
+}
