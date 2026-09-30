@@ -3751,3 +3751,67 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     padding:4px 2px;
   }
 }
+
+
+/* Accueil mobile — version compacte pour garder le footer accessible sans défilement */
+@media(max-width:560px){
+  .home{
+    padding:10px 14px 10px;
+    gap:8px;
+  }
+  .home h1{
+    font-size:42px;
+    line-height:.94;
+    margin:8px 0 10px;
+  }
+  .intro{
+    font-size:11px;
+    line-height:1.35;
+    margin-bottom:10px;
+  }
+  .primary-button{
+    padding:11px 16px;
+  }
+  .microcopy{
+    margin-top:5px;
+  }
+  .home-funes{
+    margin-bottom:2px;
+  }
+  .funes-card.funes-poster{
+    padding:9px 12px 8px;
+  }
+  .funes-card.funes-poster .funes-portrait{
+    height:138px!important;
+    width:122px;
+    margin-top:3px;
+  }
+  .funes-card.funes-poster blockquote{
+    font-size:18.5px;
+    line-height:1.04;
+    margin-bottom:5px;
+  }
+  .funes-card.funes-poster .portrait-caption{
+    margin-top:3px;
+    margin-bottom:5px;
+  }
+  .funes-card.funes-poster .quote-source{
+    top:-5px;
+  }
+  .mood-chip{
+    min-height:44px;
+    padding:5px 2px;
+  }
+  .mood-chip span{
+    font-size:19px;
+  }
+  .mood-chip strong{
+    font-size:7.5px;
+  }
+  .site-footer{
+    margin-bottom:72px;
+    padding:7px 12px 8px;
+    font-size:8px;
+    line-height:1.2;
+  }
+}
