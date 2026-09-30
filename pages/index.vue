@@ -24,13 +24,13 @@ const moods = [
       <span class="home-spark home-spark-two">✦</span>
       <div class="funes-card funes-poster">
         <div class="funes-topline"><span>★</span> L’INSTANT DU JOUR</div>
-        <div class="funes-portrait" aria-label="Louis de Funès pendant le tournage du Gendarme et les Extra-terrestres">
+        <div class="funes-portrait" aria-label="Louis de Funès pendant le tournage de L'Homme orchestre, 1970">
           <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Louis%20de%20Fun%C3%A8s%204%20%E2%80%94%20L%27Homme%20orchestre%20%281970%29.jpg" alt="Louis de Funès, L'Homme orchestre, 1970">
                   </div>
-        <p class="portrait-caption">LE GENDARME ET LES EXTRA-TERRESTRES · 1978</p>
-        <blockquote>« Le rire, c’est ce dont on a besoin avant toute chose. »</blockquote>
+        <p class="portrait-caption">L’HOMME ORCHESTRE · 1970</p>
+        <blockquote>« C’est une médecine pour moi le rire, une médecine qui fait beaucoup de bien aux gens. »</blockquote>
         <cite>— Louis de Funès</cite>
-        <p class="quote-source">Entretien, 1971</p>
+        <p class="quote-source">Entretien avec Georges Lourier · janvier 1963</p>
       </div>
       <div class="film-stamp"><span>SAISON</span><strong>LES HUMEURS<br>À LA FUNES</strong><small>ÉPISODE DU JOUR</small></div>
     </div>
