@@ -4378,3 +4378,165 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     padding-right:91px!important;
   }
 }
+
+/* Mobile — dock d'application compact, sans réduire la largeur du contenu */
+@media(max-width:560px){
+  .site-footer{display:none!important;}
+
+  .mobile-nav{
+    position:fixed!important;
+    left:14px!important;
+    right:14px!important;
+    bottom:10px!important;
+    top:auto!important;
+    width:auto!important;
+    height:86px!important;
+    min-height:86px!important;
+    padding:6px 8px 5px!important;
+    margin:0!important;
+    display:grid!important;
+    grid-template-rows:1fr 18px!important;
+    gap:0!important;
+    overflow:hidden!important;
+    z-index:50!important;
+    border:1px solid var(--line)!important;
+    border-radius:25px!important;
+    background:color-mix(in srgb,var(--paper) 96%,transparent)!important;
+    backdrop-filter:blur(18px)!important;
+    -webkit-backdrop-filter:blur(18px)!important;
+    box-shadow:0 12px 30px rgba(57,43,36,.12)!important;
+  }
+
+  .mobile-nav-links{
+    width:100%!important;
+    height:100%!important;
+    display:grid!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    align-items:stretch!important;
+  }
+
+  .mobile-nav-links a{
+    min-width:0!important;
+    height:100%!important;
+    padding:2px!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:2px!important;
+    border-radius:15px!important;
+    color:var(--muted)!important;
+    background:transparent!important;
+    font-size:8px!important;
+    font-weight:600!important;
+    line-height:1!important;
+    text-align:center!important;
+  }
+
+  .mobile-nav-links a span{
+    width:25px!important;
+    height:25px!important;
+    display:grid!important;
+    place-items:center!important;
+    border-radius:9px!important;
+    font-size:17px!important;
+    line-height:1!important;
+  }
+
+  .mobile-nav-links a.router-link-active{
+    color:var(--cocoa)!important;
+    font-weight:800!important;
+  }
+
+  .mobile-nav-links a.router-link-active span{
+    background:var(--sage-soft)!important;
+  }
+
+  .mobile-nav-footer{
+    width:100%!important;
+    min-height:18px!important;
+    padding:3px 2px 0!important;
+    border-top:1px solid var(--line)!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:5px!important;
+    color:var(--muted)!important;
+    font-size:6.5px!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+  }
+
+  .mobile-nav-footer > a{
+    display:inline!important;
+    width:auto!important;
+    height:auto!important;
+    min-height:0!important;
+    padding:1px!important;
+    color:var(--cocoa)!important;
+    font-size:7px!important;
+    font-weight:800!important;
+  }
+
+  .mobile-nav-footer > span{
+    display:inline!important;
+    width:auto!important;
+    height:auto!important;
+    min-height:0!important;
+    font-size:6.5px!important;
+    line-height:1!important;
+  }
+
+  .mobile-nav-footer .footer-heart{
+    display:inline!important;
+    width:auto!important;
+    height:auto!important;
+    color:var(--peach)!important;
+    background:none!important;
+    font-size:6.5px!important;
+  }
+
+  .mobile-nav-footer a[href*="chirelhalioua.fr"]{
+    display:inline!important;
+    color:var(--cocoa)!important;
+    font-size:6.5px!important;
+    font-weight:800!important;
+  }
+
+  /* Aucun espace latéral artificiel : le site garde sa vraie largeur mobile. */
+  .home,
+  .mood-page,
+  .placeholder-page{
+    padding-right:16px!important;
+  }
+
+  .home{
+    padding-bottom:100px!important;
+  }
+
+  .mood-page,
+  .placeholder-page{
+    padding-bottom:110px!important;
+  }
+}
+
+@media(max-width:370px){
+  .mobile-nav{
+    left:8px!important;
+    right:8px!important;
+    bottom:8px!important;
+    height:82px!important;
+    min-height:82px!important;
+    border-radius:22px!important;
+  }
+
+  .mobile-nav-links a{
+    font-size:7px!important;
+  }
+
+  .mobile-nav-links a span{
+    width:23px!important;
+    height:23px!important;
+    font-size:15px!important;
+  }
+}
