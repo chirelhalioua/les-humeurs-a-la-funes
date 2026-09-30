@@ -3728,3 +3728,12 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     white-space:normal;
   }
 }
+
+
+/* Accueil mobile — rapprocher la source de la signature */
+@media(max-width:560px){
+  .funes-card.funes-poster .quote-source{
+    position:relative;
+    top:-7px;
+  }
+}
