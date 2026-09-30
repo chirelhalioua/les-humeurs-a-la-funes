@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const dark = ref(false)
 const { loggedIn } = useUserSession()
+const route = useRoute()
+const isLanding = computed(() => route.path === '/landing')
 
 onMounted(() => {
   dark.value = localStorage.getItem('humeurs-theme') === 'dark'
@@ -17,7 +19,7 @@ watch(dark, value => {
 
 <template>
   <div class="app-shell">
-    <header class="topbar">
+    <header v-if="!isLanding" class="topbar">
       <NuxtLink to="/" class="brand" aria-label="Les Humeurs à la Funes"><BrandLogo /></NuxtLink>
 
       <nav class="desktop-nav" aria-label="Navigation principale">
@@ -38,13 +40,13 @@ watch(dark, value => {
 
     <main><NuxtPage /></main>
 
-    <footer class="site-footer">
+    <footer v-if="!isLanding" class="site-footer">
       <NuxtLink to="/contact" class="footer-contact">Contact</NuxtLink>
       <span class="footer-separator">·</span>
       <span>Développé avec <span class="footer-heart">♥</span> par <a href="https://chirelhalioua.fr/" target="_blank" rel="noopener noreferrer">Chirel Dev</a></span>
     </footer>
 
-    <nav class="mobile-app-nav" aria-label="Navigation mobile">
+    <nav v-if="!isLanding" class="mobile-app-nav" aria-label="Navigation mobile">
       <NuxtLink to="/" class="mobile-app-item">
         <span class="mobile-app-icon">⌂</span>
         <small>Accueil</small>
