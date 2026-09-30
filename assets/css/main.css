@@ -4054,3 +4054,156 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     font-weight:800;
   }
 }
+
+/* Navigation mobile — nouvelle version type application */
+@media(max-width:560px){
+  /* Le footer classique reste utilisé sur desktop uniquement. */
+  .site-footer{
+    display:none!important;
+  }
+
+  .mobile-nav{
+    position:fixed!important;
+    left:14px!important;
+    right:14px!important;
+    bottom:10px!important;
+    width:auto!important;
+    height:104px!important;
+    min-height:104px!important;
+    padding:7px 8px 8px!important;
+    margin:0!important;
+    display:grid!important;
+    grid-template-rows:1fr 24px!important;
+    gap:0!important;
+    align-items:stretch!important;
+    justify-content:stretch!important;
+    overflow:hidden!important;
+    z-index:50!important;
+    border:1px solid var(--line)!important;
+    border-radius:26px!important;
+    background:color-mix(in srgb,var(--paper) 97%,transparent)!important;
+    backdrop-filter:blur(18px)!important;
+    -webkit-backdrop-filter:blur(18px)!important;
+    box-shadow:0 12px 35px rgba(57,43,36,.14)!important;
+  }
+
+  .mobile-nav-links{
+    width:100%!important;
+    min-width:0!important;
+    min-height:0!important;
+    display:grid!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    align-items:stretch!important;
+  }
+
+  .mobile-nav-links a{
+    min-width:0!important;
+    min-height:0!important;
+    padding:4px 2px!important;
+    margin:0!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:3px!important;
+    border-radius:17px!important;
+    color:var(--muted)!important;
+    font-size:9px!important;
+    font-weight:500!important;
+    line-height:1!important;
+    text-align:center!important;
+    background:transparent!important;
+    transition:background .18s ease,color .18s ease,transform .18s ease!important;
+  }
+
+  .mobile-nav-links a span{
+    width:30px!important;
+    height:30px!important;
+    display:grid!important;
+    place-items:center!important;
+    font-size:19px!important;
+    line-height:1!important;
+    border-radius:11px!important;
+  }
+
+  .mobile-nav-links a.router-link-active{
+    color:var(--cocoa)!important;
+    font-weight:800!important;
+  }
+
+  .mobile-nav-links a.router-link-active span{
+    background:var(--sage-soft)!important;
+  }
+
+  .mobile-nav-footer{
+    width:100%!important;
+    min-width:0!important;
+    min-height:24px!important;
+    padding:5px 4px 0!important;
+    margin:0!important;
+    border-top:1px solid var(--line)!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:5px!important;
+    color:var(--muted)!important;
+    font-size:7px!important;
+    font-weight:500!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+  }
+
+  .mobile-nav-footer > a{
+    display:inline!important;
+    width:auto!important;
+    height:auto!important;
+    min-height:0!important;
+    padding:1px 2px!important;
+    margin:0!important;
+    border:0!important;
+    border-radius:0!important;
+    background:none!important;
+    color:var(--cocoa)!important;
+    font-size:7px!important;
+    font-weight:800!important;
+    line-height:1!important;
+  }
+
+  .mobile-nav-footer > span{
+    display:inline!important;
+    width:auto!important;
+    height:auto!important;
+    padding:0!important;
+    margin:0!important;
+    background:none!important;
+    border-radius:0!important;
+    font-size:7px!important;
+    line-height:1!important;
+  }
+
+  .mobile-nav-footer .footer-heart{
+    display:inline!important;
+    width:auto!important;
+    height:auto!important;
+    color:var(--peach)!important;
+    background:none!important;
+    font-size:7px!important;
+  }
+
+  .mobile-nav-footer a[href*="chirelhalioua.fr"]{
+    display:inline!important;
+    color:var(--cocoa)!important;
+    font-size:7px!important;
+    font-weight:800!important;
+  }
+
+  /* Le contenu ne passe jamais derrière le nouveau panneau. */
+  .home{
+    padding-bottom:122px!important;
+  }
+
+  .mood-page,
+  .placeholder-page{
+    padding-bottom:130px!important;
+  }
+}
