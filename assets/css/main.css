@@ -3681,3 +3681,19 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     font-size:7px;
   }
 }
+
+
+/* Accueil desktop — photo horizontale sans recadrage */
+@media(min-width:561px){
+  .funes-card.funes-poster .funes-portrait{
+    height:170px;
+    margin:12px 0 0;
+    border-radius:18px;
+  }
+  .funes-card.funes-poster .funes-portrait img{
+    object-fit:contain;
+    object-position:center;
+    background:var(--sand);
+    filter:grayscale(1) contrast(1.02);
+  }
+}
