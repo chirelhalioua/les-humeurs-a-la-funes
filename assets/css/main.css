@@ -199,3 +199,90 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     padding-right:1px!important;
   }
 }
+
+/* Navigation mobile — dock application */
+.mobile-app-nav{display:none}
+@media(max-width:560px){
+  .mobile-app-nav{
+    position:fixed;
+    left:12px;
+    right:12px;
+    bottom:10px;
+    height:66px;
+    padding:5px;
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:3px;
+    align-items:stretch;
+    z-index:40;
+    background:color-mix(in srgb,var(--paper) 96%,transparent);
+    border:1px solid var(--line);
+    border-radius:22px;
+    box-shadow:0 12px 30px rgba(57,43,36,.12);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+  }
+
+  .mobile-app-item{
+    min-width:0;
+    min-height:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:2px;
+    border-radius:16px;
+    color:var(--muted);
+    font-size:8px;
+    line-height:1;
+    transition:.18s ease;
+  }
+
+  .mobile-app-icon{
+    width:27px;
+    height:27px;
+    display:grid;
+    place-items:center;
+    border-radius:9px;
+    font-size:17px;
+    line-height:1;
+  }
+
+  .mobile-app-item.router-link-active{
+    color:var(--cocoa);
+    font-weight:800;
+    background:var(--sage-soft);
+  }
+
+  .mobile-app-item.router-link-active .mobile-app-icon{
+    background:var(--paper);
+  }
+
+  .mobile-app-item small{
+    font-size:inherit;
+    line-height:1;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    max-width:100%;
+  }
+
+  .app-shell > main{
+    padding-bottom:84px;
+  }
+}
+
+@media(max-width:360px){
+  .mobile-app-nav{
+    left:8px;
+    right:8px;
+    bottom:8px;
+    height:62px;
+    padding:4px;
+    border-radius:20px;
+  }
+
+  .mobile-app-item{font-size:7px}
+  .mobile-app-icon{width:24px;height:24px;font-size:15px;border-radius:8px}
+  .app-shell > main{padding-bottom:78px}
+}
