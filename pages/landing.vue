@@ -153,13 +153,16 @@ const moods = [
 </template>
 
 <style scoped>
+.landing :global(.topbar),
+.landing :global(.site-footer),
+.landing :global(.mobile-app-nav){display:none!important}
 .landing{
   --ink:#392b24;
   --muted:#806f63;
   --cream:#f6efe3;
   --paper:#fffaf2;
   --sage:#a9b89d;
-  --sage-soft:#dfe7d8;
+  --sage-soft:#e9eadf;
   --gold:#e7bd58;
   --line:rgba(57,43,36,.13);
   min-height:100vh;
