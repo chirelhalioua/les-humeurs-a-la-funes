@@ -5158,3 +5158,78 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     padding-bottom:108px;
   }
 }
+/* Correctifs finaux mobile : footer réellement visible + icônes homogènes */
+@media(max-width:560px){
+  .site-footer{
+    position:fixed!important;
+    left:0!important;
+    right:0!important;
+    bottom:82px!important;
+    z-index:60!important;
+    display:flex!important;
+    width:100%!important;
+    height:28px!important;
+    margin:0!important;
+    padding:3px 12px!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:7px!important;
+    flex-wrap:nowrap!important;
+    white-space:nowrap!important;
+    overflow:visible!important;
+    background:var(--cream)!important;
+    color:var(--muted)!important;
+    font-size:9px!important;
+    line-height:1!important;
+    box-shadow:0 -3px 10px rgba(57,43,36,.04);
+  }
+
+  .site-footer .footer-contact,
+  .site-footer > span,
+  .site-footer a{
+    display:inline!important;
+    width:auto!important;
+    height:auto!important;
+    min-width:0!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    background:none!important;
+    border:0!important;
+    color:var(--cocoa)!important;
+    font-size:inherit!important;
+    line-height:inherit!important;
+  }
+
+  .site-footer .footer-heart{
+    color:var(--gold)!important;
+  }
+
+  .mobile-app-item:nth-child(3) .mobile-app-icon{
+    font-size:21px!important;
+    transform:scale(1.35)!important;
+  }
+
+  .mobile-app-item:nth-child(4) .mobile-app-icon{
+    font-size:17px!important;
+    transform:scale(1.05)!important;
+  }
+}
+
+@media(max-width:360px){
+  .site-footer{
+    bottom:75px!important;
+    height:25px!important;
+    font-size:8px!important;
+  }
+
+  .mobile-app-item:nth-child(3) .mobile-app-icon{
+    font-size:19px!important;
+    transform:scale(1.35)!important;
+  }
+
+  .mobile-app-item:nth-child(4) .mobile-app-icon{
+    font-size:15px!important;
+    transform:scale(1.05)!important;
+  }
+}
