@@ -4818,3 +4818,159 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     font-size:6px!important;
   }
 }
+
+/* Accueil responsive — base propre après retrait de la navigation mobile */
+@media(max-width:560px){
+  .home{
+    width:100%;
+    min-height:auto;
+    box-sizing:border-box;
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    padding:18px 16px 24px!important;
+    gap:14px!important;
+    overflow:hidden;
+  }
+
+  .home::before{
+    width:min(118vw,520px);
+    height:min(118vw,520px);
+    right:-42vw;
+    top:-72px;
+  }
+
+  .home-copy{
+    width:100%;
+    max-width:none;
+    margin:0;
+    text-align:center;
+  }
+
+  .home h1{
+    max-width:100%;
+    font-size:clamp(38px,11vw,48px)!important;
+    line-height:.96!important;
+    margin:10px 0 12px!important;
+    overflow-wrap:normal;
+  }
+
+  .home h1 br{display:block}
+
+  .intro{
+    width:100%;
+    max-width:410px;
+    margin:0 auto 12px!important;
+    padding:0 2px;
+    font-size:12px!important;
+    line-height:1.4!important;
+  }
+
+  .primary-button{
+    max-width:100%;
+  }
+
+  .home-funes{
+    width:100%!important;
+    max-width:430px;
+    margin:0 auto!important;
+    justify-self:auto;
+  }
+
+  .funes-poster:before{
+    right:-10px;
+  }
+
+  .funes-poster:after{
+    right:0;
+  }
+
+  .funes-card.funes-poster{
+    width:100%;
+    box-sizing:border-box;
+    grid-template-columns:minmax(104px,32%) minmax(0,1fr)!important;
+    column-gap:12px!important;
+    padding:10px 12px!important;
+  }
+
+  .funes-card.funes-poster .funes-portrait{
+    width:100%!important;
+    max-width:128px;
+    height:clamp(132px,39vw,166px)!important;
+  }
+
+  .funes-card.funes-poster .funes-portrait img{
+    object-fit:cover!important;
+    object-position:center center!important;
+  }
+
+  .funes-card.funes-poster blockquote{
+    min-width:0;
+    font-size:clamp(17px,5vw,21px)!important;
+    line-height:1.05!important;
+    overflow-wrap:anywhere;
+  }
+
+  .funes-card.funes-poster .quote-source{
+    max-width:100%!important;
+    padding-right:0!important;
+    font-size:clamp(5px,1.55vw,6px)!important;
+  }
+
+  .mood-strip{
+    width:100%;
+    min-width:0;
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr))!important;
+    gap:5px!important;
+  }
+
+  .mood-chip{
+    min-width:0;
+    min-height:50px!important;
+    padding:6px 2px!important;
+    gap:1px!important;
+    border-radius:13px!important;
+    overflow:hidden;
+  }
+
+  .mood-chip span{
+    font-size:clamp(18px,5.2vw,22px)!important;
+  }
+
+  .mood-chip strong{
+    max-width:100%;
+    font-size:clamp(7px,2.2vw,9px)!important;
+    white-space:nowrap;
+  }
+}
+
+@media(max-width:380px){
+  .home{
+    padding-left:12px!important;
+    padding-right:12px!important;
+  }
+
+  .home h1{
+    font-size:clamp(35px,11vw,42px)!important;
+  }
+
+  .funes-card.funes-poster{
+    grid-template-columns:minmax(94px,31%) minmax(0,1fr)!important;
+    column-gap:9px!important;
+    padding:9px 10px!important;
+  }
+
+  .funes-card.funes-poster blockquote{
+    font-size:clamp(16px,4.8vw,18px)!important;
+  }
+
+  .mood-strip{
+    gap:4px!important;
+  }
+
+  .mood-chip{
+    padding-left:1px!important;
+    padding-right:1px!important;
+  }
+}
