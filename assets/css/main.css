@@ -5085,3 +5085,76 @@ button,a{font:inherit}button{color:inherit}a{text-decoration:none;color:inherit}
     font-size:9px;
   }
 }
+
+/* Footer mobile visible en permanence, juste au-dessus du menu */
+@media(max-width:560px){
+  .site-footer{
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:82px;
+    z-index:39;
+    width:100%;
+    height:28px;
+    margin:0;
+    padding:4px 14px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:7px;
+    background:linear-gradient(to bottom,transparent,var(--cream) 42%);
+    font-size:9px;
+    white-space:nowrap;
+  }
+
+  .mobile-app-icon{
+    width:27px!important;
+    height:27px!important;
+    min-width:27px;
+    min-height:27px;
+    display:grid;
+    place-items:center;
+  }
+
+  /* Même présence visuelle pour les deux derniers pictogrammes */
+  .mobile-app-item:nth-child(3) .mobile-app-icon{
+    transform:scale(1.08);
+  }
+
+  .mobile-app-item:nth-child(4) .mobile-app-icon{
+    transform:scale(1.18);
+  }
+
+  .app-shell > main{
+    padding-bottom:116px;
+  }
+}
+
+@media(max-width:360px){
+  .site-footer{
+    bottom:75px;
+    height:25px;
+    font-size:8px;
+    padding-left:8px;
+    padding-right:8px;
+  }
+
+  .mobile-app-icon{
+    width:24px!important;
+    height:24px!important;
+    min-width:24px;
+    min-height:24px;
+  }
+
+  .mobile-app-item:nth-child(3) .mobile-app-icon{
+    transform:scale(1.08);
+  }
+
+  .mobile-app-item:nth-child(4) .mobile-app-icon{
+    transform:scale(1.18);
+  }
+
+  .app-shell > main{
+    padding-bottom:108px;
+  }
+}
