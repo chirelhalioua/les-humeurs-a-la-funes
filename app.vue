@@ -45,11 +45,18 @@ watch(dark, value => {
     </footer>
 
     <nav class="mobile-nav" aria-label="Navigation mobile">
-      <NuxtLink to="/"><span>⌂</span>Accueil</NuxtLink>
-      <NuxtLink to="/choisir-humeurs"><span>☻</span>Humeur</NuxtLink>
-      <NuxtLink to="/suivi-humeurs"><span class="nav-follow-icon">◔</span>Suivi</NuxtLink>
-      <NuxtLink v-if="loggedIn" to="/profil"><span>○</span>Profil</NuxtLink>
-      <NuxtLink v-else to="/connexion"><span>↗</span>Connexion</NuxtLink>
+      <div class="mobile-nav-links">
+        <NuxtLink to="/"><span>⌂</span>Accueil</NuxtLink>
+        <NuxtLink to="/choisir-humeurs"><span>☻</span>Humeur</NuxtLink>
+        <NuxtLink to="/suivi-humeurs"><span class="nav-follow-icon">◔</span>Suivi</NuxtLink>
+        <NuxtLink v-if="loggedIn" to="/profil"><span>○</span>Profil</NuxtLink>
+        <NuxtLink v-else to="/connexion"><span>↗</span>Connexion</NuxtLink>
+      </div>
+      <div class="mobile-nav-footer">
+        <NuxtLink to="/contact">Contact</NuxtLink>
+        <span>·</span>
+        <span>Développé avec <span class="footer-heart">♥</span> par <a href="https://chirelhalioua.fr/" target="_blank" rel="noopener noreferrer">Chirel Dev</a></span>
+      </div>
     </nav>
   </div>
 </template>
