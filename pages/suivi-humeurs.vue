@@ -147,7 +147,7 @@ const weekFilledDays = computed(() => weekDays.value.filter(day => day.entries.l
 const weekInsight = computed(() => {
   if (!weekEntries.value.length) return 'Ta semaine commencera à se dessiner dès que tu enregistreras quelques humeurs.'
   if (weekDominant.value) {
-    return `Cette semaine, l’humeur qui revient le plus souvent est ${weekDominant.value.emoji} ${weekDominant.value.name}. Tu l’as retrouvée ${weekDominant.value.count} fois, sur ${weekFilledDays.value} jour${weekFilledDays.value > 1 ? 's' : ''} où tu as pris le temps de noter ton ressenti.`
+    return `Cette semaine, tu t’es surtout senti ${weekDominant.value.emoji} ${weekDominant.value.name}. Ton ressenti s’est principalement inscrit dans cette humeur, avec aussi les autres moments que tu as pris le temps de noter.`
   }
   return 'Continue à noter tes humeurs pour faire apparaître tes repères.'
 })
@@ -240,7 +240,7 @@ const yearFilledDays = computed(() => new Set(yearEntries.value.map(entry => get
 
 const yearInsight = computed(() => {
   if (!yearEntries.value.length) return 'Ton année commencera à se dessiner dès que tu enregistreras des humeurs.'
-  return `Au fil de ${year.value}, tu as pris le temps de noter ton humeur ${yearEntries.value.length} fois, réparties sur ${yearFilledDays.value} jour${yearFilledDays.value > 1 ? 's' : ''}. ${yearDominant.value ? `L’humeur qui revient le plus souvent est ${yearDominant.value.emoji} ${yearDominant.value.name}.` : ''}`
+  return `Au fil de ${year.value}, tes ressentis dessinent une année faite de moments différents. ${yearDominant.value ? `Tu t’es le plus souvent senti ${yearDominant.value.emoji} ${yearDominant.value.name}, parmi les différentes humeurs que tu as vécues.` : ''}`
 })
 </script>
 
@@ -344,8 +344,8 @@ const yearInsight = computed(() => {
           </div>
 
           <div class="week-meta">
-            <span>{{ weekFilledDays }}/7 jours où tu as pris un moment pour toi</span>
-            <span v-if="weekDominant">L’humeur qui revient le plus : {{ weekDominant.emoji }} {{ weekDominant.name }}</span>
+            <span>Les moments où tu as pris le temps de regarder comment tu te sens</span>
+            <span v-if="weekDominant">Cette semaine, tu t’es surtout senti {{ weekDominant.emoji }} {{ weekDominant.name }}</span>
             <span v-else>Ta semaine se dessinera ici, à ton rythme.</span>
           </div>
         </section>
@@ -405,13 +405,13 @@ const yearInsight = computed(() => {
               <span v-if="selectedMonthSummary.dominant" class="month-focus-mood">{{ selectedMonthSummary.dominant.emoji }}</span>
             </div>
             <p v-if="selectedMonthEntries.length">
-              {{ selectedMonthEntries.length }} humeur{{ selectedMonthEntries.length > 1 ? 's' : '' }} enregistrée{{ selectedMonthEntries.length > 1 ? 's' : '' }} ce mois-ci.
-              <template v-if="selectedMonthSummary.dominant"> Ce mois-ci, {{ selectedMonthSummary.dominant.emoji }} {{ selectedMonthSummary.dominant.name }} revient le plus souvent.</template>
+              <template v-if="selectedMonthSummary.dominant">Ce mois-ci, tu t’es surtout senti {{ selectedMonthSummary.dominant.emoji }} {{ selectedMonthSummary.dominant.name }}.</template>
+              <template v-else>Ce mois-ci, tu n’as pas encore noté ton ressenti.</template>
             </p>
             <p v-else>Aucune humeur enregistrée ce mois-ci.</p>
 
             <div class="month-focus-facts">
-              <span>{{ selectedMonthEntries.length }} humeur{{ selectedMonthEntries.length > 1 ? 's' : '' }} enregistrée{{ selectedMonthEntries.length > 1 ? 's' : '' }} ce mois-ci</span>
+              <span v-if="selectedMonthSummary.dominant">Ton ressenti le plus présent</span>
               <strong v-if="selectedMonthSummary.dominant">{{ selectedMonthSummary.dominant.emoji }} {{ selectedMonthSummary.dominant.name }}</strong>
             </div>
           </div>
