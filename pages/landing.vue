@@ -245,8 +245,8 @@ const moods = [
 .hero-points{display:flex;gap:30px;margin-top:30px;color:var(--muted);font-size:10px;line-height:1.35}
 .hero-points span{display:flex;gap:8px;align-items:center}.hero-points b{font-size:18px;color:var(--brown)}
 .hero-visual{height:490px;position:relative;display:grid;place-items:center;z-index:1;isolation:isolate;overflow:hidden}
-.hero-circle{position:absolute;width:420px;height:420px;border-radius:50%;background:#eadfc9;right:4%;bottom:0;z-index:0;pointer-events:none}
-.hero-portrait{position:absolute;width:320px;height:430px;right:12%;bottom:0;overflow:hidden;border-radius:170px 170px 28px 28px;z-index:2;mix-blend-mode:multiply}
+.hero-circle{position:absolute;width:420px;height:420px;border-radius:50%;background:#e9ddc7;opacity:.48;right:4%;bottom:0;z-index:0;pointer-events:none}
+.hero-portrait{position:absolute;width:320px;height:430px;right:12%;bottom:0;overflow:hidden;border-radius:170px 170px 28px 28px;z-index:2;mix-blend-mode:normal}
 .hero-portrait img{width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-quote{position:absolute;right:52%;top:65px;width:185px;font-family:Caveat,cursive;font-size:27px;line-height:1.02;transform:rotate(-4deg);z-index:3}
 .hero-spark{position:absolute;color:#d99f22;font-size:34px;z-index:4}.spark-a{left:6%;top:40%}.spark-b{right:3%;top:12%}
