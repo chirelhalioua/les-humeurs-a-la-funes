@@ -38,7 +38,7 @@ watch(dark, value => {
       </div>
     </header>
 
-    <main><NuxtPage /></main>
+    <main :class="{ 'landing-main': isLanding }"><NuxtPage /></main>
 
     <footer v-if="!isLanding" class="site-footer">
       <NuxtLink to="/contact" class="footer-contact">Contact</NuxtLink>
