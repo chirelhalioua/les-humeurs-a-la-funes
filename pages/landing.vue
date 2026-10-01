@@ -157,6 +157,8 @@ const moods = [
 .landing :global(.topbar),
 .landing :global(.site-footer),
 .landing :global(.mobile-app-nav){display:none!important}
+.landing :deep(.brand-logo text:last-of-type){fill:#392b24!important}
+:global(.app-shell>main.landing-main){flex:0 0 auto!important;min-height:0!important;padding-bottom:0!important;background:#f6efe3!important}
 .landing{
   --ink:#392b24;
   --muted:#806f63;
@@ -166,7 +168,7 @@ const moods = [
   --sage-soft:#e9eadf;
   --gold:#e7bd58;
   --line:rgba(57,43,36,.13);
-  min-height:100vh;
+  min-height:0;
   background:var(--cream);
   color:var(--ink);
   font-family:Inter,ui-sans-serif,system-ui,sans-serif;
