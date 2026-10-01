@@ -5,7 +5,7 @@ function stylePhonePreview(event: Event) {
     const doc = frame.contentDocument
     if (!doc) return
     const style = doc.createElement('style')
-    style.textContent = 'html,body{overflow:hidden!important}.topbar,.site-footer{display:none!important}.mobile-app-nav{display:grid!important;visibility:visible!important;opacity:1!important;pointer-events:none!important}.app-shell>main{padding-bottom:84px!important;min-height:0!important}a,button{pointer-events:none!important}'
+    style.textContent = 'html,body{overflow:hidden!important}.topbar,.site-footer{display:none!important}.mobile-app-nav{display:grid!important;visibility:visible!important;opacity:1!important;pointer-events:none!important;left:8px!important;right:8px!important;bottom:7px!important;height:44px!important;padding:3px!important;gap:2px!important;border-radius:14px!important;box-shadow:none!important}.mobile-app-item{gap:1px!important;font-size:6px!important;border-radius:10px!important}.mobile-app-icon{width:19px!important;height:19px!important;font-size:12px!important;border-radius:6px!important}.app-shell>main{padding-bottom:50px!important;min-height:0!important}a,button{pointer-events:none!important}'
     doc.head.appendChild(style)
   } catch { /* visual-only fallback */ }
 }
@@ -139,6 +139,7 @@ const moods = [
                 loading="lazy"
                 scrolling="no"
                 tabindex="-1"
+                style="pointer-events:none"
                 @load="stylePhonePreview"
               ></iframe>
             </div>
