@@ -214,8 +214,8 @@ const moods = [
 .hero-kicker i{width:20px;height:2px;background:var(--gold);display:inline-block}
 .hero-copy h1,.section-heading h2,.landing-final h2{font-family:Sora,Inter,sans-serif;letter-spacing:-.065em;line-height:.98}
 .hero-copy h1{font-size:clamp(46px,6.2vw,78px);margin:18px 0 18px}
-.hero-copy h1 em,.section-heading h2 em{font-family:Caveat,cursive;font-weight:600;color:#6f5842;letter-spacing:-.02em}
-.hero-copy>p{max-width:480px;color:var(--muted);font-size:17px;line-height:1.5;margin:0 0 25px}
+.hero-copy h1 em,.section-heading h2 em{font-family:Caveat,cursive;font-weight:600;color:#392b24;letter-spacing:-.02em}
+.hero-copy>p{max-width:480px;color:#66564b;font-size:17px;line-height:1.5;margin:0 0 25px}
 .hero-moods{display:flex;gap:10px;margin-bottom:25px;flex-wrap:wrap}
 .hero-moods>span{min-width:70px;display:flex;flex-direction:column;align-items:center;gap:5px}
 .hero-moods b{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-size:25px;background:#f5dfac}
