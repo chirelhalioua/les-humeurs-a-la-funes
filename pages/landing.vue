@@ -150,6 +150,11 @@ const moods = [
       </section>
     </main>
 
+    <footer class="landing-footer">
+      <NuxtLink to="/contact">Contact</NuxtLink>
+      <span>·</span>
+      <span>Développé avec <b>♥</b> par <a href="https://chirelhalioua.fr/" target="_blank" rel="noopener noreferrer">Chirel Dev</a></span>
+    </footer>
   </div>
 </template>
 
@@ -244,13 +249,13 @@ const moods = [
 .preview-section{background:var(--cream)}
 .phone-stage{position:relative;display:flex;justify-content:center;margin:20px auto 30px;max-width:1000px}
 .phone-glow{position:absolute;width:450px;height:450px;border-radius:50%;background:#eadfbf;opacity:.75;top:30px}
-.phone{position:relative;width:330px;padding:12px 10px 16px;border-radius:40px;background:#2d2520;box-shadow:0 24px 50px rgba(57,43,36,.2);z-index:1}
+.phone{position:relative;width:290px;padding:10px 9px 13px;border-radius:36px;background:#2d2520;box-shadow:0 24px 50px rgba(57,43,36,.2);z-index:1}
 .phone-bar{height:22px;color:#fff;font-size:7px;display:flex;justify-content:space-between;padding:0 10px;align-items:center}
-.phone-screen{height:610px;border-radius:29px;overflow:hidden;background:var(--cream);border:2px solid #5d514a}
-.phone-screen iframe{width:100%;height:100%;border:0;display:block;transform:scale(.72);transform-origin:top left}
+.phone-screen{height:510px;border-radius:26px;overflow:hidden;background:var(--cream);border:2px solid #5d514a}
+.phone-screen iframe{width:100%;height:100%;border:0;display:block;transform:scale(.68);transform-origin:top left}
 .phone-screen{position:relative}
-.phone-screen iframe{width:138.9%;height:138.9%}
-.phone-home{width:80px;height:4px;border-radius:10px;background:#fff;margin:9px auto 0;opacity:.7}
+.phone-screen iframe{width:147.1%;height:147.1%}
+.phone-home{width:70px;height:4px;border-radius:10px;background:#fff;margin:9px auto 0;opacity:.7}
 .preview-note{max-width:480px;margin:auto;display:flex;gap:13px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:14px 17px}.preview-note>span{font-size:9px;color:var(--muted);font-weight:800}.preview-note b{font-size:12px}.preview-note p{margin:3px 0 0;font-size:10px;line-height:1.4;color:var(--muted)}
 .landing-final{margin:0 0 0;min-height:230px;padding:50px 8vw;background:#f0e2bf;display:flex;align-items:center;justify-content:center;gap:30px;text-align:center;position:relative}.landing-final>div{max-width:600px}.landing-final h2{font-size:clamp(35px,4.8vw,55px);margin:9px 0 7px}.landing-final p{margin:0 auto 18px;max-width:500px;color:var(--muted);font-size:13px}.clapper,.reel{font-size:55px;opacity:.9}.reel{font-size:38px;transform:rotate(20deg)}
 @media(max-width:850px){
@@ -262,7 +267,7 @@ const moods = [
   .landing-nav{height:62px}.landing-nav-cta{font-size:8px;padding:9px 11px}.landing-logo{width:142px}
   .landing-hero{padding:35px 16px 25px;gap:18px}.hero-copy h1{font-size:clamp(37px,11.5vw,49px);margin:13px 0}.hero-copy>p{font-size:12px;line-height:1.45}.hero-moods{gap:4px;margin-bottom:18px}.hero-moods>span{min-width:57px}.hero-moods b{width:41px;height:41px;font-size:21px}.hero-moods small{font-size:8px}.landing-main-cta{font-size:11px;padding:12px 17px}.hero-points{font-size:8px;gap:9px;margin-top:21px}.hero-points b{font-size:15px}.hero-visual{height:300px}.hero-circle{width:280px;height:280px}.dot-one{width:12px;height:12px;right:5%;bottom:17%}.dot-two{width:7px;height:7px;left:8%;bottom:12%}.hero-portrait{width:190px;height:255px}.hero-quote{left:1%;top:10px;width:125px;font-size:20px}.film-strip{font-size:70px;top:0}.spark-a{left:2%;font-size:24px}.spark-b{right:0;font-size:23px}
   .landing-section{padding:48px 14px}.section-heading{margin-bottom:28px}.section-heading h2{font-size:36px}.section-heading p{font-size:12px}.step-card{border-radius:22px}.quote-band{padding:24px 17px;gap:12px}.quote-photo{width:80px;height:105px}.quote-band p{font-size:22px}.quote-band small{font-size:8px}.quote-star{right:4%;font-size:22px}
-  .phone{width:285px;border-radius:34px;padding:9px 8px 12px}.phone-screen{height:540px;border-radius:25px}.phone-screen iframe{transform:scale(.62);transform-origin:top left;width:161.3%;height:161.3%}.phone-home{width:65px}
+  .phone{width:250px;border-radius:31px;padding:8px 7px 10px}.phone-screen{height:450px;border-radius:23px}.phone-screen iframe{transform:scale(.62);transform-origin:top left;width:161.3%;height:161.3%}.phone-home{width:58px}
   .preview-note{margin:0 4px}.landing-final{padding:42px 18px;min-height:260px}.clapper,.reel{display:none}.landing-final h2{font-size:37px}.landing-final p{font-size:11px}.landing-footer{font-size:8px}
 }
 </style>
