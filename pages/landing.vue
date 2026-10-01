@@ -66,7 +66,7 @@ const moods = [
           <div class="hero-points">
             <span><b>⌁</b> Simple<br>et rapide</span>
             <span><b>♥</b> Un univers<br>unique et positif</span>
-            <span><b>▮▮▮</b> Ton suivi<br>dans le temps</span>
+            <span><b>◔</b> Ton suivi<br>dans le temps</span>
           </div>
         </div>
 
@@ -97,7 +97,7 @@ const moods = [
         <div class="steps">
           <article v-for="step in steps" :key="step.number" class="step-card">
             <span class="step-number">{{ step.number }}</span>
-            <div class="step-icon">{{ step.number === '01' ? '☻' : step.number === '02' ? '◷' : '▥' }}</div>
+            <div class="step-icon">{{ step.number === '01' ? '☻' : step.number === '02' ? '◷' : '◔' }}</div>
             <h3>{{ step.title }}</h3>
             <p>{{ step.text }}</p>
           </article>
