@@ -18,7 +18,7 @@ watch(dark, value => {
 </script>
 
 <template>
-  <div class="app-shell">
+  <div :key="route.path" class="app-shell">
     <header v-if="!isLanding" class="topbar">
       <NuxtLink to="/" class="brand" aria-label="Les Humeurs à la Funes"><BrandLogo /></NuxtLink>
 
