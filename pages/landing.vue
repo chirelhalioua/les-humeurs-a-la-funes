@@ -5,7 +5,7 @@ function stylePhonePreview(event: Event) {
     const doc = frame.contentDocument
     if (!doc) return
     const style = doc.createElement('style')
-    style.textContent = 'html,body{overflow:hidden!important}.topbar,.site-footer,.mobile-app-nav{display:none!important}.app-shell>main{padding-bottom:0!important;min-height:0!important}a,button{pointer-events:none!important}'
+    style.textContent = 'html,body{overflow:hidden!important}.topbar,.site-footer{display:none!important}.mobile-app-nav{display:grid!important;visibility:visible!important;opacity:1!important;pointer-events:none!important}.app-shell>main{padding-bottom:84px!important;min-height:0!important}a,button{pointer-events:none!important}'
     doc.head.appendChild(style)
   } catch { /* visual-only fallback */ }
 }
